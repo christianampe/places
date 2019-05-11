@@ -21,6 +21,8 @@ extension UINestedCollectionViewRow: UICollectionViewDelegate {
 //            assertionFailure("incorrect cell type used")
 //            return
 //        }
+//        
+//        cell.set(properties: <#T##UINestedCollectionViewRowCellViewModel#>)
     }
 }
 

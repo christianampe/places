@@ -36,6 +36,7 @@
 		BFBA6C2E22875AE80054C330 /* UINestedCollectionViewColumnCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFBA6C2D22875AE80054C330 /* UINestedCollectionViewColumnCell.xib */; };
 		BFBA6C3022875AF90054C330 /* UINestedCollectionViewColumnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6C2F22875AF90054C330 /* UINestedCollectionViewColumnCell.swift */; };
 		BFBA6C34228767240054C330 /* UIRoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6C33228767240054C330 /* UIRoundImageView.swift */; };
+		BFBA6C3622876A830054C330 /* UINestedCollectionViewRowCellViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6C3522876A830054C330 /* UINestedCollectionViewRowCellViewModelProtocol.swift */; };
 		BFD6D5D122872ABE0020F217 /* ProfileInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6D5C722872ABE0020F217 /* ProfileInput.swift */; };
 		BFD6D5D222872ABE0020F217 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6D5C822872ABE0020F217 /* ProfilePresenter.swift */; };
 		BFD6D5D322872ABE0020F217 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6D5C922872ABE0020F217 /* ProfileRouter.swift */; };
@@ -125,6 +126,7 @@
 		BFBA6C2D22875AE80054C330 /* UINestedCollectionViewColumnCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UINestedCollectionViewColumnCell.xib; sourceTree = "<group>"; };
 		BFBA6C2F22875AF90054C330 /* UINestedCollectionViewColumnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINestedCollectionViewColumnCell.swift; sourceTree = "<group>"; };
 		BFBA6C33228767240054C330 /* UIRoundImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIRoundImageView.swift; sourceTree = "<group>"; };
+		BFBA6C3522876A830054C330 /* UINestedCollectionViewRowCellViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINestedCollectionViewRowCellViewModelProtocol.swift; sourceTree = "<group>"; };
 		BFD6D5C722872ABE0020F217 /* ProfileInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInput.swift; sourceTree = "<group>"; };
 		BFD6D5C822872ABE0020F217 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		BFD6D5C922872ABE0020F217 /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 				BFBA6C27228759D40054C330 /* UINestedCollectionViewRow.swift */,
 				BFBA6C23228759BF0054C330 /* UINestedCollectionViewRowCell.xib */,
 				BFBA6C25228759CA0054C330 /* UINestedCollectionViewRowCell.swift */,
+				BFBA6C3522876A830054C330 /* UINestedCollectionViewRowCellViewModelProtocol.swift */,
 			);
 			path = "Nested Collection";
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				BFD6D5D822872ABE0020F217 /* ProfileOutput.swift in Sources */,
 				BFBA6C2A22875AC60054C330 /* UINestedCollectionViewColumn.swift in Sources */,
 				BFD6D62622872C2C0020F217 /* XIBView.swift in Sources */,
+				BFBA6C3622876A830054C330 /* UINestedCollectionViewRowCellViewModelProtocol.swift in Sources */,
 				BFF506852286423B00CA5B0B /* AppDelegate.swift in Sources */,
 				BFD6D5FC22872BDA0020F217 /* NetworkingRequestValidation.swift in Sources */,
 				BFD6D5D222872ABE0020F217 /* ProfilePresenter.swift in Sources */,

@@ -63,6 +63,12 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="mF5-FX-NIA"/>
             <size key="customSize" width="287" height="100"/>
+            <connections>
+                <outlet property="background" destination="CuM-Vf-uyh" id="dZC-Qb-s2s"/>
+                <outlet property="detail" destination="oRY-Mh-s3B" id="11R-ye-RKB"/>
+                <outlet property="icon" destination="ksJ-MC-sov" id="tce-dr-vs5"/>
+                <outlet property="title" destination="BKT-Qu-0CK" id="kji-6M-kvq"/>
+            </connections>
             <point key="canvasLocation" x="5.7971014492753632" y="84.375"/>
         </collectionViewCell>
     </objects>
