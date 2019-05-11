@@ -15,6 +15,7 @@ extension UIStoryboard {
         // MARK: - Entry
         case appLaunch = "AppLaunch"
         case app = "App"
+        case home = "Home"
         case profile = "Profile"
     }
 }

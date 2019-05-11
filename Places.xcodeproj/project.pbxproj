@@ -13,6 +13,18 @@
 		BFBA6BE6228752680054C330 /* UIImageView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6BDF228752680054C330 /* UIImageView+Additions.swift */; };
 		BFBA6BE7228752680054C330 /* UINavigationBar+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6BE0228752680054C330 /* UINavigationBar+Additions.swift */; };
 		BFBA6BE8228752680054C330 /* URL++.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6BE1228752680054C330 /* URL++.swift */; };
+		BFBA6BEB2287531D0054C330 /* Assignment.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BFBA6BEA2287531D0054C330 /* Assignment.pdf */; };
+		BFBA6C0B228754360054C330 /* HomeInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6C01228754360054C330 /* HomeInput.swift */; };
+		BFBA6C0C228754360054C330 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6C02228754360054C330 /* HomePresenter.swift */; };
+		BFBA6C0D228754360054C330 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6C03228754360054C330 /* HomeRouter.swift */; };
+		BFBA6C0E228754360054C330 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6C04228754360054C330 /* HomeViewController.swift */; };
+		BFBA6C0F228754360054C330 /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6C05228754360054C330 /* HomeProtocols.swift */; };
+		BFBA6C10228754360054C330 /* HomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6C06228754360054C330 /* HomeBuilder.swift */; };
+		BFBA6C11228754360054C330 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6C07228754360054C330 /* HomeInteractor.swift */; };
+		BFBA6C12228754360054C330 /* HomeOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6C08228754360054C330 /* HomeOutput.swift */; };
+		BFBA6C13228754360054C330 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6C09228754360054C330 /* HomeViewModel.swift */; };
+		BFBA6C16228754420054C330 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBA6C15228754420054C330 /* Home.storyboard */; };
+		BFBA6C182287544F0054C330 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBA6C172287544F0054C330 /* Profile.storyboard */; };
 		BFD6D5D122872ABE0020F217 /* ProfileInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6D5C722872ABE0020F217 /* ProfileInput.swift */; };
 		BFD6D5D222872ABE0020F217 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6D5C822872ABE0020F217 /* ProfilePresenter.swift */; };
 		BFD6D5D322872ABE0020F217 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6D5C922872ABE0020F217 /* ProfileRouter.swift */; };
@@ -79,6 +91,18 @@
 		BFBA6BDF228752680054C330 /* UIImageView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Additions.swift"; sourceTree = "<group>"; };
 		BFBA6BE0228752680054C330 /* UINavigationBar+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Additions.swift"; sourceTree = "<group>"; };
 		BFBA6BE1228752680054C330 /* URL++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL++.swift"; sourceTree = "<group>"; };
+		BFBA6BEA2287531D0054C330 /* Assignment.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Assignment.pdf; sourceTree = "<group>"; };
+		BFBA6C01228754360054C330 /* HomeInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInput.swift; sourceTree = "<group>"; };
+		BFBA6C02228754360054C330 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		BFBA6C03228754360054C330 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		BFBA6C04228754360054C330 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BFBA6C05228754360054C330 /* HomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
+		BFBA6C06228754360054C330 /* HomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilder.swift; sourceTree = "<group>"; };
+		BFBA6C07228754360054C330 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		BFBA6C08228754360054C330 /* HomeOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeOutput.swift; sourceTree = "<group>"; };
+		BFBA6C09228754360054C330 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		BFBA6C15228754420054C330 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		BFBA6C172287544F0054C330 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		BFD6D5C722872ABE0020F217 /* ProfileInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInput.swift; sourceTree = "<group>"; };
 		BFD6D5C822872ABE0020F217 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		BFD6D5C922872ABE0020F217 /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
@@ -173,6 +197,31 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		BFBA6BE9228753100054C330 /* Documents */ = {
+			isa = PBXGroup;
+			children = (
+				BFBA6BEA2287531D0054C330 /* Assignment.pdf */,
+			);
+			path = Documents;
+			sourceTree = "<group>";
+		};
+		BFBA6BEC228753E70054C330 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BFBA6C01228754360054C330 /* HomeInput.swift */,
+				BFBA6C02228754360054C330 /* HomePresenter.swift */,
+				BFBA6C03228754360054C330 /* HomeRouter.swift */,
+				BFBA6C04228754360054C330 /* HomeViewController.swift */,
+				BFBA6C05228754360054C330 /* HomeProtocols.swift */,
+				BFBA6C06228754360054C330 /* HomeBuilder.swift */,
+				BFBA6C07228754360054C330 /* HomeInteractor.swift */,
+				BFBA6C08228754360054C330 /* HomeOutput.swift */,
+				BFBA6C09228754360054C330 /* HomeViewModel.swift */,
+				BFBA6C15228754420054C330 /* Home.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		BFD6D5C622872AA90020F217 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +234,7 @@
 				BFD6D5CD22872ABE0020F217 /* ProfileInteractor.swift */,
 				BFD6D5CE22872ABE0020F217 /* ProfileOutput.swift */,
 				BFD6D5CF22872ABE0020F217 /* ProfileViewModel.swift */,
+				BFBA6C172287544F0054C330 /* Profile.storyboard */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -272,6 +322,7 @@
 		BFF506782286423B00CA5B0B = {
 			isa = PBXGroup;
 			children = (
+				BFBA6BE9228753100054C330 /* Documents */,
 				BFF506832286423B00CA5B0B /* Source */,
 				BFF5069B2286423C00CA5B0B /* PlacesTests */,
 				BFF506A62286423C00CA5B0B /* PlacesUITests */,
@@ -323,6 +374,7 @@
 			children = (
 				BFF506842286423B00CA5B0B /* AppDelegate.swift */,
 				BF599E2022871FAA00B68163 /* App Launch */,
+				BFBA6BEC228753E70054C330 /* Home */,
 				BFD6D5C622872AA90020F217 /* Profile */,
 			);
 			path = Application;
@@ -443,7 +495,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFF506922286423C00CA5B0B /* AppLaunch.storyboard in Resources */,
+				BFBA6BEB2287531D0054C330 /* Assignment.pdf in Resources */,
+				BFBA6C182287544F0054C330 /* Profile.storyboard in Resources */,
 				BFF5068F2286423C00CA5B0B /* Assets.xcassets in Resources */,
+				BFBA6C16228754420054C330 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,8 +534,11 @@
 				BFBA6BE2228752680054C330 /* UIStoryboard+Identifiers.swift in Sources */,
 				BFD6D61E22872C220020F217 /* UICollectionReusableView+StoryboardIdentifiable.swift in Sources */,
 				BFD6D5D122872ABE0020F217 /* ProfileInput.swift in Sources */,
+				BFBA6C0B228754360054C330 /* HomeInput.swift in Sources */,
+				BFBA6C10228754360054C330 /* HomeBuilder.swift in Sources */,
 				BFD6D5FE22872BDA0020F217 /* NetworkingRequestBodyEncodingType.swift in Sources */,
 				BFBA6BE5228752680054C330 /* Array++.swift in Sources */,
+				BFBA6C12228754360054C330 /* HomeOutput.swift in Sources */,
 				BFD6D5D822872ABE0020F217 /* ProfileOutput.swift in Sources */,
 				BFD6D62622872C2C0020F217 /* XIBView.swift in Sources */,
 				BFF506852286423B00CA5B0B /* AppDelegate.swift in Sources */,
@@ -496,20 +554,26 @@
 				BFD6D61C22872C220020F217 /* StoryboardIdentifiable.swift in Sources */,
 				BFD6D60C22872C170020F217 /* SegueIdentifiable.swift in Sources */,
 				BFD6D60D22872C170020F217 /* SegueIdentifiable+UIViewController.swift in Sources */,
+				BFBA6C0E228754360054C330 /* HomeViewController.swift in Sources */,
 				BFD6D5D322872ABE0020F217 /* ProfileRouter.swift in Sources */,
 				BFD6D5D922872ABE0020F217 /* ProfileViewModel.swift in Sources */,
+				BFBA6C13228754360054C330 /* HomeViewModel.swift in Sources */,
 				BFD6D5D522872ABE0020F217 /* ProfileProtocols.swift in Sources */,
 				BFD6D60222872BDA0020F217 /* NetworkingResponse.swift in Sources */,
 				BFD6D61F22872C220020F217 /* UITableView+StoryboardIdentifiable.swift in Sources */,
+				BFBA6C0D228754360054C330 /* HomeRouter.swift in Sources */,
 				BFD6D62522872C2C0020F217 /* XIBView+XIBIdentifiable.swift in Sources */,
 				BFD6D60322872BDA0020F217 /* NetworkingService.swift in Sources */,
 				BFBA6BE6228752680054C330 /* UIImageView+Additions.swift in Sources */,
 				BFD6D5D722872ABE0020F217 /* ProfileInteractor.swift in Sources */,
+				BFBA6C11228754360054C330 /* HomeInteractor.swift in Sources */,
 				BFD6D61D22872C220020F217 /* UICollectionView+StoryboardIdentifiable.swift in Sources */,
 				BFD6D61B22872C220020F217 /* UITableViewCell+StoryboardIdentifiable.swift in Sources */,
+				BFBA6C0F228754360054C330 /* HomeProtocols.swift in Sources */,
 				BFD6D61922872C220020F217 /* UIStoryboard+StoryboardIdentifiable.swift in Sources */,
 				BFD6D5D622872ABE0020F217 /* ProfileBuilder.swift in Sources */,
 				BFD6D5FD22872BDA0020F217 /* NetworkingRequestHTTPMethod.swift in Sources */,
+				BFBA6C0C228754360054C330 /* HomePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
