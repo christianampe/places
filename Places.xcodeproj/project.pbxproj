@@ -25,6 +25,17 @@
 		BFBA6C13228754360054C330 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6C09228754360054C330 /* HomeViewModel.swift */; };
 		BFBA6C16228754420054C330 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBA6C15228754420054C330 /* Home.storyboard */; };
 		BFBA6C182287544F0054C330 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBA6C172287544F0054C330 /* Profile.storyboard */; };
+		BFBA6C1E228758500054C330 /* UINestedCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFBA6C1D228758500054C330 /* UINestedCollectionView.xib */; };
+		BFBA6C202287585A0054C330 /* UINestedCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6C1F2287585A0054C330 /* UINestedCollectionView.swift */; };
+		BFBA6C22228759AF0054C330 /* UINestedCollectionViewRow.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFBA6C21228759AF0054C330 /* UINestedCollectionViewRow.xib */; };
+		BFBA6C24228759BF0054C330 /* UINestedCollectionViewRowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFBA6C23228759BF0054C330 /* UINestedCollectionViewRowCell.xib */; };
+		BFBA6C26228759CA0054C330 /* UINestedCollectionViewRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6C25228759CA0054C330 /* UINestedCollectionViewRowCell.swift */; };
+		BFBA6C28228759D40054C330 /* UINestedCollectionViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6C27228759D40054C330 /* UINestedCollectionViewRow.swift */; };
+		BFBA6C2A22875AC60054C330 /* UINestedCollectionViewColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6C2922875AC60054C330 /* UINestedCollectionViewColumn.swift */; };
+		BFBA6C2C22875AD30054C330 /* UINestedCollectionViewColumn.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFBA6C2B22875AD30054C330 /* UINestedCollectionViewColumn.xib */; };
+		BFBA6C2E22875AE80054C330 /* UINestedCollectionViewColumnCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFBA6C2D22875AE80054C330 /* UINestedCollectionViewColumnCell.xib */; };
+		BFBA6C3022875AF90054C330 /* UINestedCollectionViewColumnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6C2F22875AF90054C330 /* UINestedCollectionViewColumnCell.swift */; };
+		BFBA6C34228767240054C330 /* UIRoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6C33228767240054C330 /* UIRoundImageView.swift */; };
 		BFD6D5D122872ABE0020F217 /* ProfileInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6D5C722872ABE0020F217 /* ProfileInput.swift */; };
 		BFD6D5D222872ABE0020F217 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6D5C822872ABE0020F217 /* ProfilePresenter.swift */; };
 		BFD6D5D322872ABE0020F217 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6D5C922872ABE0020F217 /* ProfileRouter.swift */; };
@@ -103,6 +114,17 @@
 		BFBA6C09228754360054C330 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		BFBA6C15228754420054C330 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		BFBA6C172287544F0054C330 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		BFBA6C1D228758500054C330 /* UINestedCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UINestedCollectionView.xib; sourceTree = "<group>"; };
+		BFBA6C1F2287585A0054C330 /* UINestedCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINestedCollectionView.swift; sourceTree = "<group>"; };
+		BFBA6C21228759AF0054C330 /* UINestedCollectionViewRow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UINestedCollectionViewRow.xib; sourceTree = "<group>"; };
+		BFBA6C23228759BF0054C330 /* UINestedCollectionViewRowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UINestedCollectionViewRowCell.xib; sourceTree = "<group>"; };
+		BFBA6C25228759CA0054C330 /* UINestedCollectionViewRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINestedCollectionViewRowCell.swift; sourceTree = "<group>"; };
+		BFBA6C27228759D40054C330 /* UINestedCollectionViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINestedCollectionViewRow.swift; sourceTree = "<group>"; };
+		BFBA6C2922875AC60054C330 /* UINestedCollectionViewColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINestedCollectionViewColumn.swift; sourceTree = "<group>"; };
+		BFBA6C2B22875AD30054C330 /* UINestedCollectionViewColumn.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UINestedCollectionViewColumn.xib; sourceTree = "<group>"; };
+		BFBA6C2D22875AE80054C330 /* UINestedCollectionViewColumnCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UINestedCollectionViewColumnCell.xib; sourceTree = "<group>"; };
+		BFBA6C2F22875AF90054C330 /* UINestedCollectionViewColumnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINestedCollectionViewColumnCell.swift; sourceTree = "<group>"; };
+		BFBA6C33228767240054C330 /* UIRoundImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIRoundImageView.swift; sourceTree = "<group>"; };
 		BFD6D5C722872ABE0020F217 /* ProfileInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInput.swift; sourceTree = "<group>"; };
 		BFD6D5C822872ABE0020F217 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		BFD6D5C922872ABE0020F217 /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
@@ -222,6 +244,56 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		BFBA6C19228757960054C330 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				BFBA6C1A2287579D0054C330 /* UI */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		BFBA6C1A2287579D0054C330 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				BFBA6C32228767150054C330 /* Round Image */,
+				BFBA6C1C228757F40054C330 /* Nested Collection */,
+				BFBA6C1B228757E10054C330 /* Places Map */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		BFBA6C1B228757E10054C330 /* Places Map */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Places Map";
+			sourceTree = "<group>";
+		};
+		BFBA6C1C228757F40054C330 /* Nested Collection */ = {
+			isa = PBXGroup;
+			children = (
+				BFBA6C1D228758500054C330 /* UINestedCollectionView.xib */,
+				BFBA6C1F2287585A0054C330 /* UINestedCollectionView.swift */,
+				BFBA6C2B22875AD30054C330 /* UINestedCollectionViewColumn.xib */,
+				BFBA6C2922875AC60054C330 /* UINestedCollectionViewColumn.swift */,
+				BFBA6C2D22875AE80054C330 /* UINestedCollectionViewColumnCell.xib */,
+				BFBA6C2F22875AF90054C330 /* UINestedCollectionViewColumnCell.swift */,
+				BFBA6C21228759AF0054C330 /* UINestedCollectionViewRow.xib */,
+				BFBA6C27228759D40054C330 /* UINestedCollectionViewRow.swift */,
+				BFBA6C23228759BF0054C330 /* UINestedCollectionViewRowCell.xib */,
+				BFBA6C25228759CA0054C330 /* UINestedCollectionViewRowCell.swift */,
+			);
+			path = "Nested Collection";
+			sourceTree = "<group>";
+		};
+		BFBA6C32228767150054C330 /* Round Image */ = {
+			isa = PBXGroup;
+			children = (
+				BFBA6C33228767240054C330 /* UIRoundImageView.swift */,
+			);
+			path = "Round Image";
+			sourceTree = "<group>";
+		};
 		BFD6D5C622872AA90020F217 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +314,7 @@
 		BFD6D5EF22872B210020F217 /* Implementations */ = {
 			isa = PBXGroup;
 			children = (
+				BFBA6C19228757960054C330 /* Components */,
 				BFBA6BDA2287525B0054C330 /* Extensions */,
 			);
 			path = Implementations;
@@ -497,7 +570,12 @@
 				BFF506922286423C00CA5B0B /* AppLaunch.storyboard in Resources */,
 				BFBA6BEB2287531D0054C330 /* Assignment.pdf in Resources */,
 				BFBA6C182287544F0054C330 /* Profile.storyboard in Resources */,
+				BFBA6C22228759AF0054C330 /* UINestedCollectionViewRow.xib in Resources */,
+				BFBA6C1E228758500054C330 /* UINestedCollectionView.xib in Resources */,
+				BFBA6C2E22875AE80054C330 /* UINestedCollectionViewColumnCell.xib in Resources */,
+				BFBA6C2C22875AD30054C330 /* UINestedCollectionViewColumn.xib in Resources */,
 				BFF5068F2286423C00CA5B0B /* Assets.xcassets in Resources */,
+				BFBA6C24228759BF0054C330 /* UINestedCollectionViewRowCell.xib in Resources */,
 				BFBA6C16228754420054C330 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -527,6 +605,7 @@
 				BFBA6BE3228752680054C330 /* UIImage+Additions.swift in Sources */,
 				BFD6D62722872C2C0020F217 /* XIBIdentifiable+Self.swift in Sources */,
 				BFD6D60522872BDA0020F217 /* NetworkingRequest.swift in Sources */,
+				BFBA6C26228759CA0054C330 /* UINestedCollectionViewRowCell.swift in Sources */,
 				BFD6D5D422872ABE0020F217 /* ProfileViewController.swift in Sources */,
 				BFD6D61A22872C220020F217 /* StoryboardIdentifiable+Self.swift in Sources */,
 				BFD6D60122872BDA0020F217 /* NetworkingRequestBody.swift in Sources */,
@@ -536,10 +615,12 @@
 				BFD6D5D122872ABE0020F217 /* ProfileInput.swift in Sources */,
 				BFBA6C0B228754360054C330 /* HomeInput.swift in Sources */,
 				BFBA6C10228754360054C330 /* HomeBuilder.swift in Sources */,
+				BFBA6C28228759D40054C330 /* UINestedCollectionViewRow.swift in Sources */,
 				BFD6D5FE22872BDA0020F217 /* NetworkingRequestBodyEncodingType.swift in Sources */,
 				BFBA6BE5228752680054C330 /* Array++.swift in Sources */,
 				BFBA6C12228754360054C330 /* HomeOutput.swift in Sources */,
 				BFD6D5D822872ABE0020F217 /* ProfileOutput.swift in Sources */,
+				BFBA6C2A22875AC60054C330 /* UINestedCollectionViewColumn.swift in Sources */,
 				BFD6D62622872C2C0020F217 /* XIBView.swift in Sources */,
 				BFF506852286423B00CA5B0B /* AppDelegate.swift in Sources */,
 				BFD6D5FC22872BDA0020F217 /* NetworkingRequestValidation.swift in Sources */,
@@ -547,6 +628,7 @@
 				BFD6D62422872C2C0020F217 /* XIBIdentifiable.swift in Sources */,
 				BFF5068D2286423B00CA5B0B /* Places.xcdatamodeld in Sources */,
 				BFBA6BE7228752680054C330 /* UINavigationBar+Additions.swift in Sources */,
+				BFBA6C34228767240054C330 /* UIRoundImageView.swift in Sources */,
 				BFD6D61822872C220020F217 /* UIViewController+StoryboardIdentifiable.swift in Sources */,
 				BFBA6BE8228752680054C330 /* URL++.swift in Sources */,
 				BFD6D60422872BDA0020F217 /* Networking.swift in Sources */,
@@ -562,6 +644,7 @@
 				BFD6D60222872BDA0020F217 /* NetworkingResponse.swift in Sources */,
 				BFD6D61F22872C220020F217 /* UITableView+StoryboardIdentifiable.swift in Sources */,
 				BFBA6C0D228754360054C330 /* HomeRouter.swift in Sources */,
+				BFBA6C202287585A0054C330 /* UINestedCollectionView.swift in Sources */,
 				BFD6D62522872C2C0020F217 /* XIBView+XIBIdentifiable.swift in Sources */,
 				BFD6D60322872BDA0020F217 /* NetworkingService.swift in Sources */,
 				BFBA6BE6228752680054C330 /* UIImageView+Additions.swift in Sources */,
@@ -574,6 +657,7 @@
 				BFD6D5D622872ABE0020F217 /* ProfileBuilder.swift in Sources */,
 				BFD6D5FD22872BDA0020F217 /* NetworkingRequestHTTPMethod.swift in Sources */,
 				BFBA6C0C228754360054C330 /* HomePresenter.swift in Sources */,
+				BFBA6C3022875AF90054C330 /* UINestedCollectionViewColumnCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

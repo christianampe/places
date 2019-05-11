@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="YvH-Vt-dyf" customClass="UINestedCollectionViewRowCell" customModule="Places" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="250" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="250" height="100"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yosemite" translatesAutoresizingMaskIntoConstraints="NO" id="CuM-Vf-uyh">
+                        <rect key="frame" x="0.0" y="0.0" width="250" height="100"/>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="9gx-8z-asM">
+                        <rect key="frame" x="12" y="47.5" width="117.5" height="40.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Big Bear Lake" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKT-Qu-0CK">
+                                <rect key="frame" x="0.0" y="0.0" width="117.5" height="21.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="0.90311964897260277" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iru-Ud-FHM">
+                                <rect key="frame" x="0.0" y="25.5" width="64.5" height="15"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="us" translatesAutoresizingMaskIntoConstraints="NO" id="ksJ-MC-sov" customClass="UIRoundImageView" customModule="Places" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="15" id="nYh-k3-BTz"/>
+                                            <constraint firstAttribute="height" constant="15" id="qIh-35-wAX"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="112 mi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRY-Mh-s3B">
+                                        <rect key="frame" x="25" y="0.0" width="39.5" height="15"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="9gx-8z-asM" firstAttribute="leading" secondItem="YvH-Vt-dyf" secondAttribute="leading" constant="12" id="3Pg-rB-WoR"/>
+                <constraint firstItem="CuM-Vf-uyh" firstAttribute="leading" secondItem="YvH-Vt-dyf" secondAttribute="leading" id="7rg-9d-DC2"/>
+                <constraint firstAttribute="bottom" secondItem="CuM-Vf-uyh" secondAttribute="bottom" id="AL9-WK-3da"/>
+                <constraint firstAttribute="bottom" secondItem="9gx-8z-asM" secondAttribute="bottom" constant="12" id="cdw-ZZ-c0F"/>
+                <constraint firstAttribute="trailing" secondItem="CuM-Vf-uyh" secondAttribute="trailing" id="rJv-pa-a3n"/>
+                <constraint firstItem="CuM-Vf-uyh" firstAttribute="top" secondItem="YvH-Vt-dyf" secondAttribute="top" id="rsk-Vq-cOL"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="mF5-FX-NIA"/>
+            <size key="customSize" width="287" height="100"/>
+            <point key="canvasLocation" x="5.7971014492753632" y="84.375"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="us" width="310" height="163"/>
+        <image name="yosemite" width="593" height="334"/>
+    </resources>
+</document>
