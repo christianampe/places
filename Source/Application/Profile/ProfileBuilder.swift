@@ -9,7 +9,7 @@
 import UIKit
 
 final class ProfileBuilder {
-    func create(_ delegate: ProfileDelegateProtocol?, input: ProfileInputProtocol, viewModel: ProfileViewModelProtocol = ProfileViewModelProtocol(), output: ProfileOutputProtocol = ProfileOutputProtocol()) -> UIViewController {
+    func create(_ delegate: ProfileDelegateProtocol?, input: ProfileInputProtocol, viewModel: ProfileViewModelProtocol = ProfileViewModel(), output: ProfileOutputProtocol = ProfileOutput()) -> UIViewController {
         
         let storyboard = UIStoryboard(storyboard: )
         let view: ProfileViewController = storyboard.instantiateViewController()
@@ -23,7 +23,7 @@ final class ProfileBuilder {
         presenter.view = view
         presenter.interactor = interactor
         presenter.router = router
-        preenter.input = input
+        presenter.input = input
         presenter.viewModel = viewModel
         presenter.output = output
         presenter.delegate = delegate

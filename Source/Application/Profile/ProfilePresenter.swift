@@ -10,7 +10,7 @@ import UIKit
 
 final class ProfilePresenter: ProfilePresenterProtocol {
     var interactor: ProfileInteractorProtocol?
-    var router: ProfileWireframeProtocol?
+    var router: ProfileRouterProtocol?
     weak var view: ProfileViewProtocol?
     
     var input: ProfileInputProtocol?

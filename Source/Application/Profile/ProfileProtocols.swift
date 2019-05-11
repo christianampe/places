@@ -20,7 +20,7 @@ protocol ProfileViewProtocol: class {
 
 protocol ProfilePresenterProtocol: class {
     var interactor: ProfileInteractorProtocol? { get set }
-    var router: ProfileWireframeProtocol? { get set }
+    var router: ProfileRouterProtocol? { get set }
     var view: ProfileViewProtocol? { get set }
     var input: ProfileInputProtocol? { get set }
     var output: ProfileOutputProtocol? { get set }
