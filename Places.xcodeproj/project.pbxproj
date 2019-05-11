@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BFBA6BE2228752680054C330 /* UIStoryboard+Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6BDB228752670054C330 /* UIStoryboard+Identifiers.swift */; };
+		BFBA6BE3228752680054C330 /* UIImage+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6BDC228752670054C330 /* UIImage+Additions.swift */; };
+		BFBA6BE5228752680054C330 /* Array++.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6BDE228752680054C330 /* Array++.swift */; };
+		BFBA6BE6228752680054C330 /* UIImageView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6BDF228752680054C330 /* UIImageView+Additions.swift */; };
+		BFBA6BE7228752680054C330 /* UINavigationBar+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6BE0228752680054C330 /* UINavigationBar+Additions.swift */; };
+		BFBA6BE8228752680054C330 /* URL++.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6BE1228752680054C330 /* URL++.swift */; };
 		BFD6D5D122872ABE0020F217 /* ProfileInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6D5C722872ABE0020F217 /* ProfileInput.swift */; };
 		BFD6D5D222872ABE0020F217 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6D5C822872ABE0020F217 /* ProfilePresenter.swift */; };
 		BFD6D5D322872ABE0020F217 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6D5C922872ABE0020F217 /* ProfileRouter.swift */; };
@@ -67,6 +73,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BFBA6BDB228752670054C330 /* UIStoryboard+Identifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Identifiers.swift"; sourceTree = "<group>"; };
+		BFBA6BDC228752670054C330 /* UIImage+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Additions.swift"; sourceTree = "<group>"; };
+		BFBA6BDE228752680054C330 /* Array++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array++.swift"; sourceTree = "<group>"; };
+		BFBA6BDF228752680054C330 /* UIImageView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Additions.swift"; sourceTree = "<group>"; };
+		BFBA6BE0228752680054C330 /* UINavigationBar+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Additions.swift"; sourceTree = "<group>"; };
+		BFBA6BE1228752680054C330 /* URL++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL++.swift"; sourceTree = "<group>"; };
 		BFD6D5C722872ABE0020F217 /* ProfileInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInput.swift; sourceTree = "<group>"; };
 		BFD6D5C822872ABE0020F217 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		BFD6D5C922872ABE0020F217 /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
@@ -148,6 +160,19 @@
 			path = "App Launch";
 			sourceTree = "<group>";
 		};
+		BFBA6BDA2287525B0054C330 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BFBA6BDE228752680054C330 /* Array++.swift */,
+				BFBA6BE1228752680054C330 /* URL++.swift */,
+				BFBA6BDC228752670054C330 /* UIImage+Additions.swift */,
+				BFBA6BE0228752680054C330 /* UINavigationBar+Additions.swift */,
+				BFBA6BDF228752680054C330 /* UIImageView+Additions.swift */,
+				BFBA6BDB228752670054C330 /* UIStoryboard+Identifiers.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		BFD6D5C622872AA90020F217 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +192,7 @@
 		BFD6D5EF22872B210020F217 /* Implementations */ = {
 			isa = PBXGroup;
 			children = (
+				BFBA6BDA2287525B0054C330 /* Extensions */,
 			);
 			path = Implementations;
 			sourceTree = "<group>";
@@ -443,15 +469,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFD6D5FF22872BDA0020F217 /* NetworkingHelper.swift in Sources */,
+				BFBA6BE3228752680054C330 /* UIImage+Additions.swift in Sources */,
 				BFD6D62722872C2C0020F217 /* XIBIdentifiable+Self.swift in Sources */,
 				BFD6D60522872BDA0020F217 /* NetworkingRequest.swift in Sources */,
 				BFD6D5D422872ABE0020F217 /* ProfileViewController.swift in Sources */,
 				BFD6D61A22872C220020F217 /* StoryboardIdentifiable+Self.swift in Sources */,
 				BFD6D60122872BDA0020F217 /* NetworkingRequestBody.swift in Sources */,
 				BFD6D60022872BDA0020F217 /* NetworkingError.swift in Sources */,
+				BFBA6BE2228752680054C330 /* UIStoryboard+Identifiers.swift in Sources */,
 				BFD6D61E22872C220020F217 /* UICollectionReusableView+StoryboardIdentifiable.swift in Sources */,
 				BFD6D5D122872ABE0020F217 /* ProfileInput.swift in Sources */,
 				BFD6D5FE22872BDA0020F217 /* NetworkingRequestBodyEncodingType.swift in Sources */,
+				BFBA6BE5228752680054C330 /* Array++.swift in Sources */,
 				BFD6D5D822872ABE0020F217 /* ProfileOutput.swift in Sources */,
 				BFD6D62622872C2C0020F217 /* XIBView.swift in Sources */,
 				BFF506852286423B00CA5B0B /* AppDelegate.swift in Sources */,
@@ -459,7 +488,9 @@
 				BFD6D5D222872ABE0020F217 /* ProfilePresenter.swift in Sources */,
 				BFD6D62422872C2C0020F217 /* XIBIdentifiable.swift in Sources */,
 				BFF5068D2286423B00CA5B0B /* Places.xcdatamodeld in Sources */,
+				BFBA6BE7228752680054C330 /* UINavigationBar+Additions.swift in Sources */,
 				BFD6D61822872C220020F217 /* UIViewController+StoryboardIdentifiable.swift in Sources */,
+				BFBA6BE8228752680054C330 /* URL++.swift in Sources */,
 				BFD6D60422872BDA0020F217 /* Networking.swift in Sources */,
 				BFD6D61722872C220020F217 /* UIStoryboardSegue+StoryboardIdentifiable.swift in Sources */,
 				BFD6D61C22872C220020F217 /* StoryboardIdentifiable.swift in Sources */,
@@ -472,6 +503,7 @@
 				BFD6D61F22872C220020F217 /* UITableView+StoryboardIdentifiable.swift in Sources */,
 				BFD6D62522872C2C0020F217 /* XIBView+XIBIdentifiable.swift in Sources */,
 				BFD6D60322872BDA0020F217 /* NetworkingService.swift in Sources */,
+				BFBA6BE6228752680054C330 /* UIImageView+Additions.swift in Sources */,
 				BFD6D5D722872ABE0020F217 /* ProfileInteractor.swift in Sources */,
 				BFD6D61D22872C220020F217 /* UICollectionView+StoryboardIdentifiable.swift in Sources */,
 				BFD6D61B22872C220020F217 /* UITableViewCell+StoryboardIdentifiable.swift in Sources */,

@@ -9,9 +9,12 @@
 import UIKit
 
 final class ProfileBuilder {
-    func create(_ delegate: ProfileDelegateProtocol?, input: ProfileInputProtocol, viewModel: ProfileViewModelProtocol = ProfileViewModel(), output: ProfileOutputProtocol = ProfileOutput()) -> UIViewController {
+    func create(_ delegate: ProfileDelegateProtocol?,
+                input: ProfileInputProtocol,
+                viewModel: ProfileViewModelProtocol = ProfileViewModel(),
+                output: ProfileOutputProtocol = ProfileOutput()) -> UIViewController {
         
-        let storyboard = UIStoryboard(storyboard: )
+        let storyboard = UIStoryboard(storyboard: .profile)
         let view: ProfileViewController = storyboard.instantiateViewController()
         let interactor = ProfileInteractor()
         let router = ProfileRouter()
