@@ -204,6 +204,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF29F9F72288A2E70015746A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BFBA6C3522876A830054C330 /* UINestedCollectionViewRowCellViewModel.swift */,
+				BF29F9F32288995B0015746A /* UINestedCollectionViewDelegate.swift */,
+				BF29F9F5228899730015746A /* UINestedCollectionViewDataSource.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		BF29F9F82288A2ED0015746A /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				BFBA6C1D228758500054C330 /* UINestedCollectionView.xib */,
+				BFBA6C2B22875AD30054C330 /* UINestedCollectionViewColumn.xib */,
+				BFBA6C2D22875AE80054C330 /* UINestedCollectionViewColumnCell.xib */,
+				BFBA6C21228759AF0054C330 /* UINestedCollectionViewRow.xib */,
+				BFBA6C23228759BF0054C330 /* UINestedCollectionViewRowCell.xib */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		BF29F9F92288A2F40015746A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BFBA6C1F2287585A0054C330 /* UINestedCollectionView.swift */,
+				BFBA6C2922875AC60054C330 /* UINestedCollectionViewColumn.swift */,
+				BFBA6C2F22875AF90054C330 /* UINestedCollectionViewColumnCell.swift */,
+				BFBA6C27228759D40054C330 /* UINestedCollectionViewRow.swift */,
+				BFBA6C25228759CA0054C330 /* UINestedCollectionViewRowCell.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		BF599E2022871FAA00B68163 /* App Launch */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,19 +312,9 @@
 		BFBA6C1C228757F40054C330 /* Nested Collection */ = {
 			isa = PBXGroup;
 			children = (
-				BFBA6C1D228758500054C330 /* UINestedCollectionView.xib */,
-				BFBA6C1F2287585A0054C330 /* UINestedCollectionView.swift */,
-				BFBA6C2B22875AD30054C330 /* UINestedCollectionViewColumn.xib */,
-				BFBA6C2922875AC60054C330 /* UINestedCollectionViewColumn.swift */,
-				BFBA6C2D22875AE80054C330 /* UINestedCollectionViewColumnCell.xib */,
-				BFBA6C2F22875AF90054C330 /* UINestedCollectionViewColumnCell.swift */,
-				BFBA6C21228759AF0054C330 /* UINestedCollectionViewRow.xib */,
-				BFBA6C27228759D40054C330 /* UINestedCollectionViewRow.swift */,
-				BFBA6C23228759BF0054C330 /* UINestedCollectionViewRowCell.xib */,
-				BFBA6C25228759CA0054C330 /* UINestedCollectionViewRowCell.swift */,
-				BFBA6C3522876A830054C330 /* UINestedCollectionViewRowCellViewModel.swift */,
-				BF29F9F32288995B0015746A /* UINestedCollectionViewDelegate.swift */,
-				BF29F9F5228899730015746A /* UINestedCollectionViewDataSource.swift */,
+				BF29F9F92288A2F40015746A /* Classes */,
+				BF29F9F82288A2ED0015746A /* Interfaces */,
+				BF29F9F72288A2E70015746A /* Protocols */,
 			);
 			path = "Nested Collection";
 			sourceTree = "<group>";
