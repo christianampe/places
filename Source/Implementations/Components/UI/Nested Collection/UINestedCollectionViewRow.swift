@@ -11,31 +11,3 @@ import UIKit
 class UINestedCollectionViewRow: UICollectionView {
     
 }
-
-extension UINestedCollectionViewRow: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView,
-                        willDisplay cell: UICollectionViewCell,
-                        forItemAt indexPath: IndexPath) {
-        
-//        guard let cell = cell as? UINestedCollectionViewRowCell else {
-//            assertionFailure("incorrect cell type used")
-//            return
-//        }
-//        
-//        cell.set(properties: <#T##UINestedCollectionViewRowCellViewModel#>)
-    }
-}
-
-extension UINestedCollectionViewRow: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView,
-                        numberOfItemsInSection section: Int) -> Int {
-        
-        return 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        return collectionView.dequeueReusableCell(for: indexPath) as UINestedCollectionViewRowCell
-    }
-}

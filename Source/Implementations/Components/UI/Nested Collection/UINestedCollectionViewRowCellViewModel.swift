@@ -1,5 +1,5 @@
 //
-//  UINestedCollectionViewRowCellViewModelProtocol.swift
+//  UINestedCollectionViewRowCellViewModel.swift
 //  Places
 //
 //  Created by Christian Ampe on 5/11/19.

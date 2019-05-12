@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF29F9F42288995B0015746A /* UINestedCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29F9F32288995B0015746A /* UINestedCollectionViewDelegate.swift */; };
+		BF29F9F6228899730015746A /* UINestedCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29F9F5228899730015746A /* UINestedCollectionViewDataSource.swift */; };
 		BFBA6BE2228752680054C330 /* UIStoryboard+Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6BDB228752670054C330 /* UIStoryboard+Identifiers.swift */; };
 		BFBA6BE3228752680054C330 /* UIImage+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6BDC228752670054C330 /* UIImage+Additions.swift */; };
 		BFBA6BE5228752680054C330 /* Array++.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6BDE228752680054C330 /* Array++.swift */; };
@@ -36,7 +38,7 @@
 		BFBA6C2E22875AE80054C330 /* UINestedCollectionViewColumnCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFBA6C2D22875AE80054C330 /* UINestedCollectionViewColumnCell.xib */; };
 		BFBA6C3022875AF90054C330 /* UINestedCollectionViewColumnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6C2F22875AF90054C330 /* UINestedCollectionViewColumnCell.swift */; };
 		BFBA6C34228767240054C330 /* UIRoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6C33228767240054C330 /* UIRoundImageView.swift */; };
-		BFBA6C3622876A830054C330 /* UINestedCollectionViewRowCellViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6C3522876A830054C330 /* UINestedCollectionViewRowCellViewModelProtocol.swift */; };
+		BFBA6C3622876A830054C330 /* UINestedCollectionViewRowCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6C3522876A830054C330 /* UINestedCollectionViewRowCellViewModel.swift */; };
 		BFD6D5D122872ABE0020F217 /* ProfileInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6D5C722872ABE0020F217 /* ProfileInput.swift */; };
 		BFD6D5D222872ABE0020F217 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6D5C822872ABE0020F217 /* ProfilePresenter.swift */; };
 		BFD6D5D322872ABE0020F217 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6D5C922872ABE0020F217 /* ProfileRouter.swift */; };
@@ -97,6 +99,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF29F9F32288995B0015746A /* UINestedCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINestedCollectionViewDelegate.swift; sourceTree = "<group>"; };
+		BF29F9F5228899730015746A /* UINestedCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINestedCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		BFBA6BDB228752670054C330 /* UIStoryboard+Identifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Identifiers.swift"; sourceTree = "<group>"; };
 		BFBA6BDC228752670054C330 /* UIImage+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Additions.swift"; sourceTree = "<group>"; };
 		BFBA6BDE228752680054C330 /* Array++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array++.swift"; sourceTree = "<group>"; };
@@ -126,7 +130,7 @@
 		BFBA6C2D22875AE80054C330 /* UINestedCollectionViewColumnCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UINestedCollectionViewColumnCell.xib; sourceTree = "<group>"; };
 		BFBA6C2F22875AF90054C330 /* UINestedCollectionViewColumnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINestedCollectionViewColumnCell.swift; sourceTree = "<group>"; };
 		BFBA6C33228767240054C330 /* UIRoundImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIRoundImageView.swift; sourceTree = "<group>"; };
-		BFBA6C3522876A830054C330 /* UINestedCollectionViewRowCellViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINestedCollectionViewRowCellViewModelProtocol.swift; sourceTree = "<group>"; };
+		BFBA6C3522876A830054C330 /* UINestedCollectionViewRowCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINestedCollectionViewRowCellViewModel.swift; sourceTree = "<group>"; };
 		BFD6D5C722872ABE0020F217 /* ProfileInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInput.swift; sourceTree = "<group>"; };
 		BFD6D5C822872ABE0020F217 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		BFD6D5C922872ABE0020F217 /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
@@ -284,7 +288,9 @@
 				BFBA6C27228759D40054C330 /* UINestedCollectionViewRow.swift */,
 				BFBA6C23228759BF0054C330 /* UINestedCollectionViewRowCell.xib */,
 				BFBA6C25228759CA0054C330 /* UINestedCollectionViewRowCell.swift */,
-				BFBA6C3522876A830054C330 /* UINestedCollectionViewRowCellViewModelProtocol.swift */,
+				BFBA6C3522876A830054C330 /* UINestedCollectionViewRowCellViewModel.swift */,
+				BF29F9F32288995B0015746A /* UINestedCollectionViewDelegate.swift */,
+				BF29F9F5228899730015746A /* UINestedCollectionViewDataSource.swift */,
 			);
 			path = "Nested Collection";
 			sourceTree = "<group>";
@@ -604,6 +610,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF29F9F6228899730015746A /* UINestedCollectionViewDataSource.swift in Sources */,
 				BFD6D5FF22872BDA0020F217 /* NetworkingHelper.swift in Sources */,
 				BFBA6BE3228752680054C330 /* UIImage+Additions.swift in Sources */,
 				BFD6D62722872C2C0020F217 /* XIBIdentifiable+Self.swift in Sources */,
@@ -625,7 +632,7 @@
 				BFD6D5D822872ABE0020F217 /* ProfileOutput.swift in Sources */,
 				BFBA6C2A22875AC60054C330 /* UINestedCollectionViewColumn.swift in Sources */,
 				BFD6D62622872C2C0020F217 /* XIBView.swift in Sources */,
-				BFBA6C3622876A830054C330 /* UINestedCollectionViewRowCellViewModelProtocol.swift in Sources */,
+				BFBA6C3622876A830054C330 /* UINestedCollectionViewRowCellViewModel.swift in Sources */,
 				BFF506852286423B00CA5B0B /* AppDelegate.swift in Sources */,
 				BFD6D5FC22872BDA0020F217 /* NetworkingRequestValidation.swift in Sources */,
 				BFD6D5D222872ABE0020F217 /* ProfilePresenter.swift in Sources */,
@@ -660,6 +667,7 @@
 				BFD6D61922872C220020F217 /* UIStoryboard+StoryboardIdentifiable.swift in Sources */,
 				BFD6D5D622872ABE0020F217 /* ProfileBuilder.swift in Sources */,
 				BFD6D5FD22872BDA0020F217 /* NetworkingRequestHTTPMethod.swift in Sources */,
+				BF29F9F42288995B0015746A /* UINestedCollectionViewDelegate.swift in Sources */,
 				BFBA6C0C228754360054C330 /* HomePresenter.swift in Sources */,
 				BFBA6C3022875AF90054C330 /* UINestedCollectionViewColumnCell.swift in Sources */,
 			);
