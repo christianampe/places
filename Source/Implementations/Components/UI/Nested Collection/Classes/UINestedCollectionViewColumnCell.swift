@@ -11,7 +11,32 @@ import UIKit
 class UINestedCollectionViewColumnCell: UITableViewCell {
     
     /// A `UICollectionView` which contains the individual objects to display.
-    @IBOutlet private weak var collection: UINestedCollectionViewRow!
+    @IBOutlet private weak var collection: UICollectionView!
+    
+    /// The view models used to populate the `UICollectionView`.
+    private var viewModels = [UINestedCollectionViewRowCellViewModel]()
+}
+
+// MARK: - External API
+extension UINestedCollectionViewColumnCell {
+    
+    /// Method used to populate the collection view with given properties.
+    ///
+    /// - Parameter newViewModels: The view models used to populate the `UICollectionView`.
+    func set(properties newViewModels: [UINestedCollectionViewRowCellViewModel]) {
+        viewModels = newViewModels
+        collection.reloadData()
+    }
+}
+
+// MARK: - Lifecycle
+extension UINestedCollectionViewColumnCell {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        collection.registerCollectionViewCell(xibCell: UINestedCollectionViewRowCell.self)
+        collection.dataSource = self
+        collection.delegate = self
+    }
 }
 
 // MARK: - UICollectionViewDataSource
@@ -23,7 +48,7 @@ extension UINestedCollectionViewColumnCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         
-        return 0
+        return viewModels.count
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -44,6 +69,10 @@ extension UINestedCollectionViewColumnCell: UICollectionViewDelegate {
             return
         }
         
-        cell.set(properties: <#T##UINestedCollectionViewRowCellViewModel#>)
+        guard let viewModel = viewModels[safe: indexPath.row] else {
+            return
+        }
+        
+        cell.set(properties: viewModel)
     }
 }

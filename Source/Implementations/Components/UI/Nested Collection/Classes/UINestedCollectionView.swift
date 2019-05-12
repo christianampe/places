@@ -11,16 +11,17 @@ import UIKit
 class UINestedCollectionView: XIBView {
     
     /// Encompasing `UITableView` component which contains rows of type `UICollectionView`.
-    @IBOutlet private weak var collection: UINestedCollectionViewColumn!
+    @IBOutlet private weak var collection: UITableView!
     
-    private weak var delegate: UINestedCollectionViewDelegate?
-    private weak var dataSource: UINestedCollectionViewDataSource?
+    weak var delegate: UINestedCollectionViewDelegate?
+    weak var dataSource: UINestedCollectionViewDataSource?
 }
 
 // MARK: - Lifecycle
 extension UINestedCollectionView {
     override func awakeFromNib() {
         super.awakeFromNib()
+        collection.registerTableViewCell(xibCell: UINestedCollectionViewColumnCell.self)
         collection.dataSource = self
         collection.delegate = self
     }
@@ -29,7 +30,7 @@ extension UINestedCollectionView {
 // MARK: - UITableViewDataSource
 extension UINestedCollectionView: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return dataSource?.numberOfSections(in: self) ?? 0
+        return dataSource?.numberOfRows(in: self) ?? 0
     }
     
     func tableView(_ tableView: UITableView,
@@ -42,6 +43,18 @@ extension UINestedCollectionView: UITableViewDataSource {
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         return tableView.dequeueReusableCell(for: indexPath) as UINestedCollectionViewColumnCell
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return UINestedCollectionView.cellHeight
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   heightForHeaderInSection section: Int) -> CGFloat {
+        
+        return UINestedCollectionView.rowHeaderHeight
     }
 }
 
@@ -56,6 +69,16 @@ extension UINestedCollectionView: UITableViewDelegate {
             return
         }
         
+        guard let viewModels = dataSource?.nestedCollectionView(self, viewModelsAt: indexPath.row) else {
+            return
+        }
         
+        cell.set(properties: viewModels)
     }
+}
+
+extension UINestedCollectionView {
+    static let rowHeaderHeight: CGFloat = 24
+    static let cellHeight: CGFloat = 148
+    static let cellWidth: CGFloat = 370
 }

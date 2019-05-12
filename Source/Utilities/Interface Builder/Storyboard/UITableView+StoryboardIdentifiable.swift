@@ -22,7 +22,7 @@ extension UITableView {
         return cell
     }
     
-    func register<T: UITableViewCell>(xibCell: T.Type) {
+    func registerTableViewCell<T: UITableViewCell>(xibCell: T.Type) {
         register(UINib(nibName: T.storyboardIdentifier, bundle: nil), forCellReuseIdentifier: T.storyboardIdentifier)
     }
 }

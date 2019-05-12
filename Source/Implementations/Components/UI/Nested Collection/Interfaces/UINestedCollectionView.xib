@@ -12,9 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UINestedCollectionView" customModule="Places" customModuleProvider="target">
             <connections>
-                <outlet property="collection" destination="qHr-LZ-V5D" id="o6v-Lg-u0p"/>
-                <outlet property="collectionView" destination="qHr-LZ-V5D" id="lBE-NP-xP4"/>
-                <outlet property="tableView" destination="qHr-LZ-V5D" id="28V-s5-yMA"/>
+                <outlet property="collection" destination="TEg-M9-mqi" id="4Fm-X4-ob3"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -22,17 +20,17 @@
             <rect key="frame" x="0.0" y="0.0" width="401" height="707"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qHr-LZ-V5D" customClass="UINestedCollectionViewColumn" customModule="Places" customModuleProvider="target">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="TEg-M9-mqi">
                     <rect key="frame" x="0.0" y="0.0" width="401" height="707"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </view>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="qHr-LZ-V5D" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="53G-YF-kIE"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="qHr-LZ-V5D" secondAttribute="trailing" id="GSV-Vg-3lP"/>
-                <constraint firstAttribute="bottom" secondItem="qHr-LZ-V5D" secondAttribute="bottom" id="XWe-bd-xdP"/>
-                <constraint firstItem="qHr-LZ-V5D" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="tc6-Xc-3h3"/>
+                <constraint firstAttribute="bottom" secondItem="TEg-M9-mqi" secondAttribute="bottom" id="1vo-d8-nd9"/>
+                <constraint firstItem="TEg-M9-mqi" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="5PQ-7c-Uy3"/>
+                <constraint firstItem="TEg-M9-mqi" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Ggg-KG-ws4"/>
+                <constraint firstItem="TEg-M9-mqi" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="c8N-lM-1aT"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

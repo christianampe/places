@@ -9,11 +9,8 @@
 import Foundation
 
 protocol UINestedCollectionViewDataSource: class {
-    func numberOfSections(in nestedCollectionView: UINestedCollectionView) -> Int
+    func numberOfRows(in nestedCollectionView: UINestedCollectionView) -> Int
     
     func nestedCollectionView(_ nestedCollectionView: UINestedCollectionView,
-                              numberOfItemsInSection section: Int) -> Int
-    
-    func nestedCollectionView(_ nestedCollectionView: UINestedCollectionView,
-                              viewModelForItemAt indexPath: IndexPath) -> UINestedCollectionViewRowCellViewModel
+                              viewModelsAt row: Int) -> [UINestedCollectionViewRowCellViewModel]
 }

@@ -34,3 +34,11 @@ extension UINestedCollectionViewRowCell {
         detail.text = viewModel.detail
     }
 }
+
+// MARK: - Lifecycle
+extension UINestedCollectionViewRowCell {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        layer.cornerRadius = 5
+    }
+}
