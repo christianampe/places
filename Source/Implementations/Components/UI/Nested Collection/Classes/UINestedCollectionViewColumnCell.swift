@@ -75,4 +75,64 @@ extension UINestedCollectionViewColumnCell: UICollectionViewDelegate {
         
         cell.set(properties: viewModel)
     }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView,
+                                   withVelocity velocity: CGPoint,
+                                   targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
+        guard let layout = collection.collectionViewLayout as? UICollectionViewFlowLayout else {
+            assertionFailure("collection view must use flow layout")
+            return
+        }
+        
+        let bounds = scrollView.bounds
+        let xTarget = targetContentOffset.pointee.x
+        let xMax = scrollView.contentSize.width - scrollView.bounds.width
+        
+        if abs(velocity.x) <= snapToMostVisibleColumnVelocityThreshold {
+            let xCenter = scrollView.bounds.midX
+            let poses = layout.layoutAttributesForElements(in: bounds) ?? []
+            let x = poses.min(by: { abs($0.center.x - xCenter) < abs($1.center.x - xCenter) })?.frame.origin.x ?? 0
+            
+            targetContentOffset.pointee.x = x
+        } else if velocity.x > 0 {
+            let poses = layout.layoutAttributesForElements(in: CGRect(x: xTarget,
+                                                                      y: 0,
+                                                                      width: bounds.size.width,
+                                                                      height: bounds.size.height)) ?? []
+            
+            let xCurrent = scrollView.contentOffset.x
+            let x = poses.filter({ $0.frame.origin.x > xCurrent}).min(by: { $0.center.x < $1.center.x })?.frame.origin.x ?? xMax
+            
+            targetContentOffset.pointee.x = min(x, xMax)
+        } else {
+            let poses = layout.layoutAttributesForElements(in: CGRect(x: xTarget - bounds.size.width,
+                                                                      y: 0,
+                                                                      width: bounds.size.width,
+                                                                      height: bounds.size.height)) ?? []
+            
+            let x = poses.max(by: { $0.center.x < $1.center.x })?.frame.origin.x ?? 0
+            
+            targetContentOffset.pointee.x = max(x, 0)
+        }
+    }
+    
+    private var snapToMostVisibleColumnVelocityThreshold: CGFloat { return 0.3 }
+}
+
+extension UINestedCollectionViewColumnCell: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: UIScreen.main.bounds.width * 0.7,
+                      height: collectionView.layer.frame.height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
+        return UIScreen.main.bounds.width * 0.05
+    }
 }

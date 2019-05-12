@@ -48,13 +48,7 @@ extension UINestedCollectionView: UITableViewDataSource {
     func tableView(_ tableView: UITableView,
                    heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return UINestedCollectionView.cellHeight
-    }
-    
-    func tableView(_ tableView: UITableView,
-                   heightForHeaderInSection section: Int) -> CGFloat {
-        
-        return UINestedCollectionView.rowHeaderHeight
+        return UIScreen.main.bounds.height * 0.2
     }
 }
 
@@ -75,10 +69,4 @@ extension UINestedCollectionView: UITableViewDelegate {
         
         cell.set(properties: viewModels)
     }
-}
-
-extension UINestedCollectionView {
-    static let rowHeaderHeight: CGFloat = 24
-    static let cellHeight: CGFloat = 148
-    static let cellWidth: CGFloat = 370
 }

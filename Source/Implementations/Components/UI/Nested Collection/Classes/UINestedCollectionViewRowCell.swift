@@ -21,6 +21,12 @@ class UINestedCollectionViewRowCell: UICollectionViewCell {
     
     /// The `UImageView` filling the entire background of this cell.
     @IBOutlet private weak var background: UIImageView!
+    
+    // MARK: Constraints
+    @IBOutlet weak var contentHeight: NSLayoutConstraint!
+    @IBOutlet weak var contentWidth: NSLayoutConstraint!
+    @IBOutlet weak var contentLeadingSpace: NSLayoutConstraint!
+    @IBOutlet weak var contentBottomSpace: NSLayoutConstraint!
 }
 
 // MARK: - External API
@@ -39,6 +45,23 @@ extension UINestedCollectionViewRowCell {
 extension UINestedCollectionViewRowCell {
     override func awakeFromNib() {
         super.awakeFromNib()
+        styleCell()
+        setContentConstraints()
+    }
+}
+
+private extension UINestedCollectionViewRowCell {
+    func styleCell() {
         layer.cornerRadius = 5
+    }
+    
+    func setContentConstraints() {
+        let cellHeight = layer.bounds.size.height
+        let cellWidth = layer.bounds.size.width
+        
+        contentHeight.constant = cellHeight * 0.4
+        contentWidth.constant = cellWidth * 0.8
+        contentLeadingSpace.constant = cellHeight * 0.1
+        contentBottomSpace.constant = cellHeight * 0.1
     }
 }
