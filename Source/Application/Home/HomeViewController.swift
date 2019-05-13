@@ -12,16 +12,43 @@ final class HomeViewController: UIViewController, HomeViewProtocol {
     var presenter: HomePresenterProtocol?
     
     @IBOutlet private weak var nestedCollection: UINestedCollectionView!
+    @IBOutlet weak var nestedCollectionTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var nestedCollectionHeightConstraint: NSLayoutConstraint!
 }
 
+// MARK: - Lifecycle
 extension HomeViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        nestedCollection.dataSource = self
-        nestedCollection.delegate = self
+        setUp()
     }
 }
 
+// MARK: - Helper Methods
+private extension HomeViewController {
+    func setUp() {
+        nestedCollectionSetup()
+    }
+    
+    func nestedCollectionSetup() {
+        nestedCollection.dataSource = self
+        nestedCollection.delegate = self
+        
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            
+            let screenHeight = self.view.bounds.height
+            let bottomInset = self.view.safeAreaInsets.bottom
+            let topInset = self.view.safeAreaInsets.top
+            let intialRowPosition = screenHeight - UINestedCollectionView.cellHeight - bottomInset - topInset
+            
+            self.nestedCollectionHeightConstraint.constant = screenHeight
+            self.nestedCollectionTopConstraint.constant = intialRowPosition
+        }
+    }
+}
+
+// MARK: - UINestedCollectionViewDataSource
 extension HomeViewController: UINestedCollectionViewDataSource {
     func numberOfRows(in nestedCollectionView: UINestedCollectionView) -> Int {
         return 1
@@ -39,6 +66,7 @@ extension HomeViewController: UINestedCollectionViewDataSource {
     }
 }
 
+// MARK: - UINestedCollectionViewDelegate
 extension HomeViewController: UINestedCollectionViewDelegate {
     
 }

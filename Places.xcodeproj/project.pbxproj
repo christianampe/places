@@ -264,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				BFBA6C05228754360054C330 /* HomeProtocols.swift */,
+				BFBA6C15228754420054C330 /* Home.storyboard */,
 				BFBA6C04228754360054C330 /* HomeViewController.swift */,
 				BFBA6C01228754360054C330 /* HomeInput.swift */,
 				BFBA6C02228754360054C330 /* HomePresenter.swift */,
@@ -272,7 +273,6 @@
 				BFBA6C07228754360054C330 /* HomeInteractor.swift */,
 				BFBA6C08228754360054C330 /* HomeOutput.swift */,
 				BFBA6C09228754360054C330 /* HomeViewModel.swift */,
-				BFBA6C15228754420054C330 /* Home.storyboard */,
 				BF29F9FA2288A8980015746A /* HomePlaceCellViewModel.swift */,
 			);
 			path = Home;

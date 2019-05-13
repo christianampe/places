@@ -17,6 +17,13 @@ class UINestedCollectionView: XIBView {
     weak var dataSource: UINestedCollectionViewDataSource?
 }
 
+// MARK: - Static Properties
+extension UINestedCollectionView {
+    static let cellHeight: CGFloat = UINestedCollectionView.rowHeight + UINestedCollectionView.headerHeight
+    private static let rowHeight: CGFloat = UIScreen.main.bounds.height * 0.2
+    private static let headerHeight: CGFloat = UIScreen.main.bounds.height * 0.05
+}
+
 // MARK: - Lifecycle
 extension UINestedCollectionView {
     override func awakeFromNib() {
@@ -46,9 +53,21 @@ extension UINestedCollectionView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView,
+                   titleForHeaderInSection section: Int) -> String? {
+        
+        return "Popular"
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   heightForHeaderInSection section: Int) -> CGFloat {
+        
+        return UINestedCollectionView.headerHeight
+    }
+    
+    func tableView(_ tableView: UITableView,
                    heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return UIScreen.main.bounds.height * 0.2
+        return UINestedCollectionView.rowHeight
     }
 }
 

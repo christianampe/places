@@ -17,6 +17,12 @@ class UINestedCollectionViewColumnCell: UITableViewCell {
     private var viewModels = [UINestedCollectionViewRowCellViewModel]()
 }
 
+// MARK: - Static Properties
+private extension UINestedCollectionViewColumnCell {
+    static let itemWidth: CGFloat = UIScreen.main.bounds.width * 0.7
+    static let itemSpacing: CGFloat = UIScreen.main.bounds.width * 0.05
+}
+
 // MARK: - External API
 extension UINestedCollectionViewColumnCell {
     
@@ -36,6 +42,7 @@ extension UINestedCollectionViewColumnCell {
         collection.registerCollectionViewCell(xibCell: UINestedCollectionViewRowCell.self)
         collection.dataSource = self
         collection.delegate = self
+        collection.decelerationRate = .fast
     }
 }
 
@@ -75,49 +82,6 @@ extension UINestedCollectionViewColumnCell: UICollectionViewDelegate {
         
         cell.set(properties: viewModel)
     }
-    
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView,
-                                   withVelocity velocity: CGPoint,
-                                   targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        
-        guard let layout = collection.collectionViewLayout as? UICollectionViewFlowLayout else {
-            assertionFailure("collection view must use flow layout")
-            return
-        }
-        
-        let bounds = scrollView.bounds
-        let xTarget = targetContentOffset.pointee.x
-        let xMax = scrollView.contentSize.width - scrollView.bounds.width
-        
-        if abs(velocity.x) <= snapToMostVisibleColumnVelocityThreshold {
-            let xCenter = scrollView.bounds.midX
-            let poses = layout.layoutAttributesForElements(in: bounds) ?? []
-            let x = poses.min(by: { abs($0.center.x - xCenter) < abs($1.center.x - xCenter) })?.frame.origin.x ?? 0
-            
-            targetContentOffset.pointee.x = x
-        } else if velocity.x > 0 {
-            let poses = layout.layoutAttributesForElements(in: CGRect(x: xTarget,
-                                                                      y: 0,
-                                                                      width: bounds.size.width,
-                                                                      height: bounds.size.height)) ?? []
-            
-            let xCurrent = scrollView.contentOffset.x
-            let x = poses.filter({ $0.frame.origin.x > xCurrent}).min(by: { $0.center.x < $1.center.x })?.frame.origin.x ?? xMax
-            
-            targetContentOffset.pointee.x = min(x, xMax)
-        } else {
-            let poses = layout.layoutAttributesForElements(in: CGRect(x: xTarget - bounds.size.width,
-                                                                      y: 0,
-                                                                      width: bounds.size.width,
-                                                                      height: bounds.size.height)) ?? []
-            
-            let x = poses.max(by: { $0.center.x < $1.center.x })?.frame.origin.x ?? 0
-            
-            targetContentOffset.pointee.x = max(x, 0)
-        }
-    }
-    
-    private var snapToMostVisibleColumnVelocityThreshold: CGFloat { return 0.3 }
 }
 
 extension UINestedCollectionViewColumnCell: UICollectionViewDelegateFlowLayout {
@@ -125,7 +89,7 @@ extension UINestedCollectionViewColumnCell: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: UIScreen.main.bounds.width * 0.7,
+        return CGSize(width: UINestedCollectionViewColumnCell.itemWidth,
                       height: collectionView.layer.frame.height)
     }
     
@@ -133,6 +97,35 @@ extension UINestedCollectionViewColumnCell: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
-        return UIScreen.main.bounds.width * 0.05
+        return UINestedCollectionViewColumnCell.itemSpacing
+    }
+}
+
+final class SnapCollectionViewLayout: UICollectionViewFlowLayout {
+    override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint,
+                                      withScrollingVelocity velocity: CGPoint) -> CGPoint {
+        
+        guard let collectionView = collectionView else {
+            return super.targetContentOffset(forProposedContentOffset: proposedContentOffset,
+                                             withScrollingVelocity: velocity)
+        }
+        
+        let parent = super.targetContentOffset(forProposedContentOffset: proposedContentOffset,
+                                               withScrollingVelocity: velocity)
+        
+        
+        let itemSpace = UINestedCollectionViewColumnCell.itemWidth + UINestedCollectionViewColumnCell.itemSpacing
+        let horizontalVelocity = velocity.x
+        
+        var itemIndex = round(collectionView.contentOffset.x / itemSpace)
+        
+        if horizontalVelocity > 0 {
+            itemIndex += 1
+        } else if horizontalVelocity < 0 {
+            itemIndex -= 1
+        }
+        
+        return CGPoint(x: itemIndex * itemSpace,
+                       y: parent.y)
     }
 }
