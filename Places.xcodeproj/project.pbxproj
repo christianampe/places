@@ -14,6 +14,19 @@
 		BF29FA05228A50450015746A /* UINestedCollection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF29FA04228A50450015746A /* UINestedCollection.storyboard */; };
 		BF29FA07228A505E0015746A /* UINestedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29FA06228A505E0015746A /* UINestedCollectionViewController.swift */; };
 		BF29FA0A228A5EB80015746A /* UICollectionSnappingFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29FA09228A5EB80015746A /* UICollectionSnappingFlowLayout.swift */; };
+		BFA6C38A228B40F400EAD6E8 /* DetailInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA6C380228B40F400EAD6E8 /* DetailInput.swift */; };
+		BFA6C38B228B40F400EAD6E8 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA6C381228B40F400EAD6E8 /* DetailPresenter.swift */; };
+		BFA6C38C228B40F400EAD6E8 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA6C382228B40F400EAD6E8 /* DetailRouter.swift */; };
+		BFA6C38D228B40F400EAD6E8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA6C383228B40F400EAD6E8 /* DetailViewController.swift */; };
+		BFA6C38E228B40F400EAD6E8 /* DetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA6C384228B40F400EAD6E8 /* DetailProtocols.swift */; };
+		BFA6C38F228B40F400EAD6E8 /* DetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA6C385228B40F400EAD6E8 /* DetailBuilder.swift */; };
+		BFA6C390228B40F400EAD6E8 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA6C386228B40F400EAD6E8 /* DetailInteractor.swift */; };
+		BFA6C391228B40F400EAD6E8 /* DetailOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA6C387228B40F400EAD6E8 /* DetailOutput.swift */; };
+		BFA6C392228B40F400EAD6E8 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA6C388228B40F400EAD6E8 /* DetailViewModel.swift */; };
+		BFA6C395228B410100EAD6E8 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFA6C394228B410100EAD6E8 /* Detail.storyboard */; };
+		BFA6C39B228B4CA400EAD6E8 /* DetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA6C39A228B4CA400EAD6E8 /* DetailHeaderView.swift */; };
+		BFA6C39D228B4CD500EAD6E8 /* DetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA6C39C228B4CD500EAD6E8 /* DetailViewCell.swift */; };
+		BFA6C39F228B52CF00EAD6E8 /* DetailHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA6C39E228B52CF00EAD6E8 /* DetailHeaderViewCell.swift */; };
 		BFBA6BE2228752680054C330 /* UIStoryboard+Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6BDB228752670054C330 /* UIStoryboard+Identifiers.swift */; };
 		BFBA6BE3228752680054C330 /* UIImage+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6BDC228752670054C330 /* UIImage+Additions.swift */; };
 		BFBA6BE5228752680054C330 /* Array++.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6BDE228752680054C330 /* Array++.swift */; };
@@ -103,6 +116,19 @@
 		BF29FA04228A50450015746A /* UINestedCollection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UINestedCollection.storyboard; sourceTree = "<group>"; };
 		BF29FA06228A505E0015746A /* UINestedCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINestedCollectionViewController.swift; sourceTree = "<group>"; };
 		BF29FA09228A5EB80015746A /* UICollectionSnappingFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionSnappingFlowLayout.swift; sourceTree = "<group>"; };
+		BFA6C380228B40F400EAD6E8 /* DetailInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInput.swift; sourceTree = "<group>"; };
+		BFA6C381228B40F400EAD6E8 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		BFA6C382228B40F400EAD6E8 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
+		BFA6C383228B40F400EAD6E8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		BFA6C384228B40F400EAD6E8 /* DetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProtocols.swift; sourceTree = "<group>"; };
+		BFA6C385228B40F400EAD6E8 /* DetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBuilder.swift; sourceTree = "<group>"; };
+		BFA6C386228B40F400EAD6E8 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
+		BFA6C387228B40F400EAD6E8 /* DetailOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOutput.swift; sourceTree = "<group>"; };
+		BFA6C388228B40F400EAD6E8 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		BFA6C394228B410100EAD6E8 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
+		BFA6C39A228B4CA400EAD6E8 /* DetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeaderView.swift; sourceTree = "<group>"; };
+		BFA6C39C228B4CD500EAD6E8 /* DetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewCell.swift; sourceTree = "<group>"; };
+		BFA6C39E228B52CF00EAD6E8 /* DetailHeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeaderViewCell.swift; sourceTree = "<group>"; };
 		BFBA6BDB228752670054C330 /* UIStoryboard+Identifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Identifiers.swift"; sourceTree = "<group>"; };
 		BFBA6BDC228752670054C330 /* UIImage+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Additions.swift"; sourceTree = "<group>"; };
 		BFBA6BDE228752680054C330 /* Array++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array++.swift"; sourceTree = "<group>"; };
@@ -240,6 +266,26 @@
 				BFF506902286423C00CA5B0B /* AppLaunch.storyboard */,
 			);
 			path = "App Launch";
+			sourceTree = "<group>";
+		};
+		BFA6C37E228B40DF00EAD6E8 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				BFA6C384228B40F400EAD6E8 /* DetailProtocols.swift */,
+				BFA6C394228B410100EAD6E8 /* Detail.storyboard */,
+				BFA6C383228B40F400EAD6E8 /* DetailViewController.swift */,
+				BFA6C39A228B4CA400EAD6E8 /* DetailHeaderView.swift */,
+				BFA6C39E228B52CF00EAD6E8 /* DetailHeaderViewCell.swift */,
+				BFA6C39C228B4CD500EAD6E8 /* DetailViewCell.swift */,
+				BFA6C380228B40F400EAD6E8 /* DetailInput.swift */,
+				BFA6C381228B40F400EAD6E8 /* DetailPresenter.swift */,
+				BFA6C382228B40F400EAD6E8 /* DetailRouter.swift */,
+				BFA6C385228B40F400EAD6E8 /* DetailBuilder.swift */,
+				BFA6C386228B40F400EAD6E8 /* DetailInteractor.swift */,
+				BFA6C387228B40F400EAD6E8 /* DetailOutput.swift */,
+				BFA6C388228B40F400EAD6E8 /* DetailViewModel.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		BFBA6BDA2287525B0054C330 /* Extensions */ = {
@@ -480,6 +526,7 @@
 				BFF506842286423B00CA5B0B /* AppDelegate.swift */,
 				BF599E2022871FAA00B68163 /* App Launch */,
 				BFBA6BEC228753E70054C330 /* Home */,
+				BFA6C37E228B40DF00EAD6E8 /* Detail */,
 				BFD6D5C622872AA90020F217 /* Profile */,
 			);
 			path = Application;
@@ -603,6 +650,7 @@
 				BFF506922286423C00CA5B0B /* AppLaunch.storyboard in Resources */,
 				BFBA6BEB2287531D0054C330 /* Assignment.pdf in Resources */,
 				BFBA6C182287544F0054C330 /* Profile.storyboard in Resources */,
+				BFA6C395228B410100EAD6E8 /* Detail.storyboard in Resources */,
 				BFF5068F2286423C00CA5B0B /* Assets.xcassets in Resources */,
 				BFBA6C16228754420054C330 /* Home.storyboard in Resources */,
 			);
@@ -630,6 +678,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF29F9F6228899730015746A /* UINestedCollectionViewDataSource.swift in Sources */,
+				BFA6C38C228B40F400EAD6E8 /* DetailRouter.swift in Sources */,
 				BFD6D5FF22872BDA0020F217 /* NetworkingHelper.swift in Sources */,
 				BFBA6BE3228752680054C330 /* UIImage+Additions.swift in Sources */,
 				BFD6D62722872C2C0020F217 /* XIBIdentifiable+Self.swift in Sources */,
@@ -637,10 +686,12 @@
 				BFBA6C26228759CA0054C330 /* UINestedCollectionViewRowCell.swift in Sources */,
 				BFD6D5D422872ABE0020F217 /* ProfileViewController.swift in Sources */,
 				BFD6D61A22872C220020F217 /* StoryboardIdentifiable+Self.swift in Sources */,
+				BFA6C39B228B4CA400EAD6E8 /* DetailHeaderView.swift in Sources */,
 				BFD6D60122872BDA0020F217 /* NetworkingRequestBody.swift in Sources */,
 				BFD6D60022872BDA0020F217 /* NetworkingError.swift in Sources */,
 				BFBA6BE2228752680054C330 /* UIStoryboard+Identifiers.swift in Sources */,
 				BFD6D61E22872C220020F217 /* UICollectionReusableView+StoryboardIdentifiable.swift in Sources */,
+				BFA6C39F228B52CF00EAD6E8 /* DetailHeaderViewCell.swift in Sources */,
 				BFD6D5D122872ABE0020F217 /* ProfileInput.swift in Sources */,
 				BFBA6C0B228754360054C330 /* HomeInput.swift in Sources */,
 				BFBA6C10228754360054C330 /* HomeBuilder.swift in Sources */,
@@ -651,18 +702,23 @@
 				BFD6D62622872C2C0020F217 /* XIBView.swift in Sources */,
 				BFBA6C3622876A830054C330 /* UINestedCollectionViewRowCellViewModel.swift in Sources */,
 				BFF506852286423B00CA5B0B /* AppDelegate.swift in Sources */,
+				BFA6C392228B40F400EAD6E8 /* DetailViewModel.swift in Sources */,
 				BFD6D5FC22872BDA0020F217 /* NetworkingRequestValidation.swift in Sources */,
 				BF29F9FB2288A8980015746A /* HomePlaceCellViewModel.swift in Sources */,
 				BFD6D5D222872ABE0020F217 /* ProfilePresenter.swift in Sources */,
 				BF29F9FD2288B1DD0015746A /* CALayer+Additions.swift in Sources */,
 				BFD6D62422872C2C0020F217 /* XIBIdentifiable.swift in Sources */,
+				BFA6C391228B40F400EAD6E8 /* DetailOutput.swift in Sources */,
+				BFA6C38A228B40F400EAD6E8 /* DetailInput.swift in Sources */,
 				BF29FA07228A505E0015746A /* UINestedCollectionViewController.swift in Sources */,
 				BFF5068D2286423B00CA5B0B /* Places.xcdatamodeld in Sources */,
 				BFBA6BE7228752680054C330 /* UINavigationBar+Additions.swift in Sources */,
 				BFBA6C34228767240054C330 /* UIRoundImageView.swift in Sources */,
 				BFD6D61822872C220020F217 /* UIViewController+StoryboardIdentifiable.swift in Sources */,
+				BFA6C38E228B40F400EAD6E8 /* DetailProtocols.swift in Sources */,
 				BFBA6BE8228752680054C330 /* URL++.swift in Sources */,
 				BFD6D60422872BDA0020F217 /* Networking.swift in Sources */,
+				BFA6C39D228B4CD500EAD6E8 /* DetailViewCell.swift in Sources */,
 				BFD6D61722872C220020F217 /* UIStoryboardSegue+StoryboardIdentifiable.swift in Sources */,
 				BFD6D61C22872C220020F217 /* StoryboardIdentifiable.swift in Sources */,
 				BFD6D60C22872C170020F217 /* SegueIdentifiable.swift in Sources */,
@@ -673,12 +729,16 @@
 				BFBA6C13228754360054C330 /* HomeViewModel.swift in Sources */,
 				BFD6D5D522872ABE0020F217 /* ProfileProtocols.swift in Sources */,
 				BFD6D60222872BDA0020F217 /* NetworkingResponse.swift in Sources */,
+				BFA6C390228B40F400EAD6E8 /* DetailInteractor.swift in Sources */,
 				BFD6D61F22872C220020F217 /* UITableView+StoryboardIdentifiable.swift in Sources */,
 				BFBA6C0D228754360054C330 /* HomeRouter.swift in Sources */,
+				BFA6C38B228B40F400EAD6E8 /* DetailPresenter.swift in Sources */,
 				BFD6D62522872C2C0020F217 /* XIBView+XIBIdentifiable.swift in Sources */,
 				BFD6D60322872BDA0020F217 /* NetworkingService.swift in Sources */,
 				BFBA6BE6228752680054C330 /* UIImageView+Additions.swift in Sources */,
+				BFA6C38D228B40F400EAD6E8 /* DetailViewController.swift in Sources */,
 				BFD6D5D722872ABE0020F217 /* ProfileInteractor.swift in Sources */,
+				BFA6C38F228B40F400EAD6E8 /* DetailBuilder.swift in Sources */,
 				BFBA6C11228754360054C330 /* HomeInteractor.swift in Sources */,
 				BF29FA0A228A5EB80015746A /* UICollectionSnappingFlowLayout.swift in Sources */,
 				BFD6D61D22872C220020F217 /* UICollectionView+StoryboardIdentifiable.swift in Sources */,

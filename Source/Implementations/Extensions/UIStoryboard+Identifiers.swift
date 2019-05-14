@@ -16,6 +16,7 @@ extension UIStoryboard {
         case appLaunch = "AppLaunch"
         case app = "App"
         case home = "Home"
+        case detail = "Detail"
         case profile = "Profile"
     }
 }

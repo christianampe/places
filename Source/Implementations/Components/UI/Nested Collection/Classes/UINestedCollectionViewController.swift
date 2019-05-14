@@ -19,6 +19,14 @@ extension UINestedCollectionViewController {
     func reloadData() {
         tableView.reloadData()
     }
+    
+    func snapFirstCellToTop() {
+        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+    }
+    
+    func snapFirstCellToBottom() {
+        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .bottom, animated: true)
+    }
 }
 
 // MARK: - Lifecycle
@@ -32,6 +40,7 @@ extension UINestedCollectionViewController {
 private extension UINestedCollectionViewController {
     func setUpTableView() {
         tableView.panGestureRecognizer.addTarget(self, action: #selector(handleGesture(_:)))
+        snapFirstCellToBottom()
     }
 }
 
@@ -57,15 +66,7 @@ extension UINestedCollectionViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(for: indexPath) as UINestedCollectionViewColumnCell
-        
-        guard let viewModels = dataSource?.tableView(tableView, viewModelsFor: indexPath.row) else {
-            return cell
-        }
-        
-        cell.set(properties: viewModels)
-        
-        return cell
+        return tableView.dequeueReusableCell(for: indexPath) as UINestedCollectionViewColumnCell
     }
     
     func tableView(_ tableView: UITableView,
@@ -77,6 +78,21 @@ extension UINestedCollectionViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 extension UINestedCollectionViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell,
+                   forRowAt indexPath: IndexPath) {
+        
+        guard let cell = cell as? UINestedCollectionViewColumnCell else {
+            assertionFailure("incorrect cell type used")
+            return
+        }
+        
+        guard let viewModels = dataSource?.tableView(tableView, viewModelsFor: indexPath.row) else {
+            return
+        }
+        
+        cell.set(properties: viewModels)
+    }
+    
     func tableView(_ tableView: UITableView,
                    heightForHeaderInSection section: Int) -> CGFloat {
         

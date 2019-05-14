@@ -13,7 +13,7 @@
         <!--Home View Controller-->
         <scene sceneID="QV5-Y4-MQ6">
             <objects>
-                <viewController id="CC0-wq-Gwt" customClass="HomeViewController" customModule="Places" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="CC0-wq-Gwt" customClass="HomeViewController" customModule="Places" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VuC-oW-Elk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,11 +22,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </mapView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M3Z-6a-w8J">
-                                <rect key="frame" x="0.0" y="500" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="896" id="6wW-SV-Mdk"/>
-                                </constraints>
                                 <connections>
                                     <segue destination="o3F-bG-ija" kind="embed" identifier="embedNestedCollection" id="PRU-Rp-ii0"/>
                                 </connections>
@@ -34,20 +31,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="M3Z-6a-w8J" secondAttribute="bottom" id="0mR-5F-1Vt"/>
                             <constraint firstAttribute="bottom" secondItem="YgG-dw-GMV" secondAttribute="bottom" id="68e-7s-evf"/>
                             <constraint firstItem="jir-el-Ryc" firstAttribute="trailing" secondItem="M3Z-6a-w8J" secondAttribute="trailing" id="DNx-yi-aeY"/>
                             <constraint firstItem="M3Z-6a-w8J" firstAttribute="leading" secondItem="jir-el-Ryc" secondAttribute="leading" id="Jo0-WL-gt7"/>
+                            <constraint firstItem="M3Z-6a-w8J" firstAttribute="top" secondItem="VuC-oW-Elk" secondAttribute="top" id="R70-77-X8L"/>
                             <constraint firstItem="YgG-dw-GMV" firstAttribute="leading" secondItem="jir-el-Ryc" secondAttribute="leading" id="TTZ-J3-bPc"/>
                             <constraint firstItem="YgG-dw-GMV" firstAttribute="top" secondItem="VuC-oW-Elk" secondAttribute="top" id="Wrs-6F-XGq"/>
                             <constraint firstItem="jir-el-Ryc" firstAttribute="trailing" secondItem="YgG-dw-GMV" secondAttribute="trailing" id="v7A-hW-PRx"/>
-                            <constraint firstItem="M3Z-6a-w8J" firstAttribute="top" secondItem="VuC-oW-Elk" secondAttribute="top" constant="500" id="xKl-qP-0Ug"/>
+                            <constraint firstItem="M3Z-6a-w8J" firstAttribute="top" secondItem="VuC-oW-Elk" secondAttribute="top" id="xKl-qP-0Ug"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jir-el-Ryc"/>
                     </view>
-                    <connections>
-                        <outlet property="nestedCollectionHeightConstraint" destination="6wW-SV-Mdk" id="0bL-2p-JG9"/>
-                        <outlet property="nestedCollectionTopConstraint" destination="xKl-qP-0Ug" id="x3e-vd-fkB"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7zy-Yc-8qq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
