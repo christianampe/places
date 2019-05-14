@@ -36,11 +36,11 @@
                                                         <size key="itemSize" width="270" height="136"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <inset key="sectionInset" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UINestedCollectionViewRowCell" id="W3n-yN-UDb" customClass="UINestedCollectionViewRowCell" customModule="Places" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="25" width="300" height="150"/>
+                                                            <rect key="frame" x="16" y="25" width="300" height="150"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
@@ -77,6 +77,10 @@
                                                                                 </subviews>
                                                                             </stackView>
                                                                         </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="152" id="ueg-cC-2Hb"/>
+                                                                            <constraint firstAttribute="height" constant="45" id="uks-Sw-jTH"/>
+                                                                        </constraints>
                                                                     </stackView>
                                                                 </subviews>
                                                             </view>
@@ -89,8 +93,22 @@
                                                                 <constraint firstItem="KIF-pS-e6l" firstAttribute="leading" secondItem="W3n-yN-UDb" secondAttribute="leading" constant="16" id="vG3-Uj-xpM"/>
                                                             </constraints>
                                                             <size key="customSize" width="300" height="150"/>
+                                                            <connections>
+                                                                <outlet property="background" destination="SIy-1g-5pd" id="Bab-gc-ulh"/>
+                                                                <outlet property="contentBottomSpace" destination="PNY-wV-PUB" id="WIf-XM-2dc"/>
+                                                                <outlet property="contentHeight" destination="uks-Sw-jTH" id="RAy-ok-tWX"/>
+                                                                <outlet property="contentLeadingSpace" destination="vG3-Uj-xpM" id="QxZ-DX-WRA"/>
+                                                                <outlet property="contentWidth" destination="ueg-cC-2Hb" id="JCq-WX-Uu2"/>
+                                                                <outlet property="detail" destination="AnL-C8-ZVu" id="7kD-3R-Rk7"/>
+                                                                <outlet property="icon" destination="C9w-QD-gbR" id="met-Op-TUj"/>
+                                                                <outlet property="title" destination="aG4-f2-83m" id="MQ1-q8-NKe"/>
+                                                            </connections>
                                                         </collectionViewCell>
                                                     </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="gFo-Lb-WNz" id="DDS-cv-i67"/>
+                                                        <outlet property="delegate" destination="gFo-Lb-WNz" id="4fA-aJ-tV1"/>
+                                                    </connections>
                                                 </collectionView>
                                             </subviews>
                                             <constraints>
@@ -101,6 +119,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="collection" destination="pY8-ds-hST" id="ckB-cG-q8P"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

@@ -11,11 +11,7 @@ import UIKit
 class UINestedCollectionViewColumnCell: UITableViewCell {
     
     /// A `UICollectionView` which contains the individual objects to display.
-    @IBOutlet private weak var collection: UICollectionView! {
-        didSet {
-            setUp()
-        }
-    }
+    @IBOutlet private weak var collection: UICollectionView!
     
     /// The view models used to populate the `UICollectionView`.
     private var viewModels = [UINestedCollectionViewRowCellViewModel]()
@@ -32,11 +28,10 @@ extension UINestedCollectionViewColumnCell {
     }
 }
 
-// MARK: - Helper Methods
-private extension UINestedCollectionViewColumnCell {
-    func setUp() {
-        collection.dataSource = self
-        collection.delegate = self
+// MARK: - Lifecycle
+extension UINestedCollectionViewColumnCell {
+    override func awakeFromNib() {
+        super.awakeFromNib()
         collection.decelerationRate = .fast
     }
 }
