@@ -6,8 +6,14 @@
 //  Copyright © 2019 christianampe. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol UINestedCollectionViewDelegate: class {
-    
+    func nestedCollectionView(_ nestedCollectionView: UINestedCollectionView,
+                              didRespondToPanGesture sender: UIPanGestureRecognizer)
+}
+
+extension UINestedCollectionViewDelegate {
+    func nestedCollectionView(_ nestedCollectionView: UINestedCollectionView,
+                              didRespondToPanGesture sender: UIPanGestureRecognizer) {}
 }

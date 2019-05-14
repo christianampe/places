@@ -51,7 +51,7 @@ private extension HomeViewController {
 // MARK: - UINestedCollectionViewDataSource
 extension HomeViewController: UINestedCollectionViewDataSource {
     func numberOfRows(in nestedCollectionView: UINestedCollectionView) -> Int {
-        return 1
+        return 4
     }
     
     func nestedCollectionView(_ nestedCollectionView: UINestedCollectionView,
@@ -68,5 +68,24 @@ extension HomeViewController: UINestedCollectionViewDataSource {
 
 // MARK: - UINestedCollectionViewDelegate
 extension HomeViewController: UINestedCollectionViewDelegate {
-    
+    func nestedCollectionView(_ nestedCollectionView: UINestedCollectionView,
+                              didRespondToPanGesture sender: UIPanGestureRecognizer) {
+        
+        let verticalVelocity = sender.velocity(in: nestedCollectionView).y
+        let verticalPosition = sender.translation(in: view).y
+        let verticalContentOffset = nestedCollectionView.contentOffset.y
+        
+        guard verticalContentOffset <= 0.0 else {
+            return
+        }
+        
+        guard
+            (nestedCollectionTopConstraint.constant <= 0.0 && verticalVelocity > 0) ||
+            (nestedCollectionTopConstraint.constant > 0.0 && verticalVelocity < 0)
+        else {
+            return
+        }
+        
+        nestedCollectionTopConstraint.constant += verticalPosition
+    }
 }

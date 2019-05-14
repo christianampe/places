@@ -24,6 +24,13 @@ extension UINestedCollectionView {
     private static let headerHeight: CGFloat = UIScreen.main.bounds.height * 0.05
 }
 
+// MARK: - View Properties
+extension UINestedCollectionView {
+    var contentOffset: CGPoint {
+        return collection.contentOffset
+    }
+}
+
 // MARK: - Lifecycle
 extension UINestedCollectionView {
     override func awakeFromNib() {
@@ -31,6 +38,15 @@ extension UINestedCollectionView {
         collection.registerTableViewCell(xibCell: UINestedCollectionViewColumnCell.self)
         collection.dataSource = self
         collection.delegate = self
+        collection.panGestureRecognizer.addTarget(self, action: #selector(handleGesture(_:)))
+
+    }
+}
+
+// MARK: - Gesure Handlers
+extension UINestedCollectionView {
+    @objc func handleGesture(_ sender: UIPanGestureRecognizer) {
+        delegate?.nestedCollectionView(self, didRespondToPanGesture: sender)
     }
 }
 

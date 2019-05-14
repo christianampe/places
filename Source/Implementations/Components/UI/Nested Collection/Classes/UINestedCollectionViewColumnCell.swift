@@ -105,14 +105,12 @@ final class SnapCollectionViewLayout: UICollectionViewFlowLayout {
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint,
                                       withScrollingVelocity velocity: CGPoint) -> CGPoint {
         
-        guard let collectionView = collectionView else {
-            return super.targetContentOffset(forProposedContentOffset: proposedContentOffset,
-                                             withScrollingVelocity: velocity)
-        }
-        
         let parent = super.targetContentOffset(forProposedContentOffset: proposedContentOffset,
                                                withScrollingVelocity: velocity)
         
+        guard let collectionView = collectionView else {
+            return parent
+        }
         
         let itemSpace = UINestedCollectionViewColumnCell.itemWidth + UINestedCollectionViewColumnCell.itemSpacing
         let horizontalVelocity = velocity.x

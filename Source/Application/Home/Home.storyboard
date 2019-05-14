@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OLC-fY-bEL" customClass="UINestedCollectionView" customModule="Places" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="644" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="600" width="414" height="896"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="896" id="xVp-ie-ZjX"/>
@@ -37,7 +37,7 @@
                             <constraint firstItem="YgG-dw-GMV" firstAttribute="leading" secondItem="jir-el-Ryc" secondAttribute="leading" id="TTZ-J3-bPc"/>
                             <constraint firstItem="YgG-dw-GMV" firstAttribute="top" secondItem="VuC-oW-Elk" secondAttribute="top" id="Wrs-6F-XGq"/>
                             <constraint firstItem="jir-el-Ryc" firstAttribute="trailing" secondItem="YgG-dw-GMV" secondAttribute="trailing" id="v7A-hW-PRx"/>
-                            <constraint firstItem="OLC-fY-bEL" firstAttribute="top" secondItem="VuC-oW-Elk" secondAttribute="top" constant="644" id="zAt-Pv-KPc"/>
+                            <constraint firstItem="OLC-fY-bEL" firstAttribute="top" secondItem="VuC-oW-Elk" secondAttribute="top" constant="600" id="zAt-Pv-KPc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jir-el-Ryc"/>
                     </view>
