@@ -11,16 +11,14 @@ import UIKit
 class UINestedCollectionViewColumnCell: UITableViewCell {
     
     /// A `UICollectionView` which contains the individual objects to display.
-    @IBOutlet private weak var collection: UICollectionView!
+    @IBOutlet private weak var collection: UICollectionView! {
+        didSet {
+            setUp()
+        }
+    }
     
     /// The view models used to populate the `UICollectionView`.
     private var viewModels = [UINestedCollectionViewRowCellViewModel]()
-}
-
-// MARK: - Static Properties
-private extension UINestedCollectionViewColumnCell {
-    static let itemWidth: CGFloat = UIScreen.main.bounds.width * 0.7
-    static let itemSpacing: CGFloat = UIScreen.main.bounds.width * 0.05
 }
 
 // MARK: - External API
@@ -31,15 +29,12 @@ extension UINestedCollectionViewColumnCell {
     /// - Parameter newViewModels: The view models used to populate the `UICollectionView`.
     func set(properties newViewModels: [UINestedCollectionViewRowCellViewModel]) {
         viewModels = newViewModels
-        collection.reloadData()
     }
 }
 
-// MARK: - Lifecycle
-extension UINestedCollectionViewColumnCell {
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        collection.registerCollectionViewCell(xibCell: UINestedCollectionViewRowCell.self)
+// MARK: - Helper Methods
+private extension UINestedCollectionViewColumnCell {
+    func setUp() {
         collection.dataSource = self
         collection.delegate = self
         collection.decelerationRate = .fast
@@ -61,29 +56,19 @@ extension UINestedCollectionViewColumnCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        return collectionView.dequeueReusableCell(for: indexPath) as UINestedCollectionViewRowCell
-    }
-}
-
-// MARK: - UICollectionViewDelegate
-extension UINestedCollectionViewColumnCell: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView,
-                        willDisplay cell: UICollectionViewCell,
-                        forItemAt indexPath: IndexPath) {
-        
-        guard let cell = cell as? UINestedCollectionViewRowCell else {
-            assertionFailure("incorrect cell type used")
-            return
-        }
+        let cell = collectionView.dequeueReusableCell(for: indexPath) as UINestedCollectionViewRowCell
         
         guard let viewModel = viewModels[safe: indexPath.row] else {
-            return
+            return cell
         }
         
         cell.set(properties: viewModel)
+        
+        return cell
     }
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
 extension UINestedCollectionViewColumnCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
@@ -101,29 +86,8 @@ extension UINestedCollectionViewColumnCell: UICollectionViewDelegateFlowLayout {
     }
 }
 
-final class SnapCollectionViewLayout: UICollectionViewFlowLayout {
-    override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint,
-                                      withScrollingVelocity velocity: CGPoint) -> CGPoint {
-        
-        let parent = super.targetContentOffset(forProposedContentOffset: proposedContentOffset,
-                                               withScrollingVelocity: velocity)
-        
-        guard let collectionView = collectionView else {
-            return parent
-        }
-        
-        let itemSpace = UINestedCollectionViewColumnCell.itemWidth + UINestedCollectionViewColumnCell.itemSpacing
-        let horizontalVelocity = velocity.x
-        
-        var itemIndex = round(collectionView.contentOffset.x / itemSpace)
-        
-        if horizontalVelocity > 0 {
-            itemIndex += 1
-        } else if horizontalVelocity < 0 {
-            itemIndex -= 1
-        }
-        
-        return CGPoint(x: itemIndex * itemSpace,
-                       y: parent.y)
-    }
+// MARK: - Static Properties
+extension UINestedCollectionViewColumnCell {
+    static let itemWidth: CGFloat = UIScreen.main.bounds.width * 0.7
+    static let itemSpacing: CGFloat = UIScreen.main.bounds.width * 0.05
 }

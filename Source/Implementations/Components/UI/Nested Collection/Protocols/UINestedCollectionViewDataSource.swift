@@ -6,11 +6,11 @@
 //  Copyright © 2019 christianampe. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol UINestedCollectionViewDataSource: class {
-    func numberOfRows(in nestedCollectionView: UINestedCollectionView) -> Int
+    func numberOfRows(in tableView: UITableView) -> Int
     
-    func nestedCollectionView(_ nestedCollectionView: UINestedCollectionView,
-                              viewModelsAt row: Int) -> [UINestedCollectionViewRowCellViewModel]
+    func tableView(_ tableView: UITableView,
+                   viewModelsFor row: Int) -> [UINestedCollectionViewRowCellViewModel]
 }

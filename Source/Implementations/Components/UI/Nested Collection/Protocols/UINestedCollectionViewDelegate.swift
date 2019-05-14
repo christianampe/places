@@ -9,11 +9,11 @@
 import UIKit
 
 protocol UINestedCollectionViewDelegate: class {
-    func nestedCollectionView(_ nestedCollectionView: UINestedCollectionView,
-                              didRespondToPanGesture sender: UIPanGestureRecognizer)
+    func tableView(_ tableView: UITableView,
+                   didRespondToPanGesture sender: UIPanGestureRecognizer)
 }
 
 extension UINestedCollectionViewDelegate {
-    func nestedCollectionView(_ nestedCollectionView: UINestedCollectionView,
-                              didRespondToPanGesture sender: UIPanGestureRecognizer) {}
+    func tableView(_ tableView: UITableView,
+                   didRespondToPanGesture sender: UIPanGestureRecognizer) {}
 }

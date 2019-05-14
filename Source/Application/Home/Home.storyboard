@@ -21,35 +21,45 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="YgG-dw-GMV">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </mapView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OLC-fY-bEL" customClass="UINestedCollectionView" customModule="Places" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="600" width="414" height="896"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M3Z-6a-w8J">
+                                <rect key="frame" x="0.0" y="500" width="414" height="896"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="896" id="xVp-ie-ZjX"/>
+                                    <constraint firstAttribute="height" constant="896" id="6wW-SV-Mdk"/>
                                 </constraints>
-                            </view>
+                                <connections>
+                                    <segue destination="o3F-bG-ija" kind="embed" identifier="embedNestedCollection" id="PRU-Rp-ii0"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="OLC-fY-bEL" firstAttribute="leading" secondItem="jir-el-Ryc" secondAttribute="leading" id="21n-YH-s7t"/>
                             <constraint firstAttribute="bottom" secondItem="YgG-dw-GMV" secondAttribute="bottom" id="68e-7s-evf"/>
-                            <constraint firstItem="OLC-fY-bEL" firstAttribute="trailing" secondItem="jir-el-Ryc" secondAttribute="trailing" id="EbN-Mn-KTv"/>
+                            <constraint firstItem="jir-el-Ryc" firstAttribute="trailing" secondItem="M3Z-6a-w8J" secondAttribute="trailing" id="DNx-yi-aeY"/>
+                            <constraint firstItem="M3Z-6a-w8J" firstAttribute="leading" secondItem="jir-el-Ryc" secondAttribute="leading" id="Jo0-WL-gt7"/>
                             <constraint firstItem="YgG-dw-GMV" firstAttribute="leading" secondItem="jir-el-Ryc" secondAttribute="leading" id="TTZ-J3-bPc"/>
                             <constraint firstItem="YgG-dw-GMV" firstAttribute="top" secondItem="VuC-oW-Elk" secondAttribute="top" id="Wrs-6F-XGq"/>
                             <constraint firstItem="jir-el-Ryc" firstAttribute="trailing" secondItem="YgG-dw-GMV" secondAttribute="trailing" id="v7A-hW-PRx"/>
-                            <constraint firstItem="OLC-fY-bEL" firstAttribute="top" secondItem="VuC-oW-Elk" secondAttribute="top" constant="600" id="zAt-Pv-KPc"/>
+                            <constraint firstItem="M3Z-6a-w8J" firstAttribute="top" secondItem="VuC-oW-Elk" secondAttribute="top" constant="500" id="xKl-qP-0Ug"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jir-el-Ryc"/>
                     </view>
                     <connections>
-                        <outlet property="nestedCollection" destination="OLC-fY-bEL" id="l1R-XX-5cQ"/>
-                        <outlet property="nestedCollectionHeightConstraint" destination="xVp-ie-ZjX" id="XCx-QV-lUU"/>
-                        <outlet property="nestedCollectionTopConstraint" destination="zAt-Pv-KPc" id="etq-dR-zyq"/>
+                        <outlet property="nestedCollectionHeightConstraint" destination="6wW-SV-Mdk" id="0bL-2p-JG9"/>
+                        <outlet property="nestedCollectionTopConstraint" destination="xKl-qP-0Ug" id="x3e-vd-fkB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7zy-Yc-8qq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="31.884057971014496" y="146.65178571428569"/>
+        </scene>
+        <!--UINestedCollection-->
+        <scene sceneID="trm-FR-bw3">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UINestedCollection" id="o3F-bG-ija" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wx2-Ez-1VV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="602" y="147"/>
         </scene>
     </scenes>
 </document>

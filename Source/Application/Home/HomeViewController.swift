@@ -11,28 +11,30 @@ import UIKit
 final class HomeViewController: UIViewController, HomeViewProtocol {
     var presenter: HomePresenterProtocol?
     
-    @IBOutlet private weak var nestedCollection: UINestedCollectionView!
-    @IBOutlet weak var nestedCollectionTopConstraint: NSLayoutConstraint!
-    @IBOutlet weak var nestedCollectionHeightConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var nestedCollectionTopConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var nestedCollectionHeightConstraint: NSLayoutConstraint!
+    
+    private var nestedCollectionViewController: UINestedCollectionViewController? {
+        didSet {
+            nestedCollectionSetup()
+        }
+    }
 }
 
 // MARK: - Lifecycle
 extension HomeViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setUp()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "embedNestedCollection" {
+            nestedCollectionViewController = segue.viewController()
+        }
     }
 }
 
 // MARK: - Helper Methods
 private extension HomeViewController {
-    func setUp() {
-        nestedCollectionSetup()
-    }
-    
-    func nestedCollectionSetup() {
-        nestedCollection.dataSource = self
-        nestedCollection.delegate = self
+   func nestedCollectionSetup() {
+        nestedCollectionViewController?.dataSource = self
+        nestedCollectionViewController?.delegate = self
         
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
@@ -40,7 +42,7 @@ private extension HomeViewController {
             let screenHeight = self.view.bounds.height
             let bottomInset = self.view.safeAreaInsets.bottom
             let topInset = self.view.safeAreaInsets.top
-            let intialRowPosition = screenHeight - UINestedCollectionView.cellHeight - bottomInset - topInset
+            let intialRowPosition = screenHeight - UINestedCollectionViewController.cellHeight - bottomInset - topInset
             
             self.nestedCollectionHeightConstraint.constant = screenHeight
             self.nestedCollectionTopConstraint.constant = intialRowPosition
@@ -50,12 +52,12 @@ private extension HomeViewController {
 
 // MARK: - UINestedCollectionViewDataSource
 extension HomeViewController: UINestedCollectionViewDataSource {
-    func numberOfRows(in nestedCollectionView: UINestedCollectionView) -> Int {
+    func numberOfRows(in tableView: UITableView) -> Int {
         return 4
     }
     
-    func nestedCollectionView(_ nestedCollectionView: UINestedCollectionView,
-                              viewModelsAt row: Int) -> [UINestedCollectionViewRowCellViewModel] {
+    func tableView(_ tableView: UITableView,
+                   viewModelsFor row: Int) -> [UINestedCollectionViewRowCellViewModel] {
         
         let homePlaceViewModel = HomePlaceViewModel(title: "Mammoth Mountain",
                                                     detail: "22 mi",
@@ -68,12 +70,12 @@ extension HomeViewController: UINestedCollectionViewDataSource {
 
 // MARK: - UINestedCollectionViewDelegate
 extension HomeViewController: UINestedCollectionViewDelegate {
-    func nestedCollectionView(_ nestedCollectionView: UINestedCollectionView,
-                              didRespondToPanGesture sender: UIPanGestureRecognizer) {
+    func tableView(_ tableView: UITableView,
+                   didRespondToPanGesture sender: UIPanGestureRecognizer) {
         
-        let verticalVelocity = sender.velocity(in: nestedCollectionView).y
-        let verticalPosition = sender.translation(in: view).y
-        let verticalContentOffset = nestedCollectionView.contentOffset.y
+        let verticalVelocity = sender.velocity(in: tableView).y
+        let verticalTranslation = sender.translation(in: view).y
+        let verticalContentOffset = tableView.contentOffset.y
         
         guard verticalContentOffset <= 0.0 else {
             return
@@ -86,6 +88,18 @@ extension HomeViewController: UINestedCollectionViewDelegate {
             return
         }
         
-        nestedCollectionTopConstraint.constant += verticalPosition
+        tableView.frame.origin.y = tableView.frame.origin.y + verticalTranslation
+    }
+}
+
+private extension HomeViewController {
+    func progressAlongAxis(pointOnAxis: CGFloat,
+                           axisLength: CGFloat) -> CGFloat {
+        
+        let movementOnAxis = pointOnAxis / axisLength
+        let positiveMovementOnAxis = fmaxf(Float(movementOnAxis), 0.0)
+        let positiveMovementOnAxisPercent = fminf(positiveMovementOnAxis, 1.0)
+        
+        return CGFloat(positiveMovementOnAxisPercent)
     }
 }
