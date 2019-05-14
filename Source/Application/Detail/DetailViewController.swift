@@ -19,7 +19,7 @@ extension DetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         
-        return 4
+        return 12
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -46,6 +46,7 @@ extension DetailViewController: UICollectionViewDelegate {
     }
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
 extension DetailViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
@@ -73,4 +74,10 @@ extension DetailViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-
+// MARK: - Static Properties
+extension DetailViewController {
+    static let imageCollectionHeight: CGFloat = 400
+    static let directionButtonHeight: CGFloat = 72
+    static let topTextPadding: CGFloat = 48
+    static let bottomTextPadding: CGFloat = 48
+}

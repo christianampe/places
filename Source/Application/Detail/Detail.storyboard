@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bel-DU-5Fw">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bel-DU-5Fw">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="BUF-WX-nhI">
@@ -96,14 +96,14 @@
                                                 <outlet property="delegate" destination="bWR-px-210" id="60M-j8-tCI"/>
                                             </connections>
                                         </collectionView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idb-Va-jUs">
-                                            <rect key="frame" x="32" y="520" width="350" height="305.5"/>
-                                            <mutableString key="text">Location
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idb-Va-jUs">
+                                            <rect key="frame" x="32" y="520" width="350" height="255"/>
+                                            <string key="text">Location
 California, USA
 
 Lorem ipsum dolor sit amet, te pri alii ornatus, cum id libris inimicus omittantur. Sea no diam invenire aliquando, aeque meliore erroribus ne eum, quod magna minimum ut sed. In ceteros definitiones cum, at eos graeco accusamus, te nec diam doming invenire. Hinc nominavi volutpat pri ea.
 
-Ius duis interpretaris ad, vel meis libris recusabo te, an mel volumus contentiones. Eam hinc eruditi ad. Docendi contentiones necessitatibus nec no, amet elitr eam an. Ferri ornatus signiferumque pri et.</mutableString>
+Ius duis interpretaris ad, vel meis libris recusabo te, an mel volumus contentiones. Eam hinc eruditi ad. Docendi contentiones necessitatibus nec no, amet elitr eam an. Ferri ornatus signiferumque pri et.</string>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -126,6 +126,7 @@ Ius duis interpretaris ad, vel meis libris recusabo te, an mel volumus contentio
                                         <constraint firstAttribute="trailing" secondItem="huk-QW-vcJ" secondAttribute="trailing" id="Bjd-qQ-y5H"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="idb-Va-jUs" secondAttribute="trailing" constant="24" id="CfK-WJ-McW"/>
                                         <constraint firstItem="crb-Io-Hp2" firstAttribute="leading" secondItem="bWR-px-210" secondAttribute="leading" id="RCM-jS-8af"/>
+                                        <constraint firstAttribute="bottom" secondItem="idb-Va-jUs" secondAttribute="bottom" constant="48" id="RCZ-Bz-mk0"/>
                                         <constraint firstItem="idb-Va-jUs" firstAttribute="leading" secondItem="bWR-px-210" secondAttribute="leadingMargin" constant="24" id="Tk8-oP-iG9"/>
                                         <constraint firstItem="idb-Va-jUs" firstAttribute="top" secondItem="crb-Io-Hp2" secondAttribute="bottom" constant="48" id="YAG-iP-4dI"/>
                                         <constraint firstItem="crb-Io-Hp2" firstAttribute="top" secondItem="huk-QW-vcJ" secondAttribute="bottom" id="ipg-JL-CMi"/>
