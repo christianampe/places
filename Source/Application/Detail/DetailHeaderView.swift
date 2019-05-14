@@ -10,8 +10,16 @@ import UIKit
 
 final class DetailHeaderView: UICollectionReusableView {
     @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var progressView: DetailProgressView!
     @IBOutlet private weak var directionsButton: UIButton!
     @IBOutlet private weak var descriptionLabel: UILabel!
+}
+
+extension DetailHeaderView {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        progressView.setNumberOfIncrements(4)
+    }
 }
 
 // MARK: - UICollectionViewDataSource
@@ -35,7 +43,14 @@ extension DetailHeaderView: UICollectionViewDelegate {
                         willDisplay cell: UICollectionViewCell,
                         forItemAt indexPath: IndexPath) {
         
+        progressView.nextIndex = indexPath.row
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        didEndDisplaying cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
         
+        progressView.unhighlight(at: indexPath.row)
     }
 }
 

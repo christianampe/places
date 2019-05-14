@@ -55,28 +55,28 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="823"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="huk-QW-vcJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="huk-QW-vcJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="600"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="400" id="Mdb-S6-WC5"/>
+                                                <constraint firstAttribute="height" constant="600" id="Mdb-S6-WC5"/>
                                             </constraints>
                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="82M-m1-ChD">
-                                                <size key="itemSize" width="392" height="387"/>
+                                                <size key="itemSize" width="412" height="584"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                             <cells>
                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DetailHeaderViewCell" id="TBQ-9i-f4G" customClass="DetailHeaderViewCell" customModule="Places" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="6.5" width="392" height="387"/>
+                                                    <rect key="frame" x="0.0" y="8" width="412" height="584"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                        <rect key="frame" x="0.0" y="0.0" width="392" height="387"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="412" height="584"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yosemite" translatesAutoresizingMaskIntoConstraints="NO" id="fIP-2C-ZZd">
-                                                                <rect key="frame" x="0.0" y="0.0" width="392" height="387"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="412" height="584"/>
                                                             </imageView>
                                                         </subviews>
                                                     </view>
@@ -96,8 +96,23 @@
                                                 <outlet property="delegate" destination="bWR-px-210" id="60M-j8-tCI"/>
                                             </connections>
                                         </collectionView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLH-Bd-Glp">
+                                            <rect key="frame" x="0.0" y="500" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="gyO-ZR-Q48" customClass="DetailProgressView" customModule="Places" customModuleProvider="target">
+                                            <rect key="frame" x="24" y="582" width="160" height="2"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="2" id="4W3-8g-btD"/>
+                                                <constraint firstAttribute="width" constant="160" id="Ett-Gw-Yem"/>
+                                            </constraints>
+                                        </stackView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idb-Va-jUs">
-                                            <rect key="frame" x="32" y="520" width="350" height="255"/>
+                                            <rect key="frame" x="32" y="720" width="350" height="55"/>
                                             <string key="text">Location
 California, USA
 
@@ -109,7 +124,7 @@ Ius duis interpretaris ad, vel meis libris recusabo te, an mel volumus contentio
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crb-Io-Hp2">
-                                            <rect key="frame" x="0.0" y="400" width="414" height="72"/>
+                                            <rect key="frame" x="0.0" y="600" width="414" height="72"/>
                                             <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="72" id="HvQ-Hs-Ifn"/>
@@ -122,6 +137,7 @@ Ius duis interpretaris ad, vel meis libris recusabo te, an mel volumus contentio
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="crb-Io-Hp2" secondAttribute="trailing" id="130-2N-XcM"/>
+                                        <constraint firstItem="gyO-ZR-Q48" firstAttribute="leading" secondItem="bWR-px-210" secondAttribute="leadingMargin" constant="16" id="34A-SJ-xgP"/>
                                         <constraint firstItem="huk-QW-vcJ" firstAttribute="leading" secondItem="bWR-px-210" secondAttribute="leading" id="9Ek-cJ-UWq"/>
                                         <constraint firstAttribute="trailing" secondItem="huk-QW-vcJ" secondAttribute="trailing" id="Bjd-qQ-y5H"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="idb-Va-jUs" secondAttribute="trailing" constant="24" id="CfK-WJ-McW"/>
@@ -129,6 +145,7 @@ Ius duis interpretaris ad, vel meis libris recusabo te, an mel volumus contentio
                                         <constraint firstAttribute="bottom" secondItem="idb-Va-jUs" secondAttribute="bottom" constant="48" id="RCZ-Bz-mk0"/>
                                         <constraint firstItem="idb-Va-jUs" firstAttribute="leading" secondItem="bWR-px-210" secondAttribute="leadingMargin" constant="24" id="Tk8-oP-iG9"/>
                                         <constraint firstItem="idb-Va-jUs" firstAttribute="top" secondItem="crb-Io-Hp2" secondAttribute="bottom" constant="48" id="YAG-iP-4dI"/>
+                                        <constraint firstItem="crb-Io-Hp2" firstAttribute="top" secondItem="gyO-ZR-Q48" secondAttribute="bottom" constant="16" id="gh2-4C-U8Y"/>
                                         <constraint firstItem="crb-Io-Hp2" firstAttribute="top" secondItem="huk-QW-vcJ" secondAttribute="bottom" id="ipg-JL-CMi"/>
                                         <constraint firstItem="huk-QW-vcJ" firstAttribute="top" secondItem="bWR-px-210" secondAttribute="top" id="pJ6-uF-x4s"/>
                                     </constraints>
@@ -136,6 +153,7 @@ Ius duis interpretaris ad, vel meis libris recusabo te, an mel volumus contentio
                                         <outlet property="collectionView" destination="huk-QW-vcJ" id="Nh7-lf-GX8"/>
                                         <outlet property="descriptionLabel" destination="idb-Va-jUs" id="6L8-Vd-Jit"/>
                                         <outlet property="directionsButton" destination="crb-Io-Hp2" id="aDO-Be-BFp"/>
+                                        <outlet property="progressView" destination="gyO-ZR-Q48" id="SHA-oG-rM0"/>
                                     </connections>
                                 </collectionReusableView>
                                 <connections>

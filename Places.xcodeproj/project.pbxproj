@@ -27,6 +27,7 @@
 		BFA6C39B228B4CA400EAD6E8 /* DetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA6C39A228B4CA400EAD6E8 /* DetailHeaderView.swift */; };
 		BFA6C39D228B4CD500EAD6E8 /* DetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA6C39C228B4CD500EAD6E8 /* DetailViewCell.swift */; };
 		BFA6C39F228B52CF00EAD6E8 /* DetailHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA6C39E228B52CF00EAD6E8 /* DetailHeaderViewCell.swift */; };
+		BFA6C3A1228B6E5100EAD6E8 /* DetailProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA6C3A0228B6E5100EAD6E8 /* DetailProgressView.swift */; };
 		BFBA6BE2228752680054C330 /* UIStoryboard+Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6BDB228752670054C330 /* UIStoryboard+Identifiers.swift */; };
 		BFBA6BE3228752680054C330 /* UIImage+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6BDC228752670054C330 /* UIImage+Additions.swift */; };
 		BFBA6BE5228752680054C330 /* Array++.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6BDE228752680054C330 /* Array++.swift */; };
@@ -129,6 +130,7 @@
 		BFA6C39A228B4CA400EAD6E8 /* DetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeaderView.swift; sourceTree = "<group>"; };
 		BFA6C39C228B4CD500EAD6E8 /* DetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewCell.swift; sourceTree = "<group>"; };
 		BFA6C39E228B52CF00EAD6E8 /* DetailHeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeaderViewCell.swift; sourceTree = "<group>"; };
+		BFA6C3A0228B6E5100EAD6E8 /* DetailProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProgressView.swift; sourceTree = "<group>"; };
 		BFBA6BDB228752670054C330 /* UIStoryboard+Identifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Identifiers.swift"; sourceTree = "<group>"; };
 		BFBA6BDC228752670054C330 /* UIImage+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Additions.swift"; sourceTree = "<group>"; };
 		BFBA6BDE228752680054C330 /* Array++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array++.swift"; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 				BFA6C394228B410100EAD6E8 /* Detail.storyboard */,
 				BFA6C383228B40F400EAD6E8 /* DetailViewController.swift */,
 				BFA6C39A228B4CA400EAD6E8 /* DetailHeaderView.swift */,
+				BFA6C3A0228B6E5100EAD6E8 /* DetailProgressView.swift */,
 				BFA6C39E228B52CF00EAD6E8 /* DetailHeaderViewCell.swift */,
 				BFA6C39C228B4CD500EAD6E8 /* DetailViewCell.swift */,
 				BFA6C380228B40F400EAD6E8 /* DetailInput.swift */,
@@ -715,6 +718,7 @@
 				BFBA6BE7228752680054C330 /* UINavigationBar+Additions.swift in Sources */,
 				BFBA6C34228767240054C330 /* UIRoundImageView.swift in Sources */,
 				BFD6D61822872C220020F217 /* UIViewController+StoryboardIdentifiable.swift in Sources */,
+				BFA6C3A1228B6E5100EAD6E8 /* DetailProgressView.swift in Sources */,
 				BFA6C38E228B40F400EAD6E8 /* DetailProtocols.swift in Sources */,
 				BFBA6BE8228752680054C330 /* URL++.swift in Sources */,
 				BFD6D60422872BDA0020F217 /* Networking.swift in Sources */,
