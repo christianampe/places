@@ -12,7 +12,7 @@ extension UIImageView {
     
     /// Rounds an image view.
     func round() {
-        layer.cornerRadius = frame.width / 2
+        layer.round()
         clipsToBounds = true
     }
 }
