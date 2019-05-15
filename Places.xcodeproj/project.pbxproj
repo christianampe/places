@@ -48,20 +48,10 @@
 		BFBA6C12228754360054C330 /* HomeOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6C08228754360054C330 /* HomeOutput.swift */; };
 		BFBA6C13228754360054C330 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6C09228754360054C330 /* HomeViewModel.swift */; };
 		BFBA6C16228754420054C330 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBA6C15228754420054C330 /* Home.storyboard */; };
-		BFBA6C182287544F0054C330 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBA6C172287544F0054C330 /* Profile.storyboard */; };
 		BFBA6C26228759CA0054C330 /* UINestedCollectionViewRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6C25228759CA0054C330 /* UINestedCollectionViewRowCell.swift */; };
 		BFBA6C3022875AF90054C330 /* UINestedCollectionViewColumnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6C2F22875AF90054C330 /* UINestedCollectionViewColumnCell.swift */; };
 		BFBA6C34228767240054C330 /* UIRoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6C33228767240054C330 /* UIRoundImageView.swift */; };
 		BFBA6C3622876A830054C330 /* UINestedCollectionViewRowCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA6C3522876A830054C330 /* UINestedCollectionViewRowCellViewModel.swift */; };
-		BFD6D5D122872ABE0020F217 /* ProfileInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6D5C722872ABE0020F217 /* ProfileInput.swift */; };
-		BFD6D5D222872ABE0020F217 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6D5C822872ABE0020F217 /* ProfilePresenter.swift */; };
-		BFD6D5D322872ABE0020F217 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6D5C922872ABE0020F217 /* ProfileRouter.swift */; };
-		BFD6D5D422872ABE0020F217 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6D5CA22872ABE0020F217 /* ProfileViewController.swift */; };
-		BFD6D5D522872ABE0020F217 /* ProfileProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6D5CB22872ABE0020F217 /* ProfileProtocols.swift */; };
-		BFD6D5D622872ABE0020F217 /* ProfileBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6D5CC22872ABE0020F217 /* ProfileBuilder.swift */; };
-		BFD6D5D722872ABE0020F217 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6D5CD22872ABE0020F217 /* ProfileInteractor.swift */; };
-		BFD6D5D822872ABE0020F217 /* ProfileOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6D5CE22872ABE0020F217 /* ProfileOutput.swift */; };
-		BFD6D5D922872ABE0020F217 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6D5CF22872ABE0020F217 /* ProfileViewModel.swift */; };
 		BFD6D5FC22872BDA0020F217 /* NetworkingRequestValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6D5F222872BDA0020F217 /* NetworkingRequestValidation.swift */; };
 		BFD6D5FD22872BDA0020F217 /* NetworkingRequestHTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6D5F322872BDA0020F217 /* NetworkingRequestHTTPMethod.swift */; };
 		BFD6D5FE22872BDA0020F217 /* NetworkingRequestBodyEncodingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6D5F422872BDA0020F217 /* NetworkingRequestBodyEncodingType.swift */; };
@@ -154,20 +144,10 @@
 		BFBA6C08228754360054C330 /* HomeOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeOutput.swift; sourceTree = "<group>"; };
 		BFBA6C09228754360054C330 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		BFBA6C15228754420054C330 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		BFBA6C172287544F0054C330 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		BFBA6C25228759CA0054C330 /* UINestedCollectionViewRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINestedCollectionViewRowCell.swift; sourceTree = "<group>"; };
 		BFBA6C2F22875AF90054C330 /* UINestedCollectionViewColumnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINestedCollectionViewColumnCell.swift; sourceTree = "<group>"; };
 		BFBA6C33228767240054C330 /* UIRoundImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIRoundImageView.swift; sourceTree = "<group>"; };
 		BFBA6C3522876A830054C330 /* UINestedCollectionViewRowCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINestedCollectionViewRowCellViewModel.swift; sourceTree = "<group>"; };
-		BFD6D5C722872ABE0020F217 /* ProfileInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInput.swift; sourceTree = "<group>"; };
-		BFD6D5C822872ABE0020F217 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
-		BFD6D5C922872ABE0020F217 /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
-		BFD6D5CA22872ABE0020F217 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		BFD6D5CB22872ABE0020F217 /* ProfileProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProtocols.swift; sourceTree = "<group>"; };
-		BFD6D5CC22872ABE0020F217 /* ProfileBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBuilder.swift; sourceTree = "<group>"; };
-		BFD6D5CD22872ABE0020F217 /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
-		BFD6D5CE22872ABE0020F217 /* ProfileOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOutput.swift; sourceTree = "<group>"; };
-		BFD6D5CF22872ABE0020F217 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		BFD6D5F222872BDA0020F217 /* NetworkingRequestValidation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingRequestValidation.swift; sourceTree = "<group>"; };
 		BFD6D5F322872BDA0020F217 /* NetworkingRequestHTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingRequestHTTPMethod.swift; sourceTree = "<group>"; };
 		BFD6D5F422872BDA0020F217 /* NetworkingRequestBodyEncodingType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingRequestBodyEncodingType.swift; sourceTree = "<group>"; };
@@ -408,23 +388,6 @@
 			path = "Round Image";
 			sourceTree = "<group>";
 		};
-		BFD6D5C622872AA90020F217 /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				BFD6D5C722872ABE0020F217 /* ProfileInput.swift */,
-				BFD6D5C822872ABE0020F217 /* ProfilePresenter.swift */,
-				BFD6D5C922872ABE0020F217 /* ProfileRouter.swift */,
-				BFD6D5CA22872ABE0020F217 /* ProfileViewController.swift */,
-				BFD6D5CB22872ABE0020F217 /* ProfileProtocols.swift */,
-				BFD6D5CC22872ABE0020F217 /* ProfileBuilder.swift */,
-				BFD6D5CD22872ABE0020F217 /* ProfileInteractor.swift */,
-				BFD6D5CE22872ABE0020F217 /* ProfileOutput.swift */,
-				BFD6D5CF22872ABE0020F217 /* ProfileViewModel.swift */,
-				BFBA6C172287544F0054C330 /* Profile.storyboard */,
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
 		BFD6D5EF22872B210020F217 /* Implementations */ = {
 			isa = PBXGroup;
 			children = (
@@ -563,7 +526,6 @@
 				BF599E2022871FAA00B68163 /* App Launch */,
 				BFBA6BEC228753E70054C330 /* Home */,
 				BFA6C37E228B40DF00EAD6E8 /* Detail */,
-				BFD6D5C622872AA90020F217 /* Profile */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -686,7 +648,6 @@
 				BFF506922286423C00CA5B0B /* AppLaunch.storyboard in Resources */,
 				BF1D364D228BA41600CD65D7 /* UIMap.storyboard in Resources */,
 				BFBA6BEB2287531D0054C330 /* Assignment.pdf in Resources */,
-				BFBA6C182287544F0054C330 /* Profile.storyboard in Resources */,
 				BFA6C395228B410100EAD6E8 /* Detail.storyboard in Resources */,
 				BFF5068F2286423C00CA5B0B /* Assets.xcassets in Resources */,
 				BFBA6C16228754420054C330 /* Home.storyboard in Resources */,
@@ -722,7 +683,6 @@
 				BFD6D60522872BDA0020F217 /* NetworkingRequest.swift in Sources */,
 				BFBA6C26228759CA0054C330 /* UINestedCollectionViewRowCell.swift in Sources */,
 				BF1D3653228BB11900CD65D7 /* UIMapViewPlace.swift in Sources */,
-				BFD6D5D422872ABE0020F217 /* ProfileViewController.swift in Sources */,
 				BFD6D61A22872C220020F217 /* StoryboardIdentifiable+Self.swift in Sources */,
 				BFA6C39B228B4CA400EAD6E8 /* DetailHeaderView.swift in Sources */,
 				BFD6D60122872BDA0020F217 /* NetworkingRequestBody.swift in Sources */,
@@ -730,20 +690,17 @@
 				BFBA6BE2228752680054C330 /* UIStoryboard+Identifiers.swift in Sources */,
 				BFD6D61E22872C220020F217 /* UICollectionReusableView+StoryboardIdentifiable.swift in Sources */,
 				BFA6C39F228B52CF00EAD6E8 /* DetailHeaderViewCell.swift in Sources */,
-				BFD6D5D122872ABE0020F217 /* ProfileInput.swift in Sources */,
 				BFBA6C0B228754360054C330 /* HomeInput.swift in Sources */,
 				BFBA6C10228754360054C330 /* HomeBuilder.swift in Sources */,
 				BFD6D5FE22872BDA0020F217 /* NetworkingRequestBodyEncodingType.swift in Sources */,
 				BFBA6BE5228752680054C330 /* Array++.swift in Sources */,
 				BFBA6C12228754360054C330 /* HomeOutput.swift in Sources */,
-				BFD6D5D822872ABE0020F217 /* ProfileOutput.swift in Sources */,
 				BFD6D62622872C2C0020F217 /* XIBView.swift in Sources */,
 				BFBA6C3622876A830054C330 /* UINestedCollectionViewRowCellViewModel.swift in Sources */,
 				BFF506852286423B00CA5B0B /* AppDelegate.swift in Sources */,
 				BFA6C392228B40F400EAD6E8 /* DetailViewModel.swift in Sources */,
 				BFD6D5FC22872BDA0020F217 /* NetworkingRequestValidation.swift in Sources */,
 				BF29F9FB2288A8980015746A /* Place.swift in Sources */,
-				BFD6D5D222872ABE0020F217 /* ProfilePresenter.swift in Sources */,
 				BF29F9FD2288B1DD0015746A /* CALayer+Additions.swift in Sources */,
 				BFD6D62422872C2C0020F217 /* XIBIdentifiable.swift in Sources */,
 				BFA6C391228B40F400EAD6E8 /* DetailOutput.swift in Sources */,
@@ -763,10 +720,7 @@
 				BFD6D60C22872C170020F217 /* SegueIdentifiable.swift in Sources */,
 				BFD6D60D22872C170020F217 /* SegueIdentifiable+UIViewController.swift in Sources */,
 				BFBA6C0E228754360054C330 /* HomeViewController.swift in Sources */,
-				BFD6D5D322872ABE0020F217 /* ProfileRouter.swift in Sources */,
-				BFD6D5D922872ABE0020F217 /* ProfileViewModel.swift in Sources */,
 				BFBA6C13228754360054C330 /* HomeViewModel.swift in Sources */,
-				BFD6D5D522872ABE0020F217 /* ProfileProtocols.swift in Sources */,
 				BFD6D60222872BDA0020F217 /* NetworkingResponse.swift in Sources */,
 				BFA6C390228B40F400EAD6E8 /* DetailInteractor.swift in Sources */,
 				BFD6D61F22872C220020F217 /* UITableView+StoryboardIdentifiable.swift in Sources */,
@@ -776,7 +730,6 @@
 				BFD6D60322872BDA0020F217 /* NetworkingService.swift in Sources */,
 				BFBA6BE6228752680054C330 /* UIImageView+Additions.swift in Sources */,
 				BFA6C38D228B40F400EAD6E8 /* DetailViewController.swift in Sources */,
-				BFD6D5D722872ABE0020F217 /* ProfileInteractor.swift in Sources */,
 				BFA6C38F228B40F400EAD6E8 /* DetailBuilder.swift in Sources */,
 				BF1D3650228BA43000CD65D7 /* UIMapViewController.swift in Sources */,
 				BFBA6C11228754360054C330 /* HomeInteractor.swift in Sources */,
@@ -785,7 +738,6 @@
 				BFD6D61B22872C220020F217 /* UITableViewCell+StoryboardIdentifiable.swift in Sources */,
 				BFBA6C0F228754360054C330 /* HomeProtocols.swift in Sources */,
 				BFD6D61922872C220020F217 /* UIStoryboard+StoryboardIdentifiable.swift in Sources */,
-				BFD6D5D622872ABE0020F217 /* ProfileBuilder.swift in Sources */,
 				BFD6D5FD22872BDA0020F217 /* NetworkingRequestHTTPMethod.swift in Sources */,
 				BF29F9F42288995B0015746A /* UINestedCollectionViewDelegate.swift in Sources */,
 				BFBA6C0C228754360054C330 /* HomePresenter.swift in Sources */,
