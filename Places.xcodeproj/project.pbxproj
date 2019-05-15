@@ -22,7 +22,7 @@
 		BF29F9FD2288B1DD0015746A /* CALayer+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29F9FC2288B1DD0015746A /* CALayer+Additions.swift */; };
 		BF29FA05228A50450015746A /* UINestedCollection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF29FA04228A50450015746A /* UINestedCollection.storyboard */; };
 		BF29FA07228A505E0015746A /* UINestedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29FA06228A505E0015746A /* UINestedCollectionViewController.swift */; };
-		BF29FA0A228A5EB80015746A /* UICollectionSnappingFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29FA09228A5EB80015746A /* UICollectionSnappingFlowLayout.swift */; };
+		BF29FA0A228A5EB80015746A /* UINestedCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29FA09228A5EB80015746A /* UINestedCollectionViewLayout.swift */; };
 		BFA6C38A228B40F400EAD6E8 /* DetailInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA6C380228B40F400EAD6E8 /* DetailInput.swift */; };
 		BFA6C38B228B40F400EAD6E8 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA6C381228B40F400EAD6E8 /* DetailPresenter.swift */; };
 		BFA6C38C228B40F400EAD6E8 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA6C382228B40F400EAD6E8 /* DetailRouter.swift */; };
@@ -123,7 +123,7 @@
 		BF29F9FC2288B1DD0015746A /* CALayer+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Additions.swift"; sourceTree = "<group>"; };
 		BF29FA04228A50450015746A /* UINestedCollection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UINestedCollection.storyboard; sourceTree = "<group>"; };
 		BF29FA06228A505E0015746A /* UINestedCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINestedCollectionViewController.swift; sourceTree = "<group>"; };
-		BF29FA09228A5EB80015746A /* UICollectionSnappingFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionSnappingFlowLayout.swift; sourceTree = "<group>"; };
+		BF29FA09228A5EB80015746A /* UINestedCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINestedCollectionViewLayout.swift; sourceTree = "<group>"; };
 		BFA6C380228B40F400EAD6E8 /* DetailInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInput.swift; sourceTree = "<group>"; };
 		BFA6C381228B40F400EAD6E8 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		BFA6C382228B40F400EAD6E8 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
@@ -310,7 +310,7 @@
 		BF29FA08228A5E800015746A /* Layout */ = {
 			isa = PBXGroup;
 			children = (
-				BF29FA09228A5EB80015746A /* UICollectionSnappingFlowLayout.swift */,
+				BF29FA09228A5EB80015746A /* UINestedCollectionViewLayout.swift */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -754,7 +754,7 @@
 				BFA6C38F228B40F400EAD6E8 /* DetailBuilder.swift in Sources */,
 				BF1D3650228BA43000CD65D7 /* UIMapViewController.swift in Sources */,
 				BFBA6C11228754360054C330 /* HomeInteractor.swift in Sources */,
-				BF29FA0A228A5EB80015746A /* UICollectionSnappingFlowLayout.swift in Sources */,
+				BF29FA0A228A5EB80015746A /* UINestedCollectionViewLayout.swift in Sources */,
 				BFD6D61D22872C220020F217 /* UICollectionView+StoryboardIdentifiable.swift in Sources */,
 				BFD6D61B22872C220020F217 /* UITableViewCell+StoryboardIdentifiable.swift in Sources */,
 				BFBA6C0F228754360054C330 /* HomeProtocols.swift in Sources */,

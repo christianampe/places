@@ -22,7 +22,7 @@ class UINestedCollectionViewColumnCell: UITableViewCell {
     
     /// A `UICollectionView` which contains the individual objects to display.
     @IBOutlet private weak var collection: UICollectionView!
-    @IBOutlet private weak var layout: UICollectionSnappingFlowLayout!
+    @IBOutlet private weak var layout: UINestedCollectionViewLayout!
     
     /// The view models used to populate the `UICollectionView`.
     private var viewModels = [UINestedCollectionViewRowCellViewModel]()

@@ -1,5 +1,5 @@
 //
-//  UICollectionSnappingFlowLayout.swift
+//  UINestedCollectionViewLayout.swift
 //  Places
 //
 //  Created by Christian Ampe on 5/13/19.
@@ -13,9 +13,12 @@ protocol UICollectionSnappingFlowLayoutDelegate: class {
                 didSnapToItemAt index: Int)
 }
 
-class UICollectionSnappingFlowLayout: UICollectionViewFlowLayout {
+class UINestedCollectionViewLayout: UICollectionViewFlowLayout {
     weak var delegate: UICollectionSnappingFlowLayoutDelegate?
-    
+}
+
+// MARK: - Overrides
+extension UINestedCollectionViewLayout {
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint,
                                       withScrollingVelocity velocity: CGPoint) -> CGPoint {
         
