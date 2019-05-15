@@ -31,13 +31,15 @@ class UICollectionSnappingFlowLayout: UICollectionViewFlowLayout {
         
         var itemIndex = round(collectionView.contentOffset.x / itemSpace)
         
-        delegate?.layout(self, didSnapToItemAt: Int(itemIndex))
-        
         if horizontalVelocity > 0 {
             itemIndex += 1
         } else if horizontalVelocity < 0 {
             itemIndex -= 1
         }
+        
+        print(itemIndex)
+        
+        delegate?.layout(self, didSnapToItemAt: Int(itemIndex))
         
         return CGPoint(x: itemIndex * itemSpace,
                        y: parent.y)

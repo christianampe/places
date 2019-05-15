@@ -33,6 +33,7 @@ extension UIMapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView,
                  didSelect view: MKAnnotationView) {
         
+        
     }
 }
 
@@ -54,15 +55,10 @@ extension UIMapViewController {
         let userAnnotation = MKPointAnnotation()
         userAnnotation.coordinate = locationManager.location!.coordinate
         
-        if let marker = annotations[place.id] {
-            mapView.showAnnotations([userAnnotation, marker], animated: true)
-            mapView.selectAnnotation(marker, animated: true)
-        } else {
-            let marker = annotation(from: place)
-            mapView.addAnnotation(marker)
-            mapView.showAnnotations([userAnnotation, marker], animated: true)
-            mapView.selectAnnotation(marker, animated: true)
-        }
+        let marker = annotations[place.id] ?? annotation(from: place)
+        mapView.showAnnotations([userAnnotation, marker], animated: true)
+        mapView.selectAnnotation(marker, animated: true)
+        mapView.view(for: userAnnotation)?.isHidden = true
     }
 }
 

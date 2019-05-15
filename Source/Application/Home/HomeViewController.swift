@@ -22,7 +22,9 @@ final class HomeViewController: UIViewController, HomeViewProtocol {
         
         let joshuaTree = Place(id: "2", latitude: 34.134728, longitude: -116.313066, title: "Joshua Tree", detail: "20 mi", iconURLString: "", backgroundURLString: "")
         
-        return [yosemite, joshuaTree]
+        let cannonBeach = Place(id: "3", latitude: 45.8917738, longitude: -123.9615274, title: "Cannon Beach ", detail: "140 mi", iconURLString: "", backgroundURLString: "")
+        
+        return [yosemite, joshuaTree, cannonBeach]
     }()
 }
 
