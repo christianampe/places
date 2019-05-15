@@ -58,16 +58,11 @@ extension UIMapViewController {
         let marker = annotations[place.id] ?? annotation(from: place)
         mapView.showAnnotations([userAnnotation, marker], animated: true)
         mapView.selectAnnotation(marker, animated: true)
-        mapView.view(for: userAnnotation)?.isHidden = true
     }
 }
 
 // MARK: - Helper Methods
 private extension UIMapViewController {
-    func scroll(to annotation: MKPointAnnotation) {
-        
-    }
-    
     func annotation(from place: UIMapViewPlace) -> MKPointAnnotation {
         let annotation = MKPointAnnotation()
         annotation.coordinate = CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longitude)
