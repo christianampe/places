@@ -119,6 +119,7 @@
 		BF1D3675228BE53400CD65D7 /* AppBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppBuilder.swift; sourceTree = "<group>"; };
 		BF1D3677228BE57600CD65D7 /* UIClearNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIClearNavigationController.swift; sourceTree = "<group>"; };
 		BF1D3679228BE59200CD65D7 /* AppProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppProtocols.swift; sourceTree = "<group>"; };
+		BF1D367B228C97D800CD65D7 /* Places.studio */ = {isa = PBXFileReference; lastKnownFileType = file; path = Places.studio; sourceTree = "<group>"; };
 		BF29F9FA2288A8980015746A /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		BF29F9FC2288B1DD0015746A /* CALayer+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Additions.swift"; sourceTree = "<group>"; };
 		BF29FA04228A50450015746A /* UINestedCollection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UINestedCollection.storyboard; sourceTree = "<group>"; };
@@ -362,6 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				BFBA6BEA2287531D0054C330 /* Assignment.pdf */,
+				BF1D367B228C97D800CD65D7 /* Places.studio */,
 			);
 			path = Documents;
 			sourceTree = "<group>";
