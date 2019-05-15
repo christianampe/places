@@ -37,8 +37,6 @@ class UICollectionSnappingFlowLayout: UICollectionViewFlowLayout {
             itemIndex -= 1
         }
         
-        print(itemIndex)
-        
         delegate?.layout(self, didSnapToItemAt: Int(itemIndex))
         
         return CGPoint(x: itemIndex * itemSpace,

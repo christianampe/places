@@ -86,7 +86,6 @@
 		BFD6D62622872C2C0020F217 /* XIBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6D62222872C2C0020F217 /* XIBView.swift */; };
 		BFD6D62722872C2C0020F217 /* XIBIdentifiable+Self.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6D62322872C2C0020F217 /* XIBIdentifiable+Self.swift */; };
 		BFF506852286423B00CA5B0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF506842286423B00CA5B0B /* AppDelegate.swift */; };
-		BFF5068D2286423B00CA5B0B /* Places.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BFF5068B2286423B00CA5B0B /* Places.xcdatamodeld */; };
 		BFF5068F2286423C00CA5B0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFF5068E2286423C00CA5B0B /* Assets.xcassets */; };
 		BFF506922286423C00CA5B0B /* AppLaunch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFF506902286423C00CA5B0B /* AppLaunch.storyboard */; };
 		BFF5069D2286423C00CA5B0B /* PlacesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF5069C2286423C00CA5B0B /* PlacesTests.swift */; };
@@ -191,7 +190,6 @@
 		BFD6D62322872C2C0020F217 /* XIBIdentifiable+Self.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XIBIdentifiable+Self.swift"; sourceTree = "<group>"; };
 		BFF506812286423B00CA5B0B /* Places.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Places.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFF506842286423B00CA5B0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BFF5068C2286423B00CA5B0B /* Places.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Places.xcdatamodel; sourceTree = "<group>"; };
 		BFF5068E2286423C00CA5B0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFF506912286423C00CA5B0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AppLaunch.storyboard; sourceTree = "<group>"; };
 		BFF506932286423C00CA5B0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -276,12 +274,12 @@
 		BF1D3654228BE4A200CD65D7 /* App Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				BF1D3672228BE53000CD65D7 /* App.storyboard */,
 				BF1D3679228BE59200CD65D7 /* AppProtocols.swift */,
-				BF1D366B228BE52600CD65D7 /* AppInteractor.swift */,
-				BF1D366D228BE52700CD65D7 /* AppPresenter.swift */,
-				BF1D366C228BE52600CD65D7 /* AppRouter.swift */,
+				BF1D3672228BE53000CD65D7 /* App.storyboard */,
 				BF1D3671228BE53000CD65D7 /* AppNavigationController.swift */,
+				BF1D366D228BE52700CD65D7 /* AppPresenter.swift */,
+				BF1D366B228BE52600CD65D7 /* AppInteractor.swift */,
+				BF1D366C228BE52600CD65D7 /* AppRouter.swift */,
 				BF1D3675228BE53400CD65D7 /* AppBuilder.swift */,
 			);
 			path = "App Coordinator";
@@ -380,11 +378,11 @@
 				BFBA6C05228754360054C330 /* HomeProtocols.swift */,
 				BFBA6C15228754420054C330 /* Home.storyboard */,
 				BFBA6C04228754360054C330 /* HomeViewController.swift */,
-				BFBA6C01228754360054C330 /* HomeInput.swift */,
 				BFBA6C02228754360054C330 /* HomePresenter.swift */,
+				BFBA6C07228754360054C330 /* HomeInteractor.swift */,
 				BFBA6C03228754360054C330 /* HomeRouter.swift */,
 				BFBA6C06228754360054C330 /* HomeBuilder.swift */,
-				BFBA6C07228754360054C330 /* HomeInteractor.swift */,
+				BFBA6C01228754360054C330 /* HomeInput.swift */,
 				BFBA6C08228754360054C330 /* HomeOutput.swift */,
 				BFBA6C09228754360054C330 /* HomeViewModel.swift */,
 				BF29F9FA2288A8980015746A /* Place.swift */,
@@ -557,7 +555,6 @@
 		BFF506B82286438E00CA5B0B /* Storages */ = {
 			isa = PBXGroup;
 			children = (
-				BFF5068B2286423B00CA5B0B /* Places.xcdatamodeld */,
 				BFF506932286423C00CA5B0B /* Info.plist */,
 				BFF5068E2286423C00CA5B0B /* Assets.xcassets */,
 			);
@@ -733,7 +730,6 @@
 				BFA6C391228B40F400EAD6E8 /* DetailOutput.swift in Sources */,
 				BFA6C38A228B40F400EAD6E8 /* DetailInput.swift in Sources */,
 				BF29FA07228A505E0015746A /* UINestedCollectionViewController.swift in Sources */,
-				BFF5068D2286423B00CA5B0B /* Places.xcdatamodeld in Sources */,
 				BF1D366F228BE52700CD65D7 /* AppRouter.swift in Sources */,
 				BFBA6BE7228752680054C330 /* UINavigationBar+Additions.swift in Sources */,
 				BFBA6C34228767240054C330 /* UIRoundImageView.swift in Sources */,
@@ -1100,19 +1096,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		BFF5068B2286423B00CA5B0B /* Places.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				BFF5068C2286423B00CA5B0B /* Places.xcdatamodel */,
-			);
-			currentVersion = BFF5068C2286423B00CA5B0B /* Places.xcdatamodel */;
-			path = Places.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = BFF506792286423B00CA5B0B /* Project object */;
 }
