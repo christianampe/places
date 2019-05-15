@@ -226,6 +226,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF1D3649228BA38500CD65D7 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				BF29F9F82288A2ED0015746A /* Interfaces */,
+				BF29F9F92288A2F40015746A /* Classes */,
+				BF29F9F72288A2E70015746A /* Protocols */,
+				BF29FA08228A5E800015746A /* Layout */,
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
+		BF1D364A228BA39E00CD65D7 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		BF29F9F72288A2E70015746A /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,6 +345,8 @@
 				BFBA6C08228754360054C330 /* HomeOutput.swift */,
 				BFBA6C09228754360054C330 /* HomeViewModel.swift */,
 				BF29F9FA2288A8980015746A /* HomePlaceCellViewModel.swift */,
+				BF1D364A228BA39E00CD65D7 /* Map */,
+				BF1D3649228BA38500CD65D7 /* Collection */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -343,28 +363,8 @@
 			isa = PBXGroup;
 			children = (
 				BFBA6C32228767150054C330 /* Round Image */,
-				BFBA6C1C228757F40054C330 /* Nested Collection */,
-				BFBA6C1B228757E10054C330 /* Places Map */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		BFBA6C1B228757E10054C330 /* Places Map */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Places Map";
-			sourceTree = "<group>";
-		};
-		BFBA6C1C228757F40054C330 /* Nested Collection */ = {
-			isa = PBXGroup;
-			children = (
-				BF29F9F82288A2ED0015746A /* Interfaces */,
-				BF29F9F92288A2F40015746A /* Classes */,
-				BF29F9F72288A2E70015746A /* Protocols */,
-				BF29FA08228A5E800015746A /* Layout */,
-			);
-			path = "Nested Collection";
 			sourceTree = "<group>";
 		};
 		BFBA6C32228767150054C330 /* Round Image */ = {
