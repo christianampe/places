@@ -339,11 +339,11 @@
 				BFA6C3A0228B6E5100EAD6E8 /* DetailProgressView.swift */,
 				BFA6C39E228B52CF00EAD6E8 /* DetailHeaderViewCell.swift */,
 				BFA6C39C228B4CD500EAD6E8 /* DetailViewCell.swift */,
-				BFA6C380228B40F400EAD6E8 /* DetailInput.swift */,
 				BFA6C381228B40F400EAD6E8 /* DetailPresenter.swift */,
+				BFA6C386228B40F400EAD6E8 /* DetailInteractor.swift */,
 				BFA6C382228B40F400EAD6E8 /* DetailRouter.swift */,
 				BFA6C385228B40F400EAD6E8 /* DetailBuilder.swift */,
-				BFA6C386228B40F400EAD6E8 /* DetailInteractor.swift */,
+				BFA6C380228B40F400EAD6E8 /* DetailInput.swift */,
 				BFA6C387228B40F400EAD6E8 /* DetailOutput.swift */,
 				BFA6C388228B40F400EAD6E8 /* DetailViewModel.swift */,
 			);
