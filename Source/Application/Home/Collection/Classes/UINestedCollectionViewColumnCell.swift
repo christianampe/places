@@ -40,6 +40,11 @@ extension UINestedCollectionViewColumnCell {
     func set(properties newViewModels: [UINestedCollectionViewRowCellViewModel]) {
         viewModels = newViewModels
     }
+    
+    func focus(index: Int) {
+        let requestedCollectionViewIndexPath = IndexPath(row: index, section: 0)
+        collection.scrollToItem(at: requestedCollectionViewIndexPath, at: .left, animated: true)
+    }
 }
 
 // MARK: - Lifecycle

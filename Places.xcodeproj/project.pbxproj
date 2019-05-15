@@ -18,8 +18,6 @@
 		BF1D3676228BE53400CD65D7 /* AppBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D3675228BE53400CD65D7 /* AppBuilder.swift */; };
 		BF1D3678228BE57600CD65D7 /* UIClearNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D3677228BE57600CD65D7 /* UIClearNavigationController.swift */; };
 		BF1D367A228BE59300CD65D7 /* AppProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D3679228BE59200CD65D7 /* AppProtocols.swift */; };
-		BF29F9F42288995B0015746A /* UINestedCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29F9F32288995B0015746A /* UINestedCollectionViewDelegate.swift */; };
-		BF29F9F6228899730015746A /* UINestedCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29F9F5228899730015746A /* UINestedCollectionViewDataSource.swift */; };
 		BF29F9FB2288A8980015746A /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29F9FA2288A8980015746A /* Place.swift */; };
 		BF29F9FD2288B1DD0015746A /* CALayer+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29F9FC2288B1DD0015746A /* CALayer+Additions.swift */; };
 		BF29FA05228A50450015746A /* UINestedCollection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF29FA04228A50450015746A /* UINestedCollection.storyboard */; };
@@ -121,8 +119,6 @@
 		BF1D3675228BE53400CD65D7 /* AppBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppBuilder.swift; sourceTree = "<group>"; };
 		BF1D3677228BE57600CD65D7 /* UIClearNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIClearNavigationController.swift; sourceTree = "<group>"; };
 		BF1D3679228BE59200CD65D7 /* AppProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppProtocols.swift; sourceTree = "<group>"; };
-		BF29F9F32288995B0015746A /* UINestedCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINestedCollectionViewDelegate.swift; sourceTree = "<group>"; };
-		BF29F9F5228899730015746A /* UINestedCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINestedCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		BF29F9FA2288A8980015746A /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		BF29F9FC2288B1DD0015746A /* CALayer+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Additions.swift"; sourceTree = "<group>"; };
 		BF29FA04228A50450015746A /* UINestedCollection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UINestedCollection.storyboard; sourceTree = "<group>"; };
@@ -231,7 +227,7 @@
 			children = (
 				BF29F9F82288A2ED0015746A /* Interfaces */,
 				BF29F9F92288A2F40015746A /* Classes */,
-				BF29F9F72288A2E70015746A /* Protocols */,
+				BF29F9F72288A2E70015746A /* Objects */,
 				BF29FA08228A5E800015746A /* Layout */,
 			);
 			path = Collection;
@@ -242,7 +238,7 @@
 			children = (
 				BF1D364B228BA3EB00CD65D7 /* Interfaces */,
 				BF1D364E228BA41900CD65D7 /* Classes */,
-				BF1D3651228BB0EC00CD65D7 /* Protocols */,
+				BF1D3651228BB0EC00CD65D7 /* Objects */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -263,12 +259,12 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		BF1D3651228BB0EC00CD65D7 /* Protocols */ = {
+		BF1D3651228BB0EC00CD65D7 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
 				BF1D3652228BB11900CD65D7 /* UIMapViewPlace.swift */,
 			);
-			path = Protocols;
+			path = Objects;
 			sourceTree = "<group>";
 		};
 		BF1D3654228BE4A200CD65D7 /* App Coordinator */ = {
@@ -285,14 +281,12 @@
 			path = "App Coordinator";
 			sourceTree = "<group>";
 		};
-		BF29F9F72288A2E70015746A /* Protocols */ = {
+		BF29F9F72288A2E70015746A /* Objects */ = {
 			isa = PBXGroup;
 			children = (
 				BFBA6C3522876A830054C330 /* UINestedCollectionViewRowCellViewModel.swift */,
-				BF29F9F32288995B0015746A /* UINestedCollectionViewDelegate.swift */,
-				BF29F9F5228899730015746A /* UINestedCollectionViewDataSource.swift */,
 			);
-			path = Protocols;
+			path = Objects;
 			sourceTree = "<group>";
 		};
 		BF29F9F82288A2ED0015746A /* Interfaces */ = {
@@ -697,7 +691,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF29F9F6228899730015746A /* UINestedCollectionViewDataSource.swift in Sources */,
 				BFA6C38C228B40F400EAD6E8 /* DetailRouter.swift in Sources */,
 				BFD6D5FF22872BDA0020F217 /* NetworkingHelper.swift in Sources */,
 				BFBA6BE3228752680054C330 /* UIImage+Additions.swift in Sources */,
@@ -767,7 +760,6 @@
 				BFBA6C0F228754360054C330 /* HomeProtocols.swift in Sources */,
 				BFD6D61922872C220020F217 /* UIStoryboard+StoryboardIdentifiable.swift in Sources */,
 				BFD6D5FD22872BDA0020F217 /* NetworkingRequestHTTPMethod.swift in Sources */,
-				BF29F9F42288995B0015746A /* UINestedCollectionViewDelegate.swift in Sources */,
 				BFBA6C0C228754360054C330 /* HomePresenter.swift in Sources */,
 				BFBA6C3022875AF90054C330 /* UINestedCollectionViewColumnCell.swift in Sources */,
 			);
