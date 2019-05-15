@@ -22,8 +22,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </mapView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M3Z-6a-w8J">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="713" width="414" height="183"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="183" id="WEQ-IT-5PD"/>
+                                </constraints>
                                 <connections>
                                     <segue destination="o3F-bG-ija" kind="embed" identifier="embedNestedCollection" id="PRU-Rp-ii0"/>
                                 </connections>
@@ -31,18 +34,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="M3Z-6a-w8J" secondAttribute="bottom" id="0mR-5F-1Vt"/>
                             <constraint firstAttribute="bottom" secondItem="YgG-dw-GMV" secondAttribute="bottom" id="68e-7s-evf"/>
-                            <constraint firstItem="jir-el-Ryc" firstAttribute="trailing" secondItem="M3Z-6a-w8J" secondAttribute="trailing" id="DNx-yi-aeY"/>
-                            <constraint firstItem="M3Z-6a-w8J" firstAttribute="leading" secondItem="jir-el-Ryc" secondAttribute="leading" id="Jo0-WL-gt7"/>
-                            <constraint firstItem="M3Z-6a-w8J" firstAttribute="top" secondItem="VuC-oW-Elk" secondAttribute="top" id="R70-77-X8L"/>
+                            <constraint firstAttribute="bottom" secondItem="M3Z-6a-w8J" secondAttribute="bottom" id="OVY-d8-lZa"/>
                             <constraint firstItem="YgG-dw-GMV" firstAttribute="leading" secondItem="jir-el-Ryc" secondAttribute="leading" id="TTZ-J3-bPc"/>
+                            <constraint firstItem="M3Z-6a-w8J" firstAttribute="leading" secondItem="jir-el-Ryc" secondAttribute="leading" id="U7c-Ht-C2y"/>
                             <constraint firstItem="YgG-dw-GMV" firstAttribute="top" secondItem="VuC-oW-Elk" secondAttribute="top" id="Wrs-6F-XGq"/>
+                            <constraint firstItem="M3Z-6a-w8J" firstAttribute="trailing" secondItem="jir-el-Ryc" secondAttribute="trailing" id="c2n-dg-7HK"/>
                             <constraint firstItem="jir-el-Ryc" firstAttribute="trailing" secondItem="YgG-dw-GMV" secondAttribute="trailing" id="v7A-hW-PRx"/>
-                            <constraint firstItem="M3Z-6a-w8J" firstAttribute="top" secondItem="VuC-oW-Elk" secondAttribute="top" id="xKl-qP-0Ug"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jir-el-Ryc"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="YgG-dw-GMV" id="PyV-2Z-Pvo"/>
+                        <outlet property="nestedCollectionHeightConstraint" destination="WEQ-IT-5PD" id="xnO-9E-jN7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7zy-Yc-8qq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

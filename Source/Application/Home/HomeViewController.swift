@@ -7,11 +7,16 @@
 //
 
 import UIKit
+import MapKit
 
 final class HomeViewController: UIViewController, HomeViewProtocol {
     var presenter: HomePresenterProtocol?
     
+    
     private var nestedCollectionViewController: UINestedCollectionViewController?
+    
+    @IBOutlet private weak var mapView: MKMapView!
+    @IBOutlet private weak var nestedCollectionHeightConstraint: NSLayoutConstraint!
 }
 
 // MARK: - Lifecycle
@@ -30,15 +35,11 @@ private extension HomeViewController {
         nestedCollectionViewController?.dataSource = self
         nestedCollectionViewController?.delegate = self
         
-//        DispatchQueue.main.async { [weak self] in
-//            guard let self = self else { return }
-//
-//            let screenHeight = self.view.bounds.height
-//            let bottomInset = self.view.safeAreaInsets.bottom
-//            let intialRowPosition = screenHeight - UINestedCollectionViewController.cellHeight - bottomInset
-//
-//            self.nestedCollectionViewController?.topInset = intialRowPosition
-//        }
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+
+            self.nestedCollectionHeightConstraint.constant = UINestedCollectionViewController.cellHeight
+        }
     }
 }
 

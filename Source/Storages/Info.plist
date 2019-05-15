@@ -23,7 +23,7 @@
 	<key>UILaunchStoryboardName</key>
 	<string>AppLaunch</string>
 	<key>UIMainStoryboardFile</key>
-	<string>Detail</string>
+	<string>Home</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

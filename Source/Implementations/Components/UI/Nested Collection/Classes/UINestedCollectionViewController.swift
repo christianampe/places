@@ -104,11 +104,21 @@ extension UINestedCollectionViewController: UITableViewDelegate {
         
         return UINestedCollectionViewController.rowHeight
     }
+    
+    func tableView(_ tableView: UITableView,
+                   heightForFooterInSection section: Int) -> CGFloat {
+        
+        return 0.0
+    }
 }
 
 // MARK: - Static Properties
 extension UINestedCollectionViewController {
-    static let cellHeight: CGFloat = UINestedCollectionViewController.rowHeight + UINestedCollectionViewController.headerHeight
-    private static let rowHeight: CGFloat = UIScreen.main.bounds.height * 0.2
-    private static let headerHeight: CGFloat = UIScreen.main.bounds.height * 0.05
+    static let headerHeight: CGFloat = UIScreen.main.bounds.height * 0.05
+    static let rowHeight: CGFloat = UIScreen.main.bounds.height * 0.2
+    static let footerHeight: CGFloat = 0.0
+    static let cellHeight: CGFloat =
+        UINestedCollectionViewController.rowHeight +
+        UINestedCollectionViewController.headerHeight +
+        UINestedCollectionViewController.footerHeight
 }
