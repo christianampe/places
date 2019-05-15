@@ -19,14 +19,6 @@ extension UINestedCollectionViewController {
     func reloadData() {
         tableView.reloadData()
     }
-    
-    func snapFirstCellToTop() {
-        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
-    }
-    
-    func snapFirstCellToBottom() {
-        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .bottom, animated: true)
-    }
 }
 
 // MARK: - Lifecycle
@@ -40,7 +32,6 @@ extension UINestedCollectionViewController {
 private extension UINestedCollectionViewController {
     func setUpTableView() {
         tableView.panGestureRecognizer.addTarget(self, action: #selector(handleGesture(_:)))
-        snapFirstCellToBottom()
     }
 }
 
@@ -72,7 +63,8 @@ extension UINestedCollectionViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView,
                    titleForHeaderInSection section: Int) -> String? {
         
-        return "Popular"
+        return dataSource?.tableView(tableView,
+                                     titleFor: section)
     }
 }
 
@@ -91,6 +83,7 @@ extension UINestedCollectionViewController: UITableViewDelegate {
         }
         
         cell.set(properties: viewModels)
+        cell.delegate = self
     }
     
     func tableView(_ tableView: UITableView,
@@ -109,6 +102,15 @@ extension UINestedCollectionViewController: UITableViewDelegate {
                    heightForFooterInSection section: Int) -> CGFloat {
         
         return 0.0
+    }
+}
+
+extension UINestedCollectionViewController: UINestedCollectionViewColumnCellDelegate {
+    func collectionView(_ collectionView: UICollectionView,
+                        didDisplayCellAt index: Int) {
+        
+        delegate?.tableView(tableView,
+                            didDisplayItemAt: IndexPath(item: index, section: 0))
     }
 }
 

@@ -121,6 +121,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="collection" destination="pY8-ds-hST" id="ckB-cG-q8P"/>
+                                            <outlet property="layout" destination="dtg-re-UJJ" id="4LQ-OE-hoG"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

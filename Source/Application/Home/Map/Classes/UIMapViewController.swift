@@ -10,5 +10,71 @@ import UIKit
 import MapKit
 
 class UIMapViewController: UIViewController {
+    private var annotations: [String: MKPointAnnotation] = [:]
+    
     @IBOutlet private weak var mapView: MKMapView!
+    
+    private lazy var locationManager: CLLocationManager = {
+        let locationManager = CLLocationManager()
+        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+        return locationManager
+    }()
+}
+
+// MARK: - Lifecycle
+extension UIMapViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        locationManager.requestWhenInUseAuthorization()
+    }
+}
+
+extension UIMapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView,
+                 didSelect view: MKAnnotationView) {
+        
+    }
+}
+
+// MARK: - Public API
+extension UIMapViewController {
+    func set(places: [UIMapViewPlace]) {
+        var markers: [MKPointAnnotation] = []
+        
+        places.forEach {
+            let marker = annotation(from: $0)
+            markers.append(marker)
+            annotations[$0.id] = marker
+        }
+        
+        mapView.addAnnotations(markers)
+    }
+    
+    func move(to place: UIMapViewPlace) {
+        let userAnnotation = MKPointAnnotation()
+        userAnnotation.coordinate = locationManager.location!.coordinate
+        
+        if let marker = annotations[place.id] {
+            mapView.showAnnotations([userAnnotation, marker], animated: true)
+            mapView.selectAnnotation(marker, animated: true)
+        } else {
+            let marker = annotation(from: place)
+            mapView.addAnnotation(marker)
+            mapView.showAnnotations([userAnnotation, marker], animated: true)
+            mapView.selectAnnotation(marker, animated: true)
+        }
+    }
+}
+
+// MARK: - Helper Methods
+private extension UIMapViewController {
+    func scroll(to annotation: MKPointAnnotation) {
+        
+    }
+    
+    func annotation(from place: UIMapViewPlace) -> MKPointAnnotation {
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longitude)
+        return annotation
+    }
 }

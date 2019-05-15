@@ -13,4 +13,7 @@ protocol UINestedCollectionViewDataSource: class {
     
     func tableView(_ tableView: UITableView,
                    viewModelsFor row: Int) -> [UINestedCollectionViewRowCellViewModel]
+    
+    func tableView(_ tableView: UITableView,
+                   titleFor row: Int) -> String
 }

@@ -8,13 +8,27 @@
 
 import UIKit
 
+protocol UINestedCollectionViewColumnCellDelegate: class {
+    func collectionView(_ collectionView: UICollectionView,
+                        didDisplayCellAt index: Int)
+}
+
+extension UINestedCollectionViewColumnCellDelegate {
+    func collectionView(_ collectionView: UICollectionView,
+                        didDisplayCellAt index: Int) {}
+}
+
 class UINestedCollectionViewColumnCell: UITableViewCell {
     
     /// A `UICollectionView` which contains the individual objects to display.
     @IBOutlet private weak var collection: UICollectionView!
+    @IBOutlet private weak var layout: UICollectionSnappingFlowLayout!
     
     /// The view models used to populate the `UICollectionView`.
     private var viewModels = [UINestedCollectionViewRowCellViewModel]()
+    
+    /// Collection view delegation.
+    weak var delegate: UINestedCollectionViewColumnCellDelegate?
 }
 
 // MARK: - External API
@@ -32,6 +46,7 @@ extension UINestedCollectionViewColumnCell {
 extension UINestedCollectionViewColumnCell {
     override func awakeFromNib() {
         super.awakeFromNib()
+        layout.delegate = self
         collection.decelerationRate = .fast
     }
 }
@@ -55,8 +70,8 @@ extension UINestedCollectionViewColumnCell: UICollectionViewDataSource {
     }
 }
 
-// MARK: - UICollectionViewDelegateFlowLayout
-extension UINestedCollectionViewColumnCell: UICollectionViewDelegateFlowLayout {
+// MARK: - UICollectionViewDelegate
+extension UINestedCollectionViewColumnCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView,
                         willDisplay cell: UICollectionViewCell,
                         forItemAt indexPath: IndexPath) {
@@ -72,7 +87,10 @@ extension UINestedCollectionViewColumnCell: UICollectionViewDelegateFlowLayout {
         
         cell.set(properties: viewModel)
     }
-    
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+extension UINestedCollectionViewColumnCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -86,6 +104,15 @@ extension UINestedCollectionViewColumnCell: UICollectionViewDelegateFlowLayout {
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
         return UINestedCollectionViewColumnCell.itemSpacing
+    }
+}
+
+extension UINestedCollectionViewColumnCell: UICollectionSnappingFlowLayoutDelegate {
+    func layout(_ collectionViewLayout: UICollectionViewLayout,
+                didSnapToItemAt index: Int) {
+        
+        delegate?.collectionView(collection,
+                                 didDisplayCellAt: index)
     }
 }
 
