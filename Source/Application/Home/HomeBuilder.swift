@@ -9,10 +9,10 @@
 import UIKit
 
 final class HomeBuilder {
-    func create(_ delegate: HomeDelegateProtocol?,
-                input: HomeInputProtocol,
-                viewModel: HomeViewModelProtocol = HomeViewModel(),
-                output: HomeOutputProtocol = HomeOutput()) -> UIViewController {
+    static func create(_ delegate: HomeDelegateProtocol?,
+                       input: HomeInputProtocol,
+                       viewModel: HomeViewModelProtocol = HomeViewModel(),
+                       output: HomeOutputProtocol = HomeOutput()) -> UIViewController {
         
         let storyboard = UIStoryboard(storyboard: .home)
         let view: HomeViewController = storyboard.instantiateViewController()

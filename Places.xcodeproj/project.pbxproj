@@ -10,6 +10,14 @@
 		BF1D364D228BA41600CD65D7 /* UIMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF1D364C228BA41600CD65D7 /* UIMap.storyboard */; };
 		BF1D3650228BA43000CD65D7 /* UIMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D364F228BA43000CD65D7 /* UIMapViewController.swift */; };
 		BF1D3653228BB11900CD65D7 /* UIMapViewPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D3652228BB11900CD65D7 /* UIMapViewPlace.swift */; };
+		BF1D366E228BE52700CD65D7 /* AppInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D366B228BE52600CD65D7 /* AppInteractor.swift */; };
+		BF1D366F228BE52700CD65D7 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D366C228BE52600CD65D7 /* AppRouter.swift */; };
+		BF1D3670228BE52700CD65D7 /* AppPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D366D228BE52700CD65D7 /* AppPresenter.swift */; };
+		BF1D3673228BE53000CD65D7 /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D3671228BE53000CD65D7 /* AppNavigationController.swift */; };
+		BF1D3674228BE53000CD65D7 /* App.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF1D3672228BE53000CD65D7 /* App.storyboard */; };
+		BF1D3676228BE53400CD65D7 /* AppBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D3675228BE53400CD65D7 /* AppBuilder.swift */; };
+		BF1D3678228BE57600CD65D7 /* UIClearNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D3677228BE57600CD65D7 /* UIClearNavigationController.swift */; };
+		BF1D367A228BE59300CD65D7 /* AppProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D3679228BE59200CD65D7 /* AppProtocols.swift */; };
 		BF29F9F42288995B0015746A /* UINestedCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29F9F32288995B0015746A /* UINestedCollectionViewDelegate.swift */; };
 		BF29F9F6228899730015746A /* UINestedCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29F9F5228899730015746A /* UINestedCollectionViewDataSource.swift */; };
 		BF29F9FB2288A8980015746A /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29F9FA2288A8980015746A /* Place.swift */; };
@@ -106,6 +114,14 @@
 		BF1D364C228BA41600CD65D7 /* UIMap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UIMap.storyboard; sourceTree = "<group>"; };
 		BF1D364F228BA43000CD65D7 /* UIMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIMapViewController.swift; sourceTree = "<group>"; };
 		BF1D3652228BB11900CD65D7 /* UIMapViewPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIMapViewPlace.swift; sourceTree = "<group>"; };
+		BF1D366B228BE52600CD65D7 /* AppInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInteractor.swift; sourceTree = "<group>"; };
+		BF1D366C228BE52600CD65D7 /* AppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		BF1D366D228BE52700CD65D7 /* AppPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppPresenter.swift; sourceTree = "<group>"; };
+		BF1D3671228BE53000CD65D7 /* AppNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
+		BF1D3672228BE53000CD65D7 /* App.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = App.storyboard; sourceTree = "<group>"; };
+		BF1D3675228BE53400CD65D7 /* AppBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppBuilder.swift; sourceTree = "<group>"; };
+		BF1D3677228BE57600CD65D7 /* UIClearNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIClearNavigationController.swift; sourceTree = "<group>"; };
+		BF1D3679228BE59200CD65D7 /* AppProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppProtocols.swift; sourceTree = "<group>"; };
 		BF29F9F32288995B0015746A /* UINestedCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINestedCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		BF29F9F5228899730015746A /* UINestedCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINestedCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		BF29F9FA2288A8980015746A /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
@@ -257,6 +273,20 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		BF1D3654228BE4A200CD65D7 /* App Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				BF1D3672228BE53000CD65D7 /* App.storyboard */,
+				BF1D3679228BE59200CD65D7 /* AppProtocols.swift */,
+				BF1D366B228BE52600CD65D7 /* AppInteractor.swift */,
+				BF1D366D228BE52700CD65D7 /* AppPresenter.swift */,
+				BF1D366C228BE52600CD65D7 /* AppRouter.swift */,
+				BF1D3671228BE53000CD65D7 /* AppNavigationController.swift */,
+				BF1D3675228BE53400CD65D7 /* AppBuilder.swift */,
+			);
+			path = "App Coordinator";
+			sourceTree = "<group>";
+		};
 		BF29F9F72288A2E70015746A /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -375,17 +405,10 @@
 		BFBA6C1A2287579D0054C330 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				BFBA6C32228767150054C330 /* Round Image */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
-		BFBA6C32228767150054C330 /* Round Image */ = {
-			isa = PBXGroup;
-			children = (
+				BF1D3677228BE57600CD65D7 /* UIClearNavigationController.swift */,
 				BFBA6C33228767240054C330 /* UIRoundImageView.swift */,
 			);
-			path = "Round Image";
+			path = UI;
 			sourceTree = "<group>";
 		};
 		BFD6D5EF22872B210020F217 /* Implementations */ = {
@@ -524,6 +547,7 @@
 			children = (
 				BFF506842286423B00CA5B0B /* AppDelegate.swift */,
 				BF599E2022871FAA00B68163 /* App Launch */,
+				BF1D3654228BE4A200CD65D7 /* App Coordinator */,
 				BFBA6BEC228753E70054C330 /* Home */,
 				BFA6C37E228B40DF00EAD6E8 /* Detail */,
 			);
@@ -650,6 +674,7 @@
 				BFBA6BEB2287531D0054C330 /* Assignment.pdf in Resources */,
 				BFA6C395228B410100EAD6E8 /* Detail.storyboard in Resources */,
 				BFF5068F2286423C00CA5B0B /* Assets.xcassets in Resources */,
+				BF1D3674228BE53000CD65D7 /* App.storyboard in Resources */,
 				BFBA6C16228754420054C330 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -681,6 +706,7 @@
 				BFBA6BE3228752680054C330 /* UIImage+Additions.swift in Sources */,
 				BFD6D62722872C2C0020F217 /* XIBIdentifiable+Self.swift in Sources */,
 				BFD6D60522872BDA0020F217 /* NetworkingRequest.swift in Sources */,
+				BF1D3670228BE52700CD65D7 /* AppPresenter.swift in Sources */,
 				BFBA6C26228759CA0054C330 /* UINestedCollectionViewRowCell.swift in Sources */,
 				BF1D3653228BB11900CD65D7 /* UIMapViewPlace.swift in Sources */,
 				BFD6D61A22872C220020F217 /* StoryboardIdentifiable+Self.swift in Sources */,
@@ -693,6 +719,7 @@
 				BFBA6C0B228754360054C330 /* HomeInput.swift in Sources */,
 				BFBA6C10228754360054C330 /* HomeBuilder.swift in Sources */,
 				BFD6D5FE22872BDA0020F217 /* NetworkingRequestBodyEncodingType.swift in Sources */,
+				BF1D367A228BE59300CD65D7 /* AppProtocols.swift in Sources */,
 				BFBA6BE5228752680054C330 /* Array++.swift in Sources */,
 				BFBA6C12228754360054C330 /* HomeOutput.swift in Sources */,
 				BFD6D62622872C2C0020F217 /* XIBView.swift in Sources */,
@@ -707,10 +734,12 @@
 				BFA6C38A228B40F400EAD6E8 /* DetailInput.swift in Sources */,
 				BF29FA07228A505E0015746A /* UINestedCollectionViewController.swift in Sources */,
 				BFF5068D2286423B00CA5B0B /* Places.xcdatamodeld in Sources */,
+				BF1D366F228BE52700CD65D7 /* AppRouter.swift in Sources */,
 				BFBA6BE7228752680054C330 /* UINavigationBar+Additions.swift in Sources */,
 				BFBA6C34228767240054C330 /* UIRoundImageView.swift in Sources */,
 				BFD6D61822872C220020F217 /* UIViewController+StoryboardIdentifiable.swift in Sources */,
 				BFA6C3A1228B6E5100EAD6E8 /* DetailProgressView.swift in Sources */,
+				BF1D3673228BE53000CD65D7 /* AppNavigationController.swift in Sources */,
 				BFA6C38E228B40F400EAD6E8 /* DetailProtocols.swift in Sources */,
 				BFBA6BE8228752680054C330 /* URL++.swift in Sources */,
 				BFD6D60422872BDA0020F217 /* Networking.swift in Sources */,
@@ -723,12 +752,15 @@
 				BFBA6C13228754360054C330 /* HomeViewModel.swift in Sources */,
 				BFD6D60222872BDA0020F217 /* NetworkingResponse.swift in Sources */,
 				BFA6C390228B40F400EAD6E8 /* DetailInteractor.swift in Sources */,
+				BF1D3676228BE53400CD65D7 /* AppBuilder.swift in Sources */,
 				BFD6D61F22872C220020F217 /* UITableView+StoryboardIdentifiable.swift in Sources */,
 				BFBA6C0D228754360054C330 /* HomeRouter.swift in Sources */,
+				BF1D3678228BE57600CD65D7 /* UIClearNavigationController.swift in Sources */,
 				BFA6C38B228B40F400EAD6E8 /* DetailPresenter.swift in Sources */,
 				BFD6D62522872C2C0020F217 /* XIBView+XIBIdentifiable.swift in Sources */,
 				BFD6D60322872BDA0020F217 /* NetworkingService.swift in Sources */,
 				BFBA6BE6228752680054C330 /* UIImageView+Additions.swift in Sources */,
+				BF1D366E228BE52700CD65D7 /* AppInteractor.swift in Sources */,
 				BFA6C38D228B40F400EAD6E8 /* DetailViewController.swift in Sources */,
 				BFA6C38F228B40F400EAD6E8 /* DetailBuilder.swift in Sources */,
 				BF1D3650228BA43000CD65D7 /* UIMapViewController.swift in Sources */,
