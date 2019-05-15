@@ -12,16 +12,19 @@ import MapKit
 final class HomeViewController: UIViewController, HomeViewProtocol {
     var presenter: HomePresenterProtocol?
     
-    
+    private var mapViewController: UIMapViewController?
     private var nestedCollectionViewController: UINestedCollectionViewController?
     
-    @IBOutlet private weak var mapView: MKMapView!
     @IBOutlet private weak var nestedCollectionHeightConstraint: NSLayoutConstraint!
 }
 
 // MARK: - Lifecycle
 extension HomeViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "embedMap" {
+            mapViewController = segue.viewController()
+        }
+        
         if segue.identifier == "embedNestedCollection" {
             nestedCollectionViewController = segue.viewController()
             nestedCollectionSetup()

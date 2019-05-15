@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF1D364D228BA41600CD65D7 /* UIMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF1D364C228BA41600CD65D7 /* UIMap.storyboard */; };
+		BF1D3650228BA43000CD65D7 /* UIMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D364F228BA43000CD65D7 /* UIMapViewController.swift */; };
 		BF29F9F42288995B0015746A /* UINestedCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29F9F32288995B0015746A /* UINestedCollectionViewDelegate.swift */; };
 		BF29F9F6228899730015746A /* UINestedCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29F9F5228899730015746A /* UINestedCollectionViewDataSource.swift */; };
 		BF29F9FB2288A8980015746A /* HomePlaceCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29F9FA2288A8980015746A /* HomePlaceCellViewModel.swift */; };
@@ -110,6 +112,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF1D364C228BA41600CD65D7 /* UIMap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UIMap.storyboard; sourceTree = "<group>"; };
+		BF1D364F228BA43000CD65D7 /* UIMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIMapViewController.swift; sourceTree = "<group>"; };
 		BF29F9F32288995B0015746A /* UINestedCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINestedCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		BF29F9F5228899730015746A /* UINestedCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINestedCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		BF29F9FA2288A8980015746A /* HomePlaceCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePlaceCellViewModel.swift; sourceTree = "<group>"; };
@@ -240,8 +244,26 @@
 		BF1D364A228BA39E00CD65D7 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				BF1D364B228BA3EB00CD65D7 /* Interfaces */,
+				BF1D364E228BA41900CD65D7 /* Classes */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		BF1D364B228BA3EB00CD65D7 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				BF1D364C228BA41600CD65D7 /* UIMap.storyboard */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		BF1D364E228BA41900CD65D7 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BF1D364F228BA43000CD65D7 /* UIMapViewController.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		BF29F9F72288A2E70015746A /* Protocols */ = {
@@ -651,6 +673,7 @@
 			files = (
 				BF29FA05228A50450015746A /* UINestedCollection.storyboard in Resources */,
 				BFF506922286423C00CA5B0B /* AppLaunch.storyboard in Resources */,
+				BF1D364D228BA41600CD65D7 /* UIMap.storyboard in Resources */,
 				BFBA6BEB2287531D0054C330 /* Assignment.pdf in Resources */,
 				BFBA6C182287544F0054C330 /* Profile.storyboard in Resources */,
 				BFA6C395228B410100EAD6E8 /* Detail.storyboard in Resources */,
@@ -743,6 +766,7 @@
 				BFA6C38D228B40F400EAD6E8 /* DetailViewController.swift in Sources */,
 				BFD6D5D722872ABE0020F217 /* ProfileInteractor.swift in Sources */,
 				BFA6C38F228B40F400EAD6E8 /* DetailBuilder.swift in Sources */,
+				BF1D3650228BA43000CD65D7 /* UIMapViewController.swift in Sources */,
 				BFBA6C11228754360054C330 /* HomeInteractor.swift in Sources */,
 				BF29FA0A228A5EB80015746A /* UICollectionSnappingFlowLayout.swift in Sources */,
 				BFD6D61D22872C220020F217 /* UICollectionView+StoryboardIdentifiable.swift in Sources */,
