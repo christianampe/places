@@ -39,7 +39,7 @@ class UICollectionSnappingFlowLayout: UICollectionViewFlowLayout {
         
         delegate?.layout(self, didSnapToItemAt: Int(itemIndex))
         
-        return CGPoint(x: itemIndex * itemSpace,
+        return CGPoint(x: itemIndex * itemSpace - UINestedCollectionViewColumnCell.leftInsetSpacing,
                        y: parent.y)
     }
 }

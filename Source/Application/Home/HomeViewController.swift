@@ -74,7 +74,7 @@ private extension HomeViewController {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
 
-            self.nestedCollectionHeightConstraint.constant = UINestedCollectionViewController.cellHeight
+            self.nestedCollectionHeightConstraint.constant = UINestedCollectionViewController.cellHeight + self.view.safeAreaInsets.bottom
         }
     }
 }

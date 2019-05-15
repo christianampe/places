@@ -53,7 +53,8 @@ extension UINestedCollectionViewColumnCell {
         super.awakeFromNib()
         layout.delegate = self
         collection.decelerationRate = .fast
-        collection.contentInset.right = UINestedCollectionViewColumnCell.rightInset
+        collection.contentInset.left = UINestedCollectionViewColumnCell.leftInsetSpacing
+        collection.contentInset.right = UINestedCollectionViewColumnCell.rightInsetSpacing
     }
 }
 
@@ -124,7 +125,8 @@ extension UINestedCollectionViewColumnCell: UICollectionSnappingFlowLayoutDelega
 
 // MARK: - Static Properties
 extension UINestedCollectionViewColumnCell {
-    static let itemWidth: CGFloat = UIScreen.main.bounds.width * 0.8
+    static let itemWidth: CGFloat = UIScreen.main.bounds.width * 0.75
     static let itemSpacing: CGFloat = UIScreen.main.bounds.width * 0.05
-    static let rightInset: CGFloat = UIScreen.main.bounds.width - itemWidth - itemSpacing
+    static let leftInsetSpacing: CGFloat = UINestedCollectionViewColumnCell.itemSpacing
+    static let rightInsetSpacing: CGFloat = UIScreen.main.bounds.width - itemWidth - itemSpacing
 }
