@@ -12,19 +12,37 @@ import MapKit
 final class HomeViewController: UIViewController, HomeViewProtocol {
     var presenter: HomePresenterProtocol?
     
-    
+    private var mapViewController: UIMapViewController?
     private var nestedCollectionViewController: UINestedCollectionViewController?
     
-    @IBOutlet private weak var mapView: MKMapView!
     @IBOutlet private weak var nestedCollectionHeightConstraint: NSLayoutConstraint!
+    
+    var places: [Place] = {
+        let yosemite = Place(id: "1", latitude: 37.8651011, longitude: -119.5383294, title: "Yosemite", detail: "12 mi", iconURLString: "", backgroundURLString: "")
+        
+        let joshuaTree = Place(id: "2", latitude: 34.134728, longitude: -116.313066, title: "Joshua Tree", detail: "20 mi", iconURLString: "", backgroundURLString: "")
+        
+        let cannonBeach = Place(id: "3", latitude: 45.8917738, longitude: -123.9615274, title: "Cannon Beach ", detail: "140 mi", iconURLString: "", backgroundURLString: "")
+        
+        return [yosemite, joshuaTree, cannonBeach]
+    }()
 }
 
 // MARK: - Lifecycle
 extension HomeViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        mapViewController?.set(places: places)
+        nestedCollectionSetup()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "embedMap" {
+            mapViewController = segue.viewController()
+        }
+        
         if segue.identifier == "embedNestedCollection" {
             nestedCollectionViewController = segue.viewController()
-            nestedCollectionSetup()
         }
     }
 }
@@ -46,53 +64,30 @@ private extension HomeViewController {
 // MARK: - UINestedCollectionViewDataSource
 extension HomeViewController: UINestedCollectionViewDataSource {
     func numberOfRows(in tableView: UITableView) -> Int {
-        return 12
+        return 1
     }
     
     func tableView(_ tableView: UITableView,
                    viewModelsFor row: Int) -> [UINestedCollectionViewRowCellViewModel] {
         
-        let homePlaceViewModel = HomePlaceViewModel(title: "Mammoth Mountain",
-                                                    detail: "22 mi",
-                                                    iconURLString: "",
-                                                    backgroundURLString: "")
+        return places
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   titleFor row: Int) -> String {
         
-        return [homePlaceViewModel,homePlaceViewModel,homePlaceViewModel,homePlaceViewModel,homePlaceViewModel,homePlaceViewModel,homePlaceViewModel,homePlaceViewModel,homePlaceViewModel]
+        return "Near Me"
     }
 }
 
-// MARK: - UINestedCollectionViewDelegate
 extension HomeViewController: UINestedCollectionViewDelegate {
     func tableView(_ tableView: UITableView,
-                   didRespondToPanGesture sender: UIPanGestureRecognizer) {
+                   didDisplayItemAt indexPath: IndexPath) {
         
-//        let verticalVelocity = sender.velocity(in: tableView).y
-//        let verticalTranslation = sender.translation(in: view).y
-//        let verticalContentOffset = tableView.contentOffset.y
-//
-//        guard verticalContentOffset <= 0.0 else {
-//            return
-//        }
-//
-//        guard
-//            (nestedCollectionTopConstraint.constant <= 0.0 && verticalVelocity > 0) ||
-//            (nestedCollectionTopConstraint.constant > 0.0 && verticalVelocity < 0)
-//        else {
-//            return
-//        }
-//
-//        tableView.frame.origin.y = tableView.frame.origin.y + verticalTranslation
-    }
-}
-
-private extension HomeViewController {
-    func progressAlongAxis(pointOnAxis: CGFloat,
-                           axisLength: CGFloat) -> CGFloat {
+        guard let place = places[safe: indexPath.item] else {
+            return
+        }
         
-        let movementOnAxis = pointOnAxis / axisLength
-        let positiveMovementOnAxis = fmaxf(Float(movementOnAxis), 0.0)
-        let positiveMovementOnAxisPercent = fminf(positiveMovementOnAxis, 1.0)
-        
-        return CGFloat(positiveMovementOnAxisPercent)
+        mapViewController?.move(to: place)
     }
 }

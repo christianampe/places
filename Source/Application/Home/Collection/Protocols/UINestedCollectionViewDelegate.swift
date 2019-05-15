@@ -11,9 +11,15 @@ import UIKit
 protocol UINestedCollectionViewDelegate: class {
     func tableView(_ tableView: UITableView,
                    didRespondToPanGesture sender: UIPanGestureRecognizer)
+    
+    func tableView(_ tableView: UITableView,
+                   didDisplayItemAt indexPath: IndexPath)
 }
 
 extension UINestedCollectionViewDelegate {
     func tableView(_ tableView: UITableView,
                    didRespondToPanGesture sender: UIPanGestureRecognizer) {}
+    
+    func tableView(_ tableView: UITableView,
+                   didDisplayItemAt indexPath: IndexPath) {}
 }

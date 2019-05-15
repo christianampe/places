@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol UICollectionSnappingFlowLayoutDelegate: class {
+    func layout(_ collectionViewLayout: UICollectionViewLayout,
+                didSnapToItemAt index: Int)
+}
+
 class UICollectionSnappingFlowLayout: UICollectionViewFlowLayout {
+    weak var delegate: UICollectionSnappingFlowLayoutDelegate?
+    
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint,
                                       withScrollingVelocity velocity: CGPoint) -> CGPoint {
         
@@ -29,6 +36,10 @@ class UICollectionSnappingFlowLayout: UICollectionViewFlowLayout {
         } else if horizontalVelocity < 0 {
             itemIndex -= 1
         }
+        
+        print(itemIndex)
+        
+        delegate?.layout(self, didSnapToItemAt: Int(itemIndex))
         
         return CGPoint(x: itemIndex * itemSpace,
                        y: parent.y)

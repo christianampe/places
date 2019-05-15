@@ -84,6 +84,7 @@
                                                                     </stackView>
                                                                 </subviews>
                                                             </view>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="bottom" secondItem="KIF-pS-e6l" secondAttribute="bottom" constant="16" id="PNY-wV-PUB"/>
                                                                 <constraint firstAttribute="trailing" secondItem="SIy-1g-5pd" secondAttribute="trailing" id="XnU-bc-QuN"/>
@@ -111,6 +112,7 @@
                                                     </connections>
                                                 </collectionView>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="pY8-ds-hST" secondAttribute="bottom" id="IjI-s0-EXj"/>
                                                 <constraint firstItem="pY8-ds-hST" firstAttribute="top" secondItem="3TE-Bj-7xf" secondAttribute="top" id="PsE-F9-CVC"/>
@@ -121,6 +123,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="collection" destination="pY8-ds-hST" id="ckB-cG-q8P"/>
+                                            <outlet property="layout" destination="dtg-re-UJJ" id="4LQ-OE-hoG"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

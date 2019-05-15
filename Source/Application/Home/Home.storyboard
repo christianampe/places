@@ -18,9 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="YgG-dw-GMV">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wsp-QV-G5a">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </mapView>
+                                <connections>
+                                    <segue destination="vFV-Tu-6Jm" kind="embed" identifier="embedMap" id="fcv-iK-ZMo"/>
+                                </connections>
+                            </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M3Z-6a-w8J">
                                 <rect key="frame" x="0.0" y="713" width="414" height="183"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -34,24 +37,23 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="YgG-dw-GMV" secondAttribute="bottom" id="68e-7s-evf"/>
+                            <constraint firstItem="Wsp-QV-G5a" firstAttribute="top" secondItem="VuC-oW-Elk" secondAttribute="top" id="9dk-fz-Hs0"/>
+                            <constraint firstItem="jir-el-Ryc" firstAttribute="trailing" secondItem="Wsp-QV-G5a" secondAttribute="trailing" id="CZb-bg-hsh"/>
                             <constraint firstAttribute="bottom" secondItem="M3Z-6a-w8J" secondAttribute="bottom" id="OVY-d8-lZa"/>
-                            <constraint firstItem="YgG-dw-GMV" firstAttribute="leading" secondItem="jir-el-Ryc" secondAttribute="leading" id="TTZ-J3-bPc"/>
                             <constraint firstItem="M3Z-6a-w8J" firstAttribute="leading" secondItem="jir-el-Ryc" secondAttribute="leading" id="U7c-Ht-C2y"/>
-                            <constraint firstItem="YgG-dw-GMV" firstAttribute="top" secondItem="VuC-oW-Elk" secondAttribute="top" id="Wrs-6F-XGq"/>
+                            <constraint firstItem="Wsp-QV-G5a" firstAttribute="leading" secondItem="jir-el-Ryc" secondAttribute="leading" id="YQ6-1L-v0v"/>
                             <constraint firstItem="M3Z-6a-w8J" firstAttribute="trailing" secondItem="jir-el-Ryc" secondAttribute="trailing" id="c2n-dg-7HK"/>
-                            <constraint firstItem="jir-el-Ryc" firstAttribute="trailing" secondItem="YgG-dw-GMV" secondAttribute="trailing" id="v7A-hW-PRx"/>
+                            <constraint firstAttribute="bottom" secondItem="Wsp-QV-G5a" secondAttribute="bottom" id="iaC-2Q-j4n"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jir-el-Ryc"/>
                     </view>
                     <connections>
-                        <outlet property="mapView" destination="YgG-dw-GMV" id="PyV-2Z-Pvo"/>
                         <outlet property="nestedCollectionHeightConstraint" destination="WEQ-IT-5PD" id="xnO-9E-jN7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7zy-Yc-8qq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="31.884057971014496" y="146.65178571428569"/>
+            <point key="canvasLocation" x="128.98550724637681" y="25.446428571428569"/>
         </scene>
         <!--UINestedCollection-->
         <scene sceneID="trm-FR-bw3">
@@ -59,7 +61,15 @@
                 <viewControllerPlaceholder storyboardName="UINestedCollection" id="o3F-bG-ija" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wx2-Ez-1VV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="602" y="147"/>
+            <point key="canvasLocation" x="726" y="10"/>
+        </scene>
+        <!--UIMap-->
+        <scene sceneID="u5g-9D-SSm">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UIMap" id="vFV-Tu-6Jm" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HZX-YY-WLS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="669" y="42"/>
         </scene>
     </scenes>
 </document>
