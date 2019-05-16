@@ -26,7 +26,13 @@ extension HomePresenter {
         view?.show(places: places)
     }
     
-    func recieved(error: Error) {
+    func encountered(error: Error) {
         view?.show(error: error)
+    }
+}
+
+extension HomePresenter {
+    func selectedPlace() {
+        router?.showDetail()
     }
 }

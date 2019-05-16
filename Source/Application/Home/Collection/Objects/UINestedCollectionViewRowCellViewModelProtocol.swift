@@ -1,5 +1,5 @@
 //
-//  UINestedCollectionViewRowCellViewModel.swift
+//  UINestedCollectionViewRowCellViewModelProtocol.swift
 //  Places
 //
 //  Created by Christian Ampe on 5/11/19.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol UINestedCollectionViewRowCellViewModel {
+protocol UINestedCollectionViewRowCellViewModelProtocol {
     var title: String { get }
     var detail: String { get }
     var iconURLString: String { get }

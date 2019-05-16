@@ -7,5 +7,5 @@
 //
 
 struct DetailInput: DetailInputProtocol {
-
+    let placeID: String
 }

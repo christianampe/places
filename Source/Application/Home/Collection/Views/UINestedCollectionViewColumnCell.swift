@@ -24,13 +24,13 @@ extension UINestedCollectionViewColumnCellDelegate {
 class UINestedCollectionViewColumnCell: UITableViewCell {
     
     /// A `UICollectionView` which contains the individual objects to display.
-    @IBOutlet private weak var collection: UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView!
     
     /// The view models used to populate the `UICollectionView`.
-    private var viewModels = [UINestedCollectionViewRowCellViewModel]()
+    private var viewModels = [UINestedCollectionViewRowCellViewModelProtocol]()
     
     /// The currently focused item index.
-    var currentItemIndex: Int  = 0
+    var currentItemIndex: Int = 0
     
     /// Collection view delegation.
     weak var delegate: UINestedCollectionViewColumnCellDelegate?
@@ -42,14 +42,27 @@ extension UINestedCollectionViewColumnCell {
     /// Method used to populate the collection view with given properties.
     ///
     /// - Parameter newViewModels: The view models used to populate the `UICollectionView`.
-    func set(properties newViewModels: [UINestedCollectionViewRowCellViewModel]) {
+    func set(properties newViewModels: [UINestedCollectionViewRowCellViewModelProtocol]) {
         viewModels = newViewModels
-        collection.reloadData()
+        collectionView.reloadData()
     }
     
-    func focus(index: Int) {
-        let requestedCollectionViewIndexPath = IndexPath(row: index, section: 0)
-        collection.scrollToItem(at: requestedCollectionViewIndexPath, at: .left, animated: true)
+    /// Method used to scroll to the given item in the collection.
+    ///
+    /// - Parameters:
+    ///   - index: Position of the item requested.
+    ///   - animated: Bool indicating whether the scroll should be animated or not.
+    func focus(index: Int,
+               animated: Bool = true) {
+        
+        guard index < viewModels.count else {
+            return
+        }
+        
+        collectionView.scrollToItem(at: IndexPath(row: index,
+                                                  section: 0),
+                                    at: .left,
+                                    animated: animated)
     }
 }
 
@@ -57,9 +70,14 @@ extension UINestedCollectionViewColumnCell {
 extension UINestedCollectionViewColumnCell {
     override func awakeFromNib() {
         super.awakeFromNib()
-        collection.decelerationRate = .fast
-        collection.contentInset.left = UINestedCollectionViewColumnCell.leftInsetSpacing
-        collection.contentInset.right = UINestedCollectionViewColumnCell.rightInsetSpacing
+        collectionView.decelerationRate = .fast
+        collectionView.contentInset.left = UINestedCollectionViewColumnCell.leftInsetSpacing
+        collectionView.contentInset.right = UINestedCollectionViewColumnCell.rightInsetSpacing
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        focus(index: 0, animated: true)
     }
 }
 
@@ -100,7 +118,7 @@ extension UINestedCollectionViewColumnCell: UICollectionViewDelegate {
             return
         }
         
-        delegate?.collectionView(collection,
+        delegate?.collectionView(collectionView,
                                  didSelectItemAt: indexPath.item)
     }
     
@@ -114,14 +132,14 @@ extension UINestedCollectionViewColumnCell: UICollectionViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         currentItemIndex = nextFocus(for: scrollView).index
         
-        delegate?.collectionView(collection,
+        delegate?.collectionView(collectionView,
                                  didDisplayCellAt: currentItemIndex)
     }
     
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         currentItemIndex = nextFocus(for: scrollView).index
         
-        delegate?.collectionView(collection,
+        delegate?.collectionView(collectionView,
                                  didDisplayCellAt: currentItemIndex)
     }
 }

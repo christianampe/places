@@ -22,8 +22,8 @@ protocol HomeViewProtocol: class {
     var viewModel: HomeViewModelProtocol? { get set }
     var presenter: HomePresenterProtocol?  { get set }
     
-    func show(error: Error)
     func show(places: HomeViewModel)
+    func show(error: Error)
 }
 
 protocol HomePresenterProtocol: class {
@@ -35,12 +35,17 @@ protocol HomePresenterProtocol: class {
     func requestScreen()
     
     func fetched(places: HomeViewModel)
-    func recieved(error: Error)
+    func encountered(error: Error)
+    
+    func selectedPlace()
 }
 
 protocol HomeInteractorProtocol: class {
     var presenter: HomePresenterProtocol?  { get set }
+    
     func fetchPlaces()
 }
 
-protocol HomeRouterProtocol: class {}
+protocol HomeRouterProtocol: class {
+    func showDetail()
+}

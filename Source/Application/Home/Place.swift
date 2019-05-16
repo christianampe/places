@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Place: UIMapViewPlace, UINestedCollectionViewRowCellViewModel, Codable, Hashable {
+struct Place: UIMapViewPlace, UINestedCollectionViewRowCellViewModelProtocol, Codable, Hashable {
     
     // MARK: Map View Properties
     let id: String

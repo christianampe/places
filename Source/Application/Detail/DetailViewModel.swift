@@ -7,5 +7,8 @@
 //
 
 struct DetailViewModel: DetailViewModelProtocol {
-    
+    var headerViewModel: DetailHeaderViewModelProtocol?
+    var coordinates: (latitude: Double, longitude: Double)?
+    var description: String?
+    var collectionCellViewModels: [DetailViewCellViewModelProtocol]?
 }
