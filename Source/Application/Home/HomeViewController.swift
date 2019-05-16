@@ -138,6 +138,8 @@ extension HomeViewController: UINestedCollectionViewDelegate {
         }
         
         mapViewController?.move(to: place)
+        print(indexPath)
+        print(place)
     }
     
     func tableView(_ tableView: UITableView,

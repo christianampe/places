@@ -123,14 +123,40 @@ extension UINestedCollectionViewController: UITableViewDelegate {
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        currentIndexPath.section = nextFocus(for: scrollView).index
+        let index = nextFocus(for: scrollView).index
+        
+        guard let cell = tableView.cellForRow(at: IndexPath(row: 0, section: index)) as? UINestedCollectionViewColumnCell else {
+            assertionFailure("incorrect cell type used")
+            return
+        }
+        
+        currentIndexPath.row = cell.currentItemIndex
+        currentIndexPath.section = index
         
         delegate?.tableView(tableView,
                             didDisplayItemAt: currentIndexPath)
     }
     
-    private func nextFocus(for scrollView: UIScrollView,
-                           withVelocity velocity: CGPoint = .zero) -> (index: Int, offset: CGFloat) {
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        let index = nextFocus(for: scrollView).index
+        
+        guard let cell = tableView.cellForRow(at: IndexPath(row: 0, section: index)) as? UINestedCollectionViewColumnCell else {
+            assertionFailure("incorrect cell type used")
+            return
+        }
+        
+        currentIndexPath.row = cell.currentItemIndex
+        currentIndexPath.section = index
+        
+        delegate?.tableView(tableView,
+                            didDisplayItemAt: currentIndexPath)
+    }
+}
+
+// MARK: - Helper Methods
+private extension UINestedCollectionViewController {
+    func nextFocus(for scrollView: UIScrollView,
+                   withVelocity velocity: CGPoint = .zero) -> (index: Int, offset: CGFloat) {
         
         let verticalVelocity = velocity.y
         let rowHeight = UINestedCollectionViewController.cellHeight
@@ -146,7 +172,7 @@ extension UINestedCollectionViewController: UITableViewDelegate {
         return (index: correctedIndex(for: Int(itemIndex)), offset: itemIndex * rowHeight)
     }
     
-    private func correctedIndex(for index: Int) -> Int {
+    func correctedIndex(for index: Int) -> Int {
         guard index > 0 else {
             return 0
         }

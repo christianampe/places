@@ -30,7 +30,7 @@ class UINestedCollectionViewColumnCell: UITableViewCell {
     private var viewModels = [UINestedCollectionViewRowCellViewModel]()
     
     /// The currently focused item index.
-    private var currentItemIndex: Int  = 0
+    var currentItemIndex: Int  = 0
     
     /// Collection view delegation.
     weak var delegate: UINestedCollectionViewColumnCellDelegate?
