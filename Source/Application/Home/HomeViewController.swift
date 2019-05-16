@@ -84,7 +84,7 @@ extension HomeViewController: UIMapViewDelegate {
     func mapView(_ mapView: MKMapView,
                  didSelect place: UIMapViewPlace) {
         
-        guard let currentPanelIndex = nestedCollectionViewController?.currentRowIndex else {
+        guard let currentPanelIndex = nestedCollectionViewController?.currentIndexPath.section else {
             return
         }
         

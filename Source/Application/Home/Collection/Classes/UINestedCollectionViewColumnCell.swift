@@ -39,6 +39,7 @@ extension UINestedCollectionViewColumnCell {
     /// - Parameter newViewModels: The view models used to populate the `UICollectionView`.
     func set(properties newViewModels: [UINestedCollectionViewRowCellViewModel]) {
         viewModels = newViewModels
+        collection.reloadData()
     }
     
     func focus(index: Int) {
@@ -73,28 +74,20 @@ extension UINestedCollectionViewColumnCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        return collectionView.dequeueReusableCell(for: indexPath) as UINestedCollectionViewRowCell
+        let cell = collectionView.dequeueReusableCell(for: indexPath) as UINestedCollectionViewRowCell
+        
+        guard let viewModel = viewModels[safe: indexPath.row] else {
+            return cell
+        }
+        
+        cell.set(properties: viewModel)
+        
+        return cell
     }
 }
 
 // MARK: - UICollectionViewDelegate
-extension UINestedCollectionViewColumnCell: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView,
-                        willDisplay cell: UICollectionViewCell,
-                        forItemAt indexPath: IndexPath) {
-        
-        guard let cell = cell as? UINestedCollectionViewRowCell else {
-            assertionFailure("incorrect cell type used")
-            return
-        }
-        
-        guard let viewModel = viewModels[safe: indexPath.row] else {
-            return
-        }
-        
-        cell.set(properties: viewModel)
-    }
-}
+extension UINestedCollectionViewColumnCell: UICollectionViewDelegate {}
 
 // MARK: - UICollectionViewDelegateFlowLayout
 extension UINestedCollectionViewColumnCell: UICollectionViewDelegateFlowLayout {

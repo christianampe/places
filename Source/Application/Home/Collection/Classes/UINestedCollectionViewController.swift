@@ -40,7 +40,7 @@ class UINestedCollectionViewController: UIViewController {
     weak var delegate: UINestedCollectionViewDelegate?
     weak var dataSource: UINestedCollectionViewDataSource?
     
-    var currentRowIndex: Int = 0
+    var currentIndexPath = IndexPath(item: 0, section: 0)
 }
 
 extension UINestedCollectionViewController {
@@ -101,7 +101,16 @@ extension UINestedCollectionViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        return tableView.dequeueReusableCell(for: indexPath) as UINestedCollectionViewColumnCell
+        let cell = tableView.dequeueReusableCell(for: indexPath) as UINestedCollectionViewColumnCell
+        
+        guard let viewModels = dataSource?.tableView(tableView, viewModelsFor: indexPath.section) else {
+            return cell
+        }
+        
+        cell.set(properties: viewModels)
+        cell.delegate = self
+        
+        return cell
     }
     
     func tableView(_ tableView: UITableView,
@@ -114,22 +123,6 @@ extension UINestedCollectionViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 extension UINestedCollectionViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell,
-                   forRowAt indexPath: IndexPath) {
-        
-        guard let cell = cell as? UINestedCollectionViewColumnCell else {
-            assertionFailure("incorrect cell type used")
-            return
-        }
-        
-        guard let viewModels = dataSource?.tableView(tableView, viewModelsFor: indexPath.section) else {
-            return
-        }
-        
-        cell.set(properties: viewModels)
-        cell.delegate = self
-    }
-        
     func scrollViewWillEndDragging(_ scrollView: UIScrollView,
                                    withVelocity velocity: CGPoint,
                                    targetContentOffset: UnsafeMutablePointer<CGPoint>) {
@@ -145,7 +138,12 @@ extension UINestedCollectionViewController: UITableViewDelegate {
         }
         
         targetContentOffset.pointee.y = itemIndex * rowHeight
-        currentRowIndex = Int(itemIndex)
+        currentIndexPath.section = Int(itemIndex)
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        delegate?.tableView(tableView,
+                            didDisplayItemAt: currentIndexPath)
     }
 }
 
@@ -153,8 +151,10 @@ extension UINestedCollectionViewController: UINestedCollectionViewColumnCellDele
     func collectionView(_ collectionView: UICollectionView,
                         didDisplayCellAt index: Int) {
         
+        currentIndexPath.row = index
+        
         delegate?.tableView(tableView,
-                            didDisplayItemAt: IndexPath(item: index, section: 0))
+                            didDisplayItemAt: currentIndexPath)
     }
 }
 
