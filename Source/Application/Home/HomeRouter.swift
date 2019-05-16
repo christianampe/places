@@ -11,3 +11,11 @@ import UIKit
 final class HomeRouter: HomeRouterProtocol {
     weak var viewController: UIViewController?
 }
+
+extension HomeRouter {
+    func showDetail() {
+        viewController?.show(DetailBuilder.create(nil,
+                                                  input: DetailInput()),
+                             sender: nil)
+    }
+}

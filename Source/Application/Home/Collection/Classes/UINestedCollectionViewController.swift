@@ -206,7 +206,8 @@ extension UINestedCollectionViewController: UINestedCollectionViewColumnCellDele
                         didSelectItemAt index: Int) {
         
         delegate?.tableView(tableView,
-                            didSelectItemAt: currentIndexPath)
+                            didSelectItemAt: IndexPath(item: index,
+                                                       section: currentIndexPath.section))
     }
 }
 

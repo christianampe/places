@@ -105,7 +105,8 @@ extension HomeViewController: UIMapViewDelegate {
             return
         }
         
-        nestedCollectionViewController?.focus(indexPath: IndexPath(item: firstMatchingItemIndex, section: currentRowIndex))
+        nestedCollectionViewController?.focus(indexPath: IndexPath(item: firstMatchingItemIndex,
+                                                                   section: currentRowIndex))
     }
 }
 
@@ -143,5 +144,15 @@ extension HomeViewController: UINestedCollectionViewDelegate {
     func tableView(_ tableView: UITableView,
                    didSelectItemAt indexPath: IndexPath) {
         
+        guard let collection = nestedCollectionViewController else {
+            return
+        }
+        
+        guard collection.currentIndexPath == indexPath else {
+            collection.focus(indexPath: indexPath)
+            return
+        }
+        
+        presenter?.selectedPlace()
     }
 }

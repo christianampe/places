@@ -36,6 +36,8 @@ protocol HomePresenterProtocol: class {
     
     func fetched(places: HomeViewModel)
     func recieved(error: Error)
+    
+    func selectedPlace()
 }
 
 protocol HomeInteractorProtocol: class {
@@ -43,4 +45,6 @@ protocol HomeInteractorProtocol: class {
     func fetchPlaces()
 }
 
-protocol HomeRouterProtocol: class {}
+protocol HomeRouterProtocol: class {
+    func showDetail()
+}

@@ -30,3 +30,9 @@ extension HomePresenter {
         view?.show(error: error)
     }
 }
+
+extension HomePresenter {
+    func selectedPlace() {
+        router?.showDetail()
+    }
+}

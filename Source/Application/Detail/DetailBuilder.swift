@@ -9,9 +9,9 @@
 import UIKit
 
 final class DetailBuilder {
-    func create(_ delegate: DetailDelegateProtocol?, input: DetailInputProtocol,
-                viewModel: DetailViewModelProtocol = DetailViewModel(),
-                output: DetailOutputProtocol = DetailOutput()) -> UIViewController {
+    static func create(_ delegate: DetailDelegateProtocol?, input: DetailInputProtocol,
+                       viewModel: DetailViewModelProtocol = DetailViewModel(),
+                       output: DetailOutputProtocol = DetailOutput()) -> UIViewController {
         
         let storyboard = UIStoryboard(storyboard: .detail)
         let view: DetailViewController = storyboard.instantiateViewController()
