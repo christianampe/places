@@ -12,7 +12,7 @@ protocol UINestedCollectionViewDataSource: class {
     func numberOfRows(in tableView: UITableView) -> Int
     
     func tableView(_ tableView: UITableView,
-                   viewModelsFor row: Int) -> [UINestedCollectionViewRowCellViewModel]
+                   viewModelsFor row: Int) -> [UINestedCollectionViewRowCellViewModelProtocol]
     
     func tableView(_ tableView: UITableView,
                    titleFor row: Int) -> String

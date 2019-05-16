@@ -10,4 +10,13 @@ import UIKit
 
 final class DetailHeaderViewCell: UICollectionViewCell {
     @IBOutlet private weak var imageView: UIImageView!
+    
+    var viewModel: DetailHeaderViewCellViewModelProtocol?
+}
+
+// MARK: - Public API
+extension DetailHeaderViewCell {
+    func set(properties newViewModel: DetailHeaderViewCellViewModelProtocol) {
+        viewModel = newViewModel
+    }
 }

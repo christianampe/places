@@ -11,10 +11,10 @@ protocol DetailInputProtocol {
 }
 
 protocol DetailViewModelProtocol {
-    var showcaseImageURLStrings: [String]? { get set }
+    var headerViewModel: DetailHeaderViewModelProtocol? { get set }
     var coordinates: (latitude: Double, longitude: Double)? { get set }
     var description: String? { get set }
-    var collectionImageURLStrings: [String]? { get set }
+    var collectionCellViewModels: [DetailViewCellViewModelProtocol]? { get set }
 }
 
 protocol DetailOutputProtocol {}

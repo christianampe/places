@@ -15,6 +15,43 @@ final class DetailInteractor: DetailInteractorProtocol {
 extension DetailInteractor {
     func fetch(place placeID: String) {
         
-        presenter?.fetched(place: DetailViewModel())
+        let headerShowcaseViewModel = PlaceDetailHeaderShowcaseViewModel(imageURLString: "")
+        
+        let headerViewModel = PlaceDetailHeaderViewModel(headerCellViewModels: [headerShowcaseViewModel,
+                                                                                headerShowcaseViewModel,
+                                                                                headerShowcaseViewModel,
+                                                                                headerShowcaseViewModel],
+                                                         description: "")
+        
+        let collectionCellViewModel = PlaceDetailCollectionCellViewModel(imageURLString: "")
+        
+        let viewModel = DetailViewModel(headerViewModel: headerViewModel,
+                                        coordinates: nil,
+                                        description: nil,
+                                        collectionCellViewModels: [collectionCellViewModel,
+                                                                   collectionCellViewModel,
+                                                                   collectionCellViewModel,
+                                                                   collectionCellViewModel,
+                                                                   collectionCellViewModel,
+                                                                   collectionCellViewModel,
+                                                                   collectionCellViewModel,
+                                                                   collectionCellViewModel,
+                                                                   collectionCellViewModel])
+        
+        presenter?.fetched(place: viewModel)
     }
+}
+
+
+struct PlaceDetailHeaderViewModel: DetailHeaderViewModelProtocol {
+    var headerCellViewModels: [DetailHeaderViewCellViewModelProtocol]?
+    var description: String?
+}
+
+struct PlaceDetailHeaderShowcaseViewModel: DetailHeaderViewCellViewModelProtocol {
+    var imageURLString: String?
+}
+
+struct PlaceDetailCollectionCellViewModel: DetailViewCellViewModelProtocol {
+    var imageURLString: String?
 }

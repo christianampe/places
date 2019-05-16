@@ -117,7 +117,7 @@ extension HomeViewController: UINestedCollectionViewDataSource {
     }
     
     func tableView(_ tableView: UITableView,
-                   viewModelsFor row: Int) -> [UINestedCollectionViewRowCellViewModel] {
+                   viewModelsFor row: Int) -> [UINestedCollectionViewRowCellViewModelProtocol] {
         
         return viewModel?.panel[safe: row]?.places ?? []
     }

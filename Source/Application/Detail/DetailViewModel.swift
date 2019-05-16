@@ -7,8 +7,8 @@
 //
 
 struct DetailViewModel: DetailViewModelProtocol {
-    var showcaseImageURLStrings: [String]?
+    var headerViewModel: DetailHeaderViewModelProtocol?
     var coordinates: (latitude: Double, longitude: Double)?
     var description: String?
-    var collectionImageURLStrings: [String]?
+    var collectionCellViewModels: [DetailViewCellViewModelProtocol]?
 }

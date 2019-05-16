@@ -21,6 +21,7 @@ final class DetailViewController: UIViewController, DetailViewProtocol {
 extension DetailViewController {
     func show(place: DetailViewModel) {
         viewModel = place
+        collectionView.reloadData()
     }
     
     func show(error: Error) {
@@ -33,6 +34,7 @@ extension DetailViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpCollectionView()
+        presenter?.request(place: "1")
     }
 }
 
@@ -52,7 +54,6 @@ private extension DetailViewController {
         layout.minimumLineSpacing = DetailViewController.lineSpacing
         layout.minimumInteritemSpacing = DetailViewController.interitemSpacing
         layout.itemSize = CGSize(width: itemSideLength, height: itemSideLength)
-        
     }
 }
 
@@ -61,7 +62,7 @@ extension DetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         
-        return 12
+        return viewModel?.collectionCellViewModels?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -81,10 +82,36 @@ extension DetailViewController: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegate
 extension DetailViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView,
+                        willDisplaySupplementaryView view: UICollectionReusableView,
+                        forElementKind elementKind: String,
+                        at indexPath: IndexPath) {
+        
+        guard let header = view as? DetailHeaderView else {
+            assertionFailure("incorrect cell type used")
+            return
+        }
+        
+        guard let headerViewModel = viewModel?.headerViewModel else {
+            return
+        }
+        
+        header.set(properties: headerViewModel)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
                         willDisplay cell: UICollectionViewCell,
                         forItemAt indexPath: IndexPath) {
         
+        guard let cell = cell as? DetailCell else {
+            assertionFailure("incorrect cell type used")
+            return
+        }
         
+        guard let cellViewModel = viewModel?.collectionCellViewModels?[safe: indexPath.item] else {
+            return
+        }
+        
+        cell.set(properties: cellViewModel)
     }
 }
 

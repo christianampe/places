@@ -27,7 +27,7 @@ class UINestedCollectionViewColumnCell: UITableViewCell {
     @IBOutlet private weak var collectionView: UICollectionView!
     
     /// The view models used to populate the `UICollectionView`.
-    private var viewModels = [UINestedCollectionViewRowCellViewModel]()
+    private var viewModels = [UINestedCollectionViewRowCellViewModelProtocol]()
     
     /// The currently focused item index.
     var currentItemIndex: Int = 0
@@ -42,7 +42,7 @@ extension UINestedCollectionViewColumnCell {
     /// Method used to populate the collection view with given properties.
     ///
     /// - Parameter newViewModels: The view models used to populate the `UICollectionView`.
-    func set(properties newViewModels: [UINestedCollectionViewRowCellViewModel]) {
+    func set(properties newViewModels: [UINestedCollectionViewRowCellViewModelProtocol]) {
         viewModels = newViewModels
         collectionView.reloadData()
     }
