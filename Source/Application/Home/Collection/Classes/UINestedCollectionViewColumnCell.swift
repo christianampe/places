@@ -11,6 +11,9 @@ import UIKit
 protocol UINestedCollectionViewColumnCellDelegate: class {
     func collectionView(_ collectionView: UICollectionView,
                         didDisplayCellAt index: Int)
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt index: Int)
 }
 
 extension UINestedCollectionViewColumnCellDelegate {
@@ -26,6 +29,9 @@ class UINestedCollectionViewColumnCell: UITableViewCell {
     
     /// The view models used to populate the `UICollectionView`.
     private var viewModels = [UINestedCollectionViewRowCellViewModel]()
+    
+    /// The currently focused item index.
+    private var currentItemIndex: Int  = 0
     
     /// Collection view delegation.
     weak var delegate: UINestedCollectionViewColumnCellDelegate?
@@ -87,7 +93,24 @@ extension UINestedCollectionViewColumnCell: UICollectionViewDataSource {
 }
 
 // MARK: - UICollectionViewDelegate
-extension UINestedCollectionViewColumnCell: UICollectionViewDelegate {}
+extension UINestedCollectionViewColumnCell: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
+        
+        guard indexPath.section == 0 else {
+            assertionFailure("collections should only have one section")
+            return
+        }
+        
+        delegate?.collectionView(collection,
+                                 didSelectItemAt: indexPath.item)
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        delegate?.collectionView(collection,
+                                 didDisplayCellAt: currentItemIndex)
+    }
+}
 
 // MARK: - UICollectionViewDelegateFlowLayout
 extension UINestedCollectionViewColumnCell: UICollectionViewDelegateFlowLayout {
@@ -111,8 +134,19 @@ extension UINestedCollectionViewColumnCell: UICollectionSnappingFlowLayoutDelega
     func layout(_ collectionViewLayout: UICollectionViewLayout,
                 didSnapToItemAt index: Int) {
         
-        delegate?.collectionView(collection,
-                                 didDisplayCellAt: index)
+        guard index > 0 else {
+            currentItemIndex = 0
+            return
+        }
+        
+        let maxItemIndex = viewModels.count - 1
+        
+        guard index < maxItemIndex else {
+            currentItemIndex = maxItemIndex
+            return
+        }
+        
+        currentItemIndex = index
     }
 }
 

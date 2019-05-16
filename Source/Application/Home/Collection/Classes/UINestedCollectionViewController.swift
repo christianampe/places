@@ -20,18 +20,18 @@ protocol UINestedCollectionViewDataSource: class {
 
 protocol UINestedCollectionViewDelegate: class {
     func tableView(_ tableView: UITableView,
-                   didRespondToPanGesture sender: UIPanGestureRecognizer)
+                   didDisplayItemAt indexPath: IndexPath)
     
     func tableView(_ tableView: UITableView,
-                   didDisplayItemAt indexPath: IndexPath)
+                   didSelectItemAt indexPath: IndexPath)
 }
 
 extension UINestedCollectionViewDelegate {
     func tableView(_ tableView: UITableView,
-                   didRespondToPanGesture sender: UIPanGestureRecognizer) {}
+                   didDisplayItemAt indexPath: IndexPath) {}
     
     func tableView(_ tableView: UITableView,
-                   didDisplayItemAt indexPath: IndexPath) {}
+                   didSelectItemAt indexPath: IndexPath) {}
 }
 
 class UINestedCollectionViewController: UIViewController {
@@ -75,14 +75,6 @@ private extension UINestedCollectionViewController {
         tableView.sectionHeaderHeight = UINestedCollectionViewController.headerHeight
         tableView.rowHeight = UINestedCollectionViewController.rowHeight
         tableView.sectionFooterHeight = UINestedCollectionViewController.footerHeight
-        tableView.panGestureRecognizer.addTarget(self, action: #selector(handleGesture(_:)))
-    }
-}
-
-// MARK: - Gesure Handlers
-extension UINestedCollectionViewController {
-    @objc func handleGesture(_ sender: UIPanGestureRecognizer) {
-        delegate?.tableView(tableView, didRespondToPanGesture: sender)
     }
 }
 
@@ -138,6 +130,25 @@ extension UINestedCollectionViewController: UITableViewDelegate {
         }
         
         targetContentOffset.pointee.y = itemIndex * rowHeight
+        
+        let index = Int(itemIndex)
+        
+        guard index > 0 else {
+            currentIndexPath.section = 0
+            return
+        }
+        
+        guard let dataSource = dataSource else {
+            return
+        }
+        
+        let maxRowIndex = dataSource.numberOfRows(in: tableView) - 1
+        
+        guard index < maxRowIndex else {
+            currentIndexPath.section = maxRowIndex
+            return
+        }
+        
         currentIndexPath.section = Int(itemIndex)
     }
     
@@ -155,6 +166,13 @@ extension UINestedCollectionViewController: UINestedCollectionViewColumnCellDele
         
         delegate?.tableView(tableView,
                             didDisplayItemAt: currentIndexPath)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt index: Int) {
+        
+        delegate?.tableView(tableView,
+                            didSelectItemAt: currentIndexPath)
     }
 }
 
