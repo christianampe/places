@@ -84,21 +84,28 @@ extension HomeViewController: UIMapViewDelegate {
     func mapView(_ mapView: MKMapView,
                  didSelect place: UIMapViewPlace) {
         
-        guard let currentPanelIndex = nestedCollectionViewController?.currentIndexPath.section else {
+        guard let collection = nestedCollectionViewController, let viewModel = viewModel else {
             return
         }
         
-        guard let currentPanel = viewModel?.panel[safe: currentPanelIndex] else {
+        let currentRowIndex = collection.currentIndexPath.section
+        let currentItemIndex = collection.currentIndexPath.row
+        
+        guard let currentRowViewModels = viewModel.panel[safe: currentRowIndex] else {
             return
         }
         
-        let currentPanelPlaceIndex = currentPanel.places.map { $0.id }.firstIndex(of: place.id)
+        let currentRowViewModelIDs = currentRowViewModels.places.map { $0.id }
         
-        guard let placeIndex = currentPanelPlaceIndex else {
+        guard let currentItemID = currentRowViewModelIDs[safe: currentItemIndex], place.id != currentItemID else {
             return
         }
-            
-        nestedCollectionViewController?.focus(indexPath: IndexPath(item: placeIndex, section: currentPanelIndex))
+        
+        guard let firstMatchingItemIndex = currentRowViewModelIDs.firstIndex(of: place.id) else {
+            return
+        }
+        
+        nestedCollectionViewController?.focus(indexPath: IndexPath(item: firstMatchingItemIndex, section: currentRowIndex))
     }
 }
 

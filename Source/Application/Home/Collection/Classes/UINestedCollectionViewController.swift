@@ -119,8 +119,22 @@ extension UINestedCollectionViewController: UITableViewDelegate {
                                    withVelocity velocity: CGPoint,
                                    targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         
+        targetContentOffset.pointee.y = nextFocus(for: scrollView, withVelocity: velocity).offset
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        currentIndexPath.section = nextFocus(for: scrollView).index
+        
+        delegate?.tableView(tableView,
+                            didDisplayItemAt: currentIndexPath)
+    }
+    
+    private func nextFocus(for scrollView: UIScrollView,
+                           withVelocity velocity: CGPoint = .zero) -> (index: Int, offset: CGFloat) {
+        
         let verticalVelocity = velocity.y
         let rowHeight = UINestedCollectionViewController.cellHeight
+        
         var itemIndex = round(scrollView.contentOffset.y / rowHeight)
         
         if verticalVelocity > 0 {
@@ -129,32 +143,26 @@ extension UINestedCollectionViewController: UITableViewDelegate {
             itemIndex -= 1
         }
         
-        targetContentOffset.pointee.y = itemIndex * rowHeight
-        
-        let index = Int(itemIndex)
-        
+        return (index: correctedIndex(for: Int(itemIndex)), offset: itemIndex * rowHeight)
+    }
+    
+    private func correctedIndex(for index: Int) -> Int {
         guard index > 0 else {
-            currentIndexPath.section = 0
-            return
+            return 0
         }
         
         guard let dataSource = dataSource else {
-            return
+            assertionFailure("how did you get this far")
+            return 0
         }
         
         let maxRowIndex = dataSource.numberOfRows(in: tableView) - 1
         
         guard index < maxRowIndex else {
-            currentIndexPath.section = maxRowIndex
-            return
+            return maxRowIndex
         }
         
-        currentIndexPath.section = Int(itemIndex)
-    }
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        delegate?.tableView(tableView,
-                            didDisplayItemAt: currentIndexPath)
+        return index
     }
 }
 

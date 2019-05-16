@@ -25,7 +25,6 @@ class UINestedCollectionViewColumnCell: UITableViewCell {
     
     /// A `UICollectionView` which contains the individual objects to display.
     @IBOutlet private weak var collection: UICollectionView!
-    @IBOutlet private weak var layout: UINestedCollectionViewLayout!
     
     /// The view models used to populate the `UICollectionView`.
     private var viewModels = [UINestedCollectionViewRowCellViewModel]()
@@ -58,7 +57,6 @@ extension UINestedCollectionViewColumnCell {
 extension UINestedCollectionViewColumnCell {
     override func awakeFromNib() {
         super.awakeFromNib()
-        layout.delegate = self
         collection.decelerationRate = .fast
         collection.contentInset.left = UINestedCollectionViewColumnCell.leftInsetSpacing
         collection.contentInset.right = UINestedCollectionViewColumnCell.rightInsetSpacing
@@ -106,7 +104,23 @@ extension UINestedCollectionViewColumnCell: UICollectionViewDelegate {
                                  didSelectItemAt: indexPath.item)
     }
     
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView,
+                                   withVelocity velocity: CGPoint,
+                                   targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
+        targetContentOffset.pointee.x = nextFocus(for: scrollView, withVelocity: velocity).offset
+    }
+    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        currentItemIndex = nextFocus(for: scrollView).index
+        
+        delegate?.collectionView(collection,
+                                 didDisplayCellAt: currentItemIndex)
+    }
+    
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        currentItemIndex = nextFocus(for: scrollView).index
+        
         delegate?.collectionView(collection,
                                  didDisplayCellAt: currentItemIndex)
     }
@@ -130,23 +144,43 @@ extension UINestedCollectionViewColumnCell: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension UINestedCollectionViewColumnCell: UICollectionSnappingFlowLayoutDelegate {
-    func layout(_ collectionViewLayout: UICollectionViewLayout,
-                didSnapToItemAt index: Int) {
+// MARK: - Helper Methods
+private extension UINestedCollectionViewColumnCell {
+    func nextFocus(for scrollView: UIScrollView,
+                           withVelocity velocity: CGPoint = .zero) -> (index: Int, offset: CGFloat) {
+        
+        let horizontalVelocity = velocity.x
+        let itemSpace = UINestedCollectionViewColumnCell.itemWidth + UINestedCollectionViewColumnCell.itemSpacing
+        
+        var itemIndex = round(scrollView.contentOffset.x / itemSpace)
+        
+        if horizontalVelocity > 0 {
+            itemIndex += 1
+        } else if horizontalVelocity < 0 {
+            itemIndex -= 1
+        }
+        
+        return (index: correctedIndex(for: Int(itemIndex)),
+                offset: itemIndex * itemSpace - UINestedCollectionViewColumnCell.leftInsetSpacing)
+    }
+    
+    func correctedIndex(for index: Int) -> Int {
+        guard viewModels.count > 0 else {
+            assertionFailure("how did you get this far")
+            return 0
+        }
         
         guard index > 0 else {
-            currentItemIndex = 0
-            return
+            return 0
         }
         
-        let maxItemIndex = viewModels.count - 1
+        let maxRowIndex = max(viewModels.count - 1, 0)
         
-        guard index < maxItemIndex else {
-            currentItemIndex = maxItemIndex
-            return
+        guard index < maxRowIndex else {
+            return maxRowIndex
         }
         
-        currentItemIndex = index
+        return index
     }
 }
 

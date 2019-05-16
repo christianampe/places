@@ -32,7 +32,7 @@
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pY8-ds-hST">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="dtg-re-UJJ" customClass="UINestedCollectionViewLayout" customModule="Places" customModuleProvider="target">
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="dtg-re-UJJ">
                                                         <size key="itemSize" width="270" height="136"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -123,7 +123,6 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="collection" destination="pY8-ds-hST" id="ckB-cG-q8P"/>
-                                            <outlet property="layout" destination="dtg-re-UJJ" id="4LQ-OE-hoG"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
