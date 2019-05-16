@@ -17,6 +17,17 @@ final class DetailViewController: UIViewController, DetailViewProtocol {
     @IBOutlet private weak var collectionView: UICollectionView!
 }
 
+// MARK: - DetailViewProtocol
+extension DetailViewController {
+    func show(place: DetailViewModel) {
+        viewModel = place
+    }
+    
+    func show(error: Error) {
+        
+    }
+}
+
 // MARK: - Lifecycle
 extension DetailViewController {
     override func viewDidLoad() {

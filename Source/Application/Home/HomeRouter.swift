@@ -15,7 +15,7 @@ final class HomeRouter: HomeRouterProtocol {
 extension HomeRouter {
     func showDetail() {
         viewController?.show(DetailBuilder.create(nil,
-                                                  input: DetailInput()),
+                                                  input: DetailInput(placeID: "1")),
                              sender: nil)
     }
 }

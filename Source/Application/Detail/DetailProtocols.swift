@@ -6,9 +6,16 @@
 //  Copyright © 2019 christianampe. All rights reserved.
 //
 
-protocol DetailInputProtocol {}
+protocol DetailInputProtocol {
+    var placeID: String { get }
+}
 
-protocol DetailViewModelProtocol {}
+protocol DetailViewModelProtocol {
+    var showcaseImageURLStrings: [String]? { get set }
+    var coordinates: (latitude: Double, longitude: Double)? { get set }
+    var description: String? { get set }
+    var collectionImageURLStrings: [String]? { get set }
+}
 
 protocol DetailOutputProtocol {}
 
@@ -19,6 +26,9 @@ protocol DetailViewProtocol: class {
     var output: DetailOutputProtocol? { get set }
     var viewModel: DetailViewModelProtocol? { get set }
     var presenter: DetailPresenterProtocol?  { get set }
+    
+    func show(place: DetailViewModel)
+    func show(error: Error)
 }
 
 protocol DetailPresenterProtocol: class {
@@ -26,10 +36,19 @@ protocol DetailPresenterProtocol: class {
     var interactor: DetailInteractorProtocol? { get set }
     var router: DetailRouterProtocol? { get set }
     var delegate: DetailDelegateProtocol? { get set }
+    
+    func request(place placeID: String)
+    
+    func fetched(place: DetailViewModel)
+    func encountered(error: Error)
+    
+    func getDirections()
 }
 
 protocol DetailInteractorProtocol: class {
     var presenter: DetailPresenterProtocol?  { get set }
+    
+    func fetch(place placeID: String)
 }
 
 protocol DetailRouterProtocol: class {}

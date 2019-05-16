@@ -14,3 +14,21 @@ final class DetailPresenter: DetailPresenterProtocol {
     weak var view: DetailViewProtocol?
     weak var delegate: DetailDelegateProtocol?
 }
+
+extension DetailPresenter {
+    func request(place placeID: String) {
+        interactor?.fetch(place: placeID)
+    }
+    
+    func fetched(place: DetailViewModel) {
+        view?.show(place: place)
+    }
+    
+    func encountered(error: Error) {
+        
+    }
+    
+    func getDirections() {
+        
+    }
+}

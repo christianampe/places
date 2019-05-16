@@ -11,3 +11,10 @@ import UIKit
 final class DetailInteractor: DetailInteractorProtocol {
     weak var presenter: DetailPresenterProtocol?
 }
+
+extension DetailInteractor {
+    func fetch(place placeID: String) {
+        
+        presenter?.fetched(place: DetailViewModel())
+    }
+}
