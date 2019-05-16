@@ -49,9 +49,20 @@ extension UINestedCollectionViewColumnCell {
     
     /// Method used to scroll to the given item in the collection.
     ///
-    /// - Parameter index: Position of the item requested.
-    func focus(index: Int) {
-        collectionView.scrollToItem(at: IndexPath(row: index, section: 0), at: .left, animated: true)
+    /// - Parameters:
+    ///   - index: Position of the item requested.
+    ///   - animated: Bool indicating whether the scroll should be animated or not.
+    func focus(index: Int,
+               animated: Bool = true) {
+        
+        guard index < viewModels.count else {
+            return
+        }
+        
+        collectionView.scrollToItem(at: IndexPath(row: index,
+                                                  section: 0),
+                                    at: .left,
+                                    animated: animated)
     }
 }
 
@@ -62,6 +73,11 @@ extension UINestedCollectionViewColumnCell {
         collectionView.decelerationRate = .fast
         collectionView.contentInset.left = UINestedCollectionViewColumnCell.leftInsetSpacing
         collectionView.contentInset.right = UINestedCollectionViewColumnCell.rightInsetSpacing
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        focus(index: 0, animated: false)
     }
 }
 
