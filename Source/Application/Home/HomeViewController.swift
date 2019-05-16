@@ -10,89 +10,138 @@ import UIKit
 import MapKit
 
 final class HomeViewController: UIViewController, HomeViewProtocol {
+    var input: HomeInputProtocol?
+    var output: HomeOutputProtocol?
+    var viewModel: HomeViewModelProtocol?
     var presenter: HomePresenterProtocol?
     
-    
+    private var mapViewController: UIMapViewController?
     private var nestedCollectionViewController: UINestedCollectionViewController?
     
-    @IBOutlet private weak var mapView: MKMapView!
     @IBOutlet private weak var nestedCollectionHeightConstraint: NSLayoutConstraint!
+}
+
+// MARK: - HomeViewProtocol
+extension HomeViewController {
+    func show(error: Error) {
+        
+    }
+    
+    func show(places: HomeViewModel) {
+        viewModel = places
+        
+        nestedCollectionViewController?.reloadData()
+        mapViewController?.set(places: places.panel.flatMap { $0.places })
+    }
 }
 
 // MARK: - Lifecycle
 extension HomeViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        mapViewSetup()
+        nestedCollectionSetup()
+        presenter?.requestScreen()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "embedMap" {
+            mapViewController = segue.viewController()
+        }
+        
         if segue.identifier == "embedNestedCollection" {
             nestedCollectionViewController = segue.viewController()
-            nestedCollectionSetup()
         }
     }
 }
 
 // MARK: - Helper Methods
 private extension HomeViewController {
+    func mapViewSetup() {
+        mapViewController?.dataSource = self
+        mapViewController?.delegate = self
+    }
+    
     func nestedCollectionSetup() {
         nestedCollectionViewController?.dataSource = self
         nestedCollectionViewController?.delegate = self
-        
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
+        nestedCollectionHeightConstraint.constant = UINestedCollectionViewController.cellHeight
+    }
+}
 
-            self.nestedCollectionHeightConstraint.constant = UINestedCollectionViewController.cellHeight
+// MARK: - UIMapViewDataSource
+extension HomeViewController: UIMapViewDataSource {
+    func mapView(_ mapView: MKMapView,
+                 placesIn region: MKCoordinateRegion) -> [UIMapViewPlace] {
+        
+        // TODO: implement when optimization is necessary and an acceptable api is available
+        return []
+    }
+}
+
+// MARK: - UIMapViewDelegate
+extension HomeViewController: UIMapViewDelegate {
+    func mapView(_ mapView: MKMapView,
+                 didSelect place: UIMapViewPlace) {
+        
+        guard let collection = nestedCollectionViewController, let viewModel = viewModel else {
+            return
         }
+        
+        let currentRowIndex = collection.currentIndexPath.section
+        let currentItemIndex = collection.currentIndexPath.row
+        
+        guard let currentRowViewModels = viewModel.panel[safe: currentRowIndex] else {
+            return
+        }
+        
+        let currentRowViewModelIDs = currentRowViewModels.places.map { $0.id }
+        
+        guard let currentItemID = currentRowViewModelIDs[safe: currentItemIndex], place.id != currentItemID else {
+            return
+        }
+        
+        guard let firstMatchingItemIndex = currentRowViewModelIDs.firstIndex(of: place.id) else {
+            return
+        }
+        
+        nestedCollectionViewController?.focus(indexPath: IndexPath(item: firstMatchingItemIndex, section: currentRowIndex))
     }
 }
 
 // MARK: - UINestedCollectionViewDataSource
 extension HomeViewController: UINestedCollectionViewDataSource {
     func numberOfRows(in tableView: UITableView) -> Int {
-        return 12
+        return viewModel?.panel.count ?? 0
     }
     
     func tableView(_ tableView: UITableView,
                    viewModelsFor row: Int) -> [UINestedCollectionViewRowCellViewModel] {
         
-        let homePlaceViewModel = HomePlaceViewModel(title: "Mammoth Mountain",
-                                                    detail: "22 mi",
-                                                    iconURLString: "",
-                                                    backgroundURLString: "")
+        return viewModel?.panel[safe: row]?.places ?? []
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   titleFor row: Int) -> String {
         
-        return [homePlaceViewModel,homePlaceViewModel,homePlaceViewModel,homePlaceViewModel,homePlaceViewModel,homePlaceViewModel,homePlaceViewModel,homePlaceViewModel,homePlaceViewModel]
+        return viewModel?.panel[safe: row]?.title ?? ""
     }
 }
 
 // MARK: - UINestedCollectionViewDelegate
 extension HomeViewController: UINestedCollectionViewDelegate {
     func tableView(_ tableView: UITableView,
-                   didRespondToPanGesture sender: UIPanGestureRecognizer) {
+                   didDisplayItemAt indexPath: IndexPath) {
         
-//        let verticalVelocity = sender.velocity(in: tableView).y
-//        let verticalTranslation = sender.translation(in: view).y
-//        let verticalContentOffset = tableView.contentOffset.y
-//
-//        guard verticalContentOffset <= 0.0 else {
-//            return
-//        }
-//
-//        guard
-//            (nestedCollectionTopConstraint.constant <= 0.0 && verticalVelocity > 0) ||
-//            (nestedCollectionTopConstraint.constant > 0.0 && verticalVelocity < 0)
-//        else {
-//            return
-//        }
-//
-//        tableView.frame.origin.y = tableView.frame.origin.y + verticalTranslation
+        guard let place = viewModel?.panel[safe: indexPath.section]?.places[safe: indexPath.item] else {
+            return
+        }
+        
+        mapViewController?.move(to: place)
     }
-}
-
-private extension HomeViewController {
-    func progressAlongAxis(pointOnAxis: CGFloat,
-                           axisLength: CGFloat) -> CGFloat {
+    
+    func tableView(_ tableView: UITableView,
+                   didSelectItemAt indexPath: IndexPath) {
         
-        let movementOnAxis = pointOnAxis / axisLength
-        let positiveMovementOnAxis = fmaxf(Float(movementOnAxis), 0.0)
-        let positiveMovementOnAxisPercent = fminf(positiveMovementOnAxis, 1.0)
-        
-        return CGFloat(positiveMovementOnAxisPercent)
     }
 }
