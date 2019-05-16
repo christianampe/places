@@ -22,11 +22,9 @@ extension UINestedCollectionViewLayout {
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint,
                                       withScrollingVelocity velocity: CGPoint) -> CGPoint {
         
-        let parent = super.targetContentOffset(forProposedContentOffset: proposedContentOffset,
-                                               withScrollingVelocity: velocity)
-        
         guard let collectionView = collectionView else {
-            return parent
+            return super.targetContentOffset(forProposedContentOffset: proposedContentOffset,
+                                             withScrollingVelocity: velocity)
         }
         
         let itemSpace = UINestedCollectionViewColumnCell.itemWidth + UINestedCollectionViewColumnCell.itemSpacing
@@ -43,6 +41,6 @@ extension UINestedCollectionViewLayout {
         delegate?.layout(self, didSnapToItemAt: Int(itemIndex))
         
         return CGPoint(x: itemIndex * itemSpace - UINestedCollectionViewColumnCell.leftInsetSpacing,
-                       y: parent.y)
+                       y: 0)
     }
 }

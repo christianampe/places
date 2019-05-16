@@ -20,15 +20,15 @@ final class HomeBuilder {
         let router = HomeRouter()
         let presenter = HomePresenter()
         
+        view.input = input
+        view.viewModel = viewModel
+        view.output = output
         view.presenter = presenter
         interactor.presenter = presenter
         router.viewController = view
         presenter.view = view
         presenter.interactor = interactor
         presenter.router = router
-        presenter.input = input
-        presenter.viewModel = viewModel
-        presenter.output = output
         presenter.delegate = delegate
         
         return view

@@ -78,7 +78,13 @@ extension UIMapViewController: MKMapViewDelegate {
 
 // MARK: - Public API
 extension UIMapViewController {
-    func set(places: [UIMapViewPlace]) {
+    func set(places: [UIMapViewPlace], clearPrevious: Bool = false) {
+        if clearPrevious {
+            annotationsHash = [:]
+            placesHash = [:]
+            mapView.removeAnnotations(mapView.annotations)
+        }
+        
         guard !places.isEmpty else {
             return
         }
@@ -86,6 +92,10 @@ extension UIMapViewController {
         var markers: [MKPointAnnotation] = []
         
         places.forEach {
+            guard annotationsHash[$0.id] == nil else {
+                return
+            }
+            
             let marker = annotation(from: $0)
             markers.append(marker)
             annotationsHash[$0.id] = marker

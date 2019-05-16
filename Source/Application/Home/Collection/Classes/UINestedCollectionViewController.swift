@@ -39,6 +39,8 @@ class UINestedCollectionViewController: UIViewController {
     
     weak var delegate: UINestedCollectionViewDelegate?
     weak var dataSource: UINestedCollectionViewDataSource?
+    
+    var currentRowIndex: Int = 0
 }
 
 extension UINestedCollectionViewController {
@@ -69,6 +71,10 @@ extension UINestedCollectionViewController {
 
 private extension UINestedCollectionViewController {
     func setUpTableView() {
+        tableView.decelerationRate = .fast
+        tableView.sectionHeaderHeight = UINestedCollectionViewController.headerHeight
+        tableView.rowHeight = UINestedCollectionViewController.rowHeight
+        tableView.sectionFooterHeight = UINestedCollectionViewController.footerHeight
         tableView.panGestureRecognizer.addTarget(self, action: #selector(handleGesture(_:)))
     }
 }
@@ -116,30 +122,30 @@ extension UINestedCollectionViewController: UITableViewDelegate {
             return
         }
         
-        guard let viewModels = dataSource?.tableView(tableView, viewModelsFor: indexPath.row) else {
+        guard let viewModels = dataSource?.tableView(tableView, viewModelsFor: indexPath.section) else {
             return
         }
         
         cell.set(properties: viewModels)
         cell.delegate = self
     }
-    
-    func tableView(_ tableView: UITableView,
-                   heightForHeaderInSection section: Int) -> CGFloat {
         
-        return UINestedCollectionViewController.headerHeight
-    }
-    
-    func tableView(_ tableView: UITableView,
-                   heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView,
+                                   withVelocity velocity: CGPoint,
+                                   targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         
-        return UINestedCollectionViewController.rowHeight
-    }
-    
-    func tableView(_ tableView: UITableView,
-                   heightForFooterInSection section: Int) -> CGFloat {
+        let verticalVelocity = velocity.y
+        let rowHeight = UINestedCollectionViewController.cellHeight
+        var itemIndex = round(scrollView.contentOffset.y / rowHeight)
         
-        return 0.0
+        if verticalVelocity > 0 {
+            itemIndex += 1
+        } else if verticalVelocity < 0 {
+            itemIndex -= 1
+        }
+        
+        targetContentOffset.pointee.y = itemIndex * rowHeight
+        currentRowIndex = Int(itemIndex)
     }
 }
 

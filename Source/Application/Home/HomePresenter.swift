@@ -12,9 +12,21 @@ final class HomePresenter: HomePresenterProtocol {
     var interactor: HomeInteractorProtocol?
     var router: HomeRouterProtocol?
     weak var view: HomeViewProtocol?
-    
-    var input: HomeInputProtocol?
-    var viewModel: HomeViewModelProtocol?
-    var output: HomeOutputProtocol?
     weak var delegate: HomeDelegateProtocol?
+}
+
+extension HomePresenter {
+    func requestScreen() {
+        interactor?.fetchPlaces()
+    }
+}
+
+extension HomePresenter {
+    func fetched(places: HomeViewModel) {
+        view?.show(places: places)
+    }
+    
+    func recieved(error: Error) {
+        view?.show(error: error)
+    }
 }

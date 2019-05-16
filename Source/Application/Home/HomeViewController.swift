@@ -10,31 +10,38 @@ import UIKit
 import MapKit
 
 final class HomeViewController: UIViewController, HomeViewProtocol {
+    var input: HomeInputProtocol?
+    var output: HomeOutputProtocol?
+    var viewModel: HomeViewModelProtocol?
     var presenter: HomePresenterProtocol?
     
     private var mapViewController: UIMapViewController?
     private var nestedCollectionViewController: UINestedCollectionViewController?
     
     @IBOutlet private weak var nestedCollectionHeightConstraint: NSLayoutConstraint!
+}
+
+// MARK: - HomeViewProtocol
+extension HomeViewController {
+    func show(error: Error) {
+        
+    }
     
-    var places: [Place] = []
+    func show(places: HomeViewModel) {
+        viewModel = places
+        
+        nestedCollectionViewController?.reloadData()
+        mapViewController?.set(places: places.panel.flatMap { $0.places })
+    }
 }
 
 // MARK: - Lifecycle
 extension HomeViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let yosemite = Place(id: "1", latitude: 37.8651011, longitude: -119.5383294, title: "Yosemite", detail: "12 mi", iconURLString: "", backgroundURLString: "")
-        
-        let joshuaTree = Place(id: "2", latitude: 34.134728, longitude: -116.313066, title: "Joshua Tree", detail: "20 mi", iconURLString: "", backgroundURLString: "")
-        
-        let cannonBeach = Place(id: "3", latitude: 45.8917738, longitude: -123.9615274, title: "Cannon Beach ", detail: "140 mi", iconURLString: "", backgroundURLString: "")
-        
-        set([yosemite, joshuaTree, cannonBeach])
-        
         mapViewSetup()
         nestedCollectionSetup()
+        presenter?.requestScreen()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -48,34 +55,17 @@ extension HomeViewController {
     }
 }
 
-extension HomeViewController {
-    func set(_ places: [Place], clearExisting: Bool = false) {
-        if clearExisting {
-            self.places = places
-        } else {
-            self.places.append(contentsOf: places)
-        }
-    }
-}
-
 // MARK: - Helper Methods
 private extension HomeViewController {
     func mapViewSetup() {
         mapViewController?.dataSource = self
         mapViewController?.delegate = self
-        
-        mapViewController?.set(places: places)
     }
     
     func nestedCollectionSetup() {
         nestedCollectionViewController?.dataSource = self
         nestedCollectionViewController?.delegate = self
-        
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-
-            self.nestedCollectionHeightConstraint.constant = UINestedCollectionViewController.cellHeight + self.view.safeAreaInsets.bottom
-        }
+        nestedCollectionHeightConstraint.constant = UINestedCollectionViewController.cellHeight
     }
 }
 
@@ -94,32 +84,40 @@ extension HomeViewController: UIMapViewDelegate {
     func mapView(_ mapView: MKMapView,
                  didSelect place: UIMapViewPlace) {
         
-        let mapViewIDs = places.map { $0.id }
-        
-        guard let placeIndex = mapViewIDs.firstIndex(of: place.id) else {
+        guard let currentPanelIndex = nestedCollectionViewController?.currentRowIndex else {
             return
         }
         
-        nestedCollectionViewController?.focus(indexPath: IndexPath(item: placeIndex, section: 0))
+        guard let currentPanel = viewModel?.panel[safe: currentPanelIndex] else {
+            return
+        }
+        
+        let currentPanelPlaceIndex = currentPanel.places.map { $0.id }.firstIndex(of: place.id)
+        
+        guard let placeIndex = currentPanelPlaceIndex else {
+            return
+        }
+            
+        nestedCollectionViewController?.focus(indexPath: IndexPath(item: placeIndex, section: currentPanelIndex))
     }
 }
 
 // MARK: - UINestedCollectionViewDataSource
 extension HomeViewController: UINestedCollectionViewDataSource {
     func numberOfRows(in tableView: UITableView) -> Int {
-        return 1
+        return viewModel?.panel.count ?? 0
     }
     
     func tableView(_ tableView: UITableView,
                    viewModelsFor row: Int) -> [UINestedCollectionViewRowCellViewModel] {
         
-        return places
+        return viewModel?.panel[safe: row]?.places ?? []
     }
     
     func tableView(_ tableView: UITableView,
                    titleFor row: Int) -> String {
         
-        return "Near Me"
+        return viewModel?.panel[safe: row]?.title ?? ""
     }
 }
 
@@ -128,7 +126,7 @@ extension HomeViewController: UINestedCollectionViewDelegate {
     func tableView(_ tableView: UITableView,
                    didDisplayItemAt indexPath: IndexPath) {
         
-        guard let place = places[safe: indexPath.item] else {
+        guard let place = viewModel?.panel[safe: indexPath.section]?.places[safe: indexPath.item] else {
             return
         }
         
