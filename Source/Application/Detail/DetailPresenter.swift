@@ -12,9 +12,5 @@ final class DetailPresenter: DetailPresenterProtocol {
     var interactor: DetailInteractorProtocol?
     var router: DetailRouterProtocol?
     weak var view: DetailViewProtocol?
-    
-    var input: DetailInputProtocol?
-    var viewModel: DetailViewModelProtocol?
-    var output: DetailOutputProtocol?
     weak var delegate: DetailDelegateProtocol?
 }

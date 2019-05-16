@@ -9,6 +9,9 @@
 import UIKit
 
 final class DetailViewController: UIViewController, DetailViewProtocol {
+    var input: DetailInputProtocol?
+    var output: DetailOutputProtocol?
+    var viewModel: DetailViewModelProtocol?
     var presenter: DetailPresenterProtocol?
     
     @IBOutlet private weak var collectionView: UICollectionView!
