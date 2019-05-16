@@ -24,13 +24,13 @@ extension UINestedCollectionViewColumnCellDelegate {
 class UINestedCollectionViewColumnCell: UITableViewCell {
     
     /// A `UICollectionView` which contains the individual objects to display.
-    @IBOutlet private weak var collection: UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView!
     
     /// The view models used to populate the `UICollectionView`.
     private var viewModels = [UINestedCollectionViewRowCellViewModel]()
     
     /// The currently focused item index.
-    var currentItemIndex: Int  = 0
+    var currentItemIndex: Int = 0
     
     /// Collection view delegation.
     weak var delegate: UINestedCollectionViewColumnCellDelegate?
@@ -44,12 +44,14 @@ extension UINestedCollectionViewColumnCell {
     /// - Parameter newViewModels: The view models used to populate the `UICollectionView`.
     func set(properties newViewModels: [UINestedCollectionViewRowCellViewModel]) {
         viewModels = newViewModels
-        collection.reloadData()
+        collectionView.reloadData()
     }
     
+    /// Method used to scroll to the given item in the collection.
+    ///
+    /// - Parameter index: Position of the item requested.
     func focus(index: Int) {
-        let requestedCollectionViewIndexPath = IndexPath(row: index, section: 0)
-        collection.scrollToItem(at: requestedCollectionViewIndexPath, at: .left, animated: true)
+        collectionView.scrollToItem(at: IndexPath(row: index, section: 0), at: .left, animated: true)
     }
 }
 
@@ -57,9 +59,9 @@ extension UINestedCollectionViewColumnCell {
 extension UINestedCollectionViewColumnCell {
     override func awakeFromNib() {
         super.awakeFromNib()
-        collection.decelerationRate = .fast
-        collection.contentInset.left = UINestedCollectionViewColumnCell.leftInsetSpacing
-        collection.contentInset.right = UINestedCollectionViewColumnCell.rightInsetSpacing
+        collectionView.decelerationRate = .fast
+        collectionView.contentInset.left = UINestedCollectionViewColumnCell.leftInsetSpacing
+        collectionView.contentInset.right = UINestedCollectionViewColumnCell.rightInsetSpacing
     }
 }
 
@@ -100,7 +102,7 @@ extension UINestedCollectionViewColumnCell: UICollectionViewDelegate {
             return
         }
         
-        delegate?.collectionView(collection,
+        delegate?.collectionView(collectionView,
                                  didSelectItemAt: indexPath.item)
     }
     
@@ -114,14 +116,14 @@ extension UINestedCollectionViewColumnCell: UICollectionViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         currentItemIndex = nextFocus(for: scrollView).index
         
-        delegate?.collectionView(collection,
+        delegate?.collectionView(collectionView,
                                  didDisplayCellAt: currentItemIndex)
     }
     
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         currentItemIndex = nextFocus(for: scrollView).index
         
-        delegate?.collectionView(collection,
+        delegate?.collectionView(collectionView,
                                  didDisplayCellAt: currentItemIndex)
     }
 }
