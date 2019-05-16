@@ -21,6 +21,16 @@
 		BF1D3681228DFAFA00CD65D7 /* DetailHeaderViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D3680228DFAFA00CD65D7 /* DetailHeaderViewModelProtocol.swift */; };
 		BF1D3685228DFDFC00CD65D7 /* DetailHeaderViewCellViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D3684228DFDFC00CD65D7 /* DetailHeaderViewCellViewModelProtocol.swift */; };
 		BF1D3687228E020200CD65D7 /* DetailViewCellViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D3686228E020200CD65D7 /* DetailViewCellViewModelProtocol.swift */; };
+		BF1D368C228E1CBB00CD65D7 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1D3689228E1CBB00CD65D7 /* Moya.framework */; };
+		BF1D3690228E1DC500CD65D7 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1D368A228E1CBB00CD65D7 /* Kingfisher.framework */; };
+		BF1D3691228E1EF700CD65D7 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1D368B228E1CBB00CD65D7 /* Alamofire.framework */; };
+		BF1D3693228E1F0500CD65D7 /* ReactiveMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1D3692228E1F0500CD65D7 /* ReactiveMoya.framework */; };
+		BF1D3695228E1F0900CD65D7 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1D3694228E1F0900CD65D7 /* Result.framework */; };
+		BF1D369D228E1F1C00CD65D7 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1D3697228E1F1C00CD65D7 /* RxBlocking.framework */; };
+		BF1D369E228E1F1C00CD65D7 /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1D3698228E1F1C00CD65D7 /* RxMoya.framework */; };
+		BF1D369F228E1F1C00CD65D7 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1D3699228E1F1C00CD65D7 /* RxSwift.framework */; };
+		BF1D36A0228E1F1C00CD65D7 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1D369A228E1F1C00CD65D7 /* RxCocoa.framework */; };
+		BF1D36A1228E1F1C00CD65D7 /* RxAtomic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1D369B228E1F1C00CD65D7 /* RxAtomic.framework */; };
 		BF29F9FB2288A8980015746A /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29F9FA2288A8980015746A /* Place.swift */; };
 		BF29F9FD2288B1DD0015746A /* CALayer+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29F9FC2288B1DD0015746A /* CALayer+Additions.swift */; };
 		BF29FA05228A50450015746A /* UINestedCollection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF29FA04228A50450015746A /* UINestedCollection.storyboard */; };
@@ -125,6 +135,16 @@
 		BF1D3680228DFAFA00CD65D7 /* DetailHeaderViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeaderViewModelProtocol.swift; sourceTree = "<group>"; };
 		BF1D3684228DFDFC00CD65D7 /* DetailHeaderViewCellViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeaderViewCellViewModelProtocol.swift; sourceTree = "<group>"; };
 		BF1D3686228E020200CD65D7 /* DetailViewCellViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewCellViewModelProtocol.swift; sourceTree = "<group>"; };
+		BF1D3689228E1CBB00CD65D7 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
+		BF1D368A228E1CBB00CD65D7 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		BF1D368B228E1CBB00CD65D7 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		BF1D3692228E1F0500CD65D7 /* ReactiveMoya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveMoya.framework; path = Carthage/Build/iOS/ReactiveMoya.framework; sourceTree = "<group>"; };
+		BF1D3694228E1F0900CD65D7 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		BF1D3697228E1F1C00CD65D7 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		BF1D3698228E1F1C00CD65D7 /* RxMoya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxMoya.framework; path = Carthage/Build/iOS/RxMoya.framework; sourceTree = "<group>"; };
+		BF1D3699228E1F1C00CD65D7 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		BF1D369A228E1F1C00CD65D7 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		BF1D369B228E1F1C00CD65D7 /* RxAtomic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxAtomic.framework; path = Carthage/Build/iOS/RxAtomic.framework; sourceTree = "<group>"; };
 		BF29F9FA2288A8980015746A /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		BF29F9FC2288B1DD0015746A /* CALayer+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Additions.swift"; sourceTree = "<group>"; };
 		BF29FA04228A50450015746A /* UINestedCollection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UINestedCollection.storyboard; sourceTree = "<group>"; };
@@ -207,6 +227,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF1D3691228E1EF700CD65D7 /* Alamofire.framework in Frameworks */,
+				BF1D3690228E1DC500CD65D7 /* Kingfisher.framework in Frameworks */,
+				BF1D368C228E1CBB00CD65D7 /* Moya.framework in Frameworks */,
+				BF1D3693228E1F0500CD65D7 /* ReactiveMoya.framework in Frameworks */,
+				BF1D3695228E1F0900CD65D7 /* Result.framework in Frameworks */,
+				BF1D369D228E1F1C00CD65D7 /* RxBlocking.framework in Frameworks */,
+				BF1D369E228E1F1C00CD65D7 /* RxMoya.framework in Frameworks */,
+				BF1D369F228E1F1C00CD65D7 /* RxSwift.framework in Frameworks */,
+				BF1D36A0228E1F1C00CD65D7 /* RxCocoa.framework in Frameworks */,
+				BF1D36A1228E1F1C00CD65D7 /* RxAtomic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +350,23 @@
 				BFA6C39E228B52CF00EAD6E8 /* DetailHeaderViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		BF1D3688228E1CBB00CD65D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF1D369B228E1F1C00CD65D7 /* RxAtomic.framework */,
+				BF1D3697228E1F1C00CD65D7 /* RxBlocking.framework */,
+				BF1D369A228E1F1C00CD65D7 /* RxCocoa.framework */,
+				BF1D3698228E1F1C00CD65D7 /* RxMoya.framework */,
+				BF1D3699228E1F1C00CD65D7 /* RxSwift.framework */,
+				BF1D3694228E1F0900CD65D7 /* Result.framework */,
+				BF1D3692228E1F0500CD65D7 /* ReactiveMoya.framework */,
+				BF1D368B228E1CBB00CD65D7 /* Alamofire.framework */,
+				BF1D368A228E1CBB00CD65D7 /* Kingfisher.framework */,
+				BF1D3689228E1CBB00CD65D7 /* Moya.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		BF29F9F72288A2E70015746A /* Objects */ = {
@@ -524,6 +571,7 @@
 				BFF5069B2286423C00CA5B0B /* PlacesTests */,
 				BFF506A62286423C00CA5B0B /* PlacesUITests */,
 				BFF506822286423B00CA5B0B /* Products */,
+				BF1D3688228E1CBB00CD65D7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -597,6 +645,7 @@
 				BFF5067D2286423B00CA5B0B /* Sources */,
 				BFF5067E2286423B00CA5B0B /* Frameworks */,
 				BFF5067F2286423B00CA5B0B /* Resources */,
+				BF1D368F228E1CE900CD65D7 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -717,6 +766,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BF1D368F228E1CE900CD65D7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Moya.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveMoya.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxMoya.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxAtomic.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BFF5067D2286423B00CA5B0B /* Sources */ = {
@@ -965,6 +1044,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8T6KWW939D;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Storages/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -986,6 +1069,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8T6KWW939D;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Storages/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
