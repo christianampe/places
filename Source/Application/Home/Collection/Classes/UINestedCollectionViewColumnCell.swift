@@ -77,7 +77,7 @@ extension UINestedCollectionViewColumnCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        focus(index: 0, animated: false)
+        focus(index: 0, animated: true)
     }
 }
 

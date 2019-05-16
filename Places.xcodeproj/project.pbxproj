@@ -279,6 +279,23 @@
 			path = "App Coordinator";
 			sourceTree = "<group>";
 		};
+		BF1D367E228D566600CD65D7 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				BFA6C39A228B4CA400EAD6E8 /* DetailHeaderView.swift */,
+				BFA6C39E228B52CF00EAD6E8 /* DetailHeaderViewCell.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		BF1D367F228D568300CD65D7 /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				BFA6C3A0228B6E5100EAD6E8 /* DetailProgressView.swift */,
+			);
+			path = Progress;
+			sourceTree = "<group>";
+		};
 		BF29F9F72288A2E70015746A /* Objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -319,9 +336,6 @@
 				BFA6C384228B40F400EAD6E8 /* DetailProtocols.swift */,
 				BFA6C394228B410100EAD6E8 /* Detail.storyboard */,
 				BFA6C383228B40F400EAD6E8 /* DetailViewController.swift */,
-				BFA6C39A228B4CA400EAD6E8 /* DetailHeaderView.swift */,
-				BFA6C3A0228B6E5100EAD6E8 /* DetailProgressView.swift */,
-				BFA6C39E228B52CF00EAD6E8 /* DetailHeaderViewCell.swift */,
 				BFA6C39C228B4CD500EAD6E8 /* DetailViewCell.swift */,
 				BFA6C381228B40F400EAD6E8 /* DetailPresenter.swift */,
 				BFA6C386228B40F400EAD6E8 /* DetailInteractor.swift */,
@@ -330,6 +344,8 @@
 				BFA6C380228B40F400EAD6E8 /* DetailInput.swift */,
 				BFA6C387228B40F400EAD6E8 /* DetailOutput.swift */,
 				BFA6C388228B40F400EAD6E8 /* DetailViewModel.swift */,
+				BF1D367F228D568300CD65D7 /* Progress */,
+				BF1D367E228D566600CD65D7 /* Header */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
