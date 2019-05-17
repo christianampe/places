@@ -15,22 +15,22 @@
             <objects>
                 <viewController id="7Fq-Oh-c0V" customClass="UINestedCollectionViewController" customModule="Places" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZF4-fY-hfT">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s4p-5i-JV9">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UINestedCollectionViewColumnCell" rowHeight="200" id="gFo-Lb-WNz" customClass="UINestedCollectionViewColumnCell" customModule="Places" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="600" height="200"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gFo-Lb-WNz" id="3TE-Bj-7xf">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pY8-ds-hST">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="dtg-re-UJJ">
                                                         <size key="itemSize" width="270" height="136"/>
@@ -49,59 +49,28 @@
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yosemite" translatesAutoresizingMaskIntoConstraints="NO" id="SIy-1g-5pd">
                                                                         <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
                                                                     </imageView>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="KIF-pS-e6l">
-                                                                        <rect key="frame" x="16" y="89" width="152" height="45"/>
-                                                                        <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Big Bear Lake" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="aG4-f2-83m">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="152" height="29"/>
-                                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                                                                <color key="textColor" white="1" alpha="0.90311964899999997" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ral-Th-fJz">
-                                                                                <rect key="frame" x="0.0" y="33" width="61.5" height="12"/>
-                                                                                <subviews>
-                                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="us" translatesAutoresizingMaskIntoConstraints="NO" id="C9w-QD-gbR" customClass="UIRoundImageView" customModule="Places" customModuleProvider="target">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="12" height="12"/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="width" secondItem="C9w-QD-gbR" secondAttribute="height" multiplier="1:1" id="6d3-j4-Ryh"/>
-                                                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="12" id="tpI-Av-ZIj"/>
-                                                                                        </constraints>
-                                                                                    </imageView>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="112 mi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="AnL-C8-ZVu">
-                                                                                        <rect key="frame" x="22" y="0.0" width="39.5" height="12"/>
-                                                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
-                                                                                        <color key="textColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <nil key="highlightedColor"/>
-                                                                                    </label>
-                                                                                </subviews>
-                                                                            </stackView>
-                                                                        </subviews>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="width" constant="152" id="ueg-cC-2Hb"/>
-                                                                            <constraint firstAttribute="height" constant="45" id="uks-Sw-jTH"/>
-                                                                        </constraints>
-                                                                    </stackView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Big Bear Lake" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="aG4-f2-83m">
+                                                                        <rect key="frame" x="12" y="109" width="152" height="29"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                                        <color key="textColor" white="1" alpha="0.90311964899999997" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
                                                                 </subviews>
                                                             </view>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="bottom" secondItem="KIF-pS-e6l" secondAttribute="bottom" constant="16" id="PNY-wV-PUB"/>
+                                                                <constraint firstItem="aG4-f2-83m" firstAttribute="leading" secondItem="W3n-yN-UDb" secondAttribute="leading" constant="12" id="C3c-rZ-uk7"/>
+                                                                <constraint firstAttribute="bottom" secondItem="aG4-f2-83m" secondAttribute="bottom" constant="12" id="OZC-uh-oQR"/>
                                                                 <constraint firstAttribute="trailing" secondItem="SIy-1g-5pd" secondAttribute="trailing" id="XnU-bc-QuN"/>
                                                                 <constraint firstAttribute="bottom" secondItem="SIy-1g-5pd" secondAttribute="bottom" id="gdh-PS-Jza"/>
                                                                 <constraint firstItem="SIy-1g-5pd" firstAttribute="leading" secondItem="W3n-yN-UDb" secondAttribute="leading" id="iPI-oA-pZV"/>
                                                                 <constraint firstItem="SIy-1g-5pd" firstAttribute="top" secondItem="W3n-yN-UDb" secondAttribute="top" id="smm-gY-s7B"/>
-                                                                <constraint firstItem="KIF-pS-e6l" firstAttribute="leading" secondItem="W3n-yN-UDb" secondAttribute="leading" constant="16" id="vG3-Uj-xpM"/>
                                                             </constraints>
                                                             <size key="customSize" width="300" height="150"/>
                                                             <connections>
                                                                 <outlet property="background" destination="SIy-1g-5pd" id="Bab-gc-ulh"/>
-                                                                <outlet property="contentBottomSpace" destination="PNY-wV-PUB" id="WIf-XM-2dc"/>
-                                                                <outlet property="contentHeight" destination="uks-Sw-jTH" id="RAy-ok-tWX"/>
-                                                                <outlet property="contentLeadingSpace" destination="vG3-Uj-xpM" id="QxZ-DX-WRA"/>
-                                                                <outlet property="contentWidth" destination="ueg-cC-2Hb" id="JCq-WX-Uu2"/>
-                                                                <outlet property="detail" destination="AnL-C8-ZVu" id="7kD-3R-Rk7"/>
-                                                                <outlet property="icon" destination="C9w-QD-gbR" id="met-Op-TUj"/>
+                                                                <outlet property="contentBottomSpace" destination="OZC-uh-oQR" id="VHS-rF-AYA"/>
+                                                                <outlet property="contentLeadingSpace" destination="C3c-rZ-uk7" id="4Ii-T0-fko"/>
                                                                 <outlet property="title" destination="aG4-f2-83m" id="MQ1-q8-NKe"/>
                                                             </connections>
                                                         </collectionViewCell>
@@ -151,7 +120,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="us" width="310" height="163"/>
         <image name="yosemite" width="593" height="334"/>
     </resources>
 </document>
