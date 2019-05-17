@@ -19,9 +19,9 @@ extension HomeInteractor {
                 guard let self = self else { return }
                 
                 switch result {
-                    
                 case .success(let response):
-                    let places = response.data.compactMap({ [weak self] (park) -> Place? in
+                    
+                    let places = response.data.compactMap { [weak self] park -> Place? in
                         guard let self = self else { return nil }
                         
                         guard let coordinates = self.coordinates(from: park.latLong) else {
@@ -34,13 +34,12 @@ extension HomeInteractor {
                                      name: park.name,
                                      detail: "",
                                      backgroundURLString: park.images.first?.url ?? "")
-                    })
+                    }
                     
                     let homeCollectionRow = HomeCollectionRow(title: state,
                                                               places: places)
                     
                     self.presenter?.fetched(collection: homeCollectionRow)
-                    
                 case .failure(let error):
                     self.presenter?.encountered(error: error)
                 }
