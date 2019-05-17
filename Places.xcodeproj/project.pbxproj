@@ -31,6 +31,7 @@
 		BF1D369F228E1F1C00CD65D7 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1D3699228E1F1C00CD65D7 /* RxSwift.framework */; };
 		BF1D36A0228E1F1C00CD65D7 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1D369A228E1F1C00CD65D7 /* RxCocoa.framework */; };
 		BF1D36A1228E1F1C00CD65D7 /* RxAtomic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1D369B228E1F1C00CD65D7 /* RxAtomic.framework */; };
+		BF1D36A3228E23DA00CD65D7 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1D36A2228E23D900CD65D7 /* ReactiveSwift.framework */; };
 		BF29F9FB2288A8980015746A /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29F9FA2288A8980015746A /* Place.swift */; };
 		BF29F9FD2288B1DD0015746A /* CALayer+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29F9FC2288B1DD0015746A /* CALayer+Additions.swift */; };
 		BF29FA05228A50450015746A /* UINestedCollection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF29FA04228A50450015746A /* UINestedCollection.storyboard */; };
@@ -145,6 +146,7 @@
 		BF1D3699228E1F1C00CD65D7 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		BF1D369A228E1F1C00CD65D7 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		BF1D369B228E1F1C00CD65D7 /* RxAtomic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxAtomic.framework; path = Carthage/Build/iOS/RxAtomic.framework; sourceTree = "<group>"; };
+		BF1D36A2228E23D900CD65D7 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
 		BF29F9FA2288A8980015746A /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		BF29F9FC2288B1DD0015746A /* CALayer+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Additions.swift"; sourceTree = "<group>"; };
 		BF29FA04228A50450015746A /* UINestedCollection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UINestedCollection.storyboard; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				BF1D3690228E1DC500CD65D7 /* Kingfisher.framework in Frameworks */,
 				BF1D368C228E1CBB00CD65D7 /* Moya.framework in Frameworks */,
 				BF1D3693228E1F0500CD65D7 /* ReactiveMoya.framework in Frameworks */,
+				BF1D36A3228E23DA00CD65D7 /* ReactiveSwift.framework in Frameworks */,
 				BF1D3695228E1F0900CD65D7 /* Result.framework in Frameworks */,
 				BF1D369D228E1F1C00CD65D7 /* RxBlocking.framework in Frameworks */,
 				BF1D369E228E1F1C00CD65D7 /* RxMoya.framework in Frameworks */,
@@ -355,6 +358,7 @@
 		BF1D3688228E1CBB00CD65D7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BF1D36A2228E23D900CD65D7 /* ReactiveSwift.framework */,
 				BF1D369B228E1F1C00CD65D7 /* RxAtomic.framework */,
 				BF1D3697228E1F1C00CD65D7 /* RxBlocking.framework */,
 				BF1D369A228E1F1C00CD65D7 /* RxCocoa.framework */,
@@ -786,6 +790,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxAtomic.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveSwift.framework",
 			);
 			outputFileListPaths = (
 			);
