@@ -16,20 +16,20 @@ final class HomeBuilder {
         
         let storyboard = UIStoryboard(storyboard: .home)
         let view: HomeViewController = storyboard.instantiateViewController()
+        let presenter = HomePresenter()
         let interactor = HomeInteractor()
         let router = HomeRouter()
-        let presenter = HomePresenter()
         
         view.input = input
         view.viewModel = viewModel
         view.output = output
         view.presenter = presenter
-        interactor.presenter = presenter
-        router.viewController = view
         presenter.view = view
         presenter.interactor = interactor
         presenter.router = router
         presenter.delegate = delegate
+        interactor.presenter = presenter
+        router.viewController = view
         
         return view
     }

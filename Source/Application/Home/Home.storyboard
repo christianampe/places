@@ -47,6 +47,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jir-el-Ryc"/>
                     </view>
+                    <navigationItem key="navigationItem" id="w38-4Y-9Pb">
+                        <barButtonItem key="backBarButtonItem" title=" " id="cBm-o5-mfS"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="nestedCollectionHeightConstraint" destination="WEQ-IT-5PD" id="xnO-9E-jN7"/>
                     </connections>

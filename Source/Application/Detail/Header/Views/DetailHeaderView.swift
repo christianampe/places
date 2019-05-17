@@ -13,8 +13,18 @@ final class DetailHeaderView: UICollectionReusableView {
     @IBOutlet private weak var progressView: DetailProgressView!
     @IBOutlet private weak var directionsButton: UIButton!
     @IBOutlet private weak var descriptionLabel: UILabel!
+    
+    private var viewModel: DetailHeaderViewModelProtocol?
 }
 
+extension DetailHeaderView {
+    func set(properties newViewModel: DetailHeaderViewModelProtocol) {
+        viewModel = newViewModel
+        collectionView.reloadData()
+    }
+}
+
+// MARK: - Lifecycle
 extension DetailHeaderView {
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,7 +37,7 @@ extension DetailHeaderView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         
-        return 4
+        return viewModel?.headerCellViewModels?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -44,6 +54,17 @@ extension DetailHeaderView: UICollectionViewDelegate {
                         forItemAt indexPath: IndexPath) {
         
         progressView.nextIndex = indexPath.row
+        
+        guard let cell = cell as? DetailHeaderViewCell else {
+            assertionFailure("incorrect cell type used")
+            return
+        }
+        
+        guard let cellViewModel = viewModel?.headerCellViewModels?[safe: indexPath.row] else {
+            return
+        }
+        
+        cell.set(properties: cellViewModel)
     }
     
     func collectionView(_ collectionView: UICollectionView,

@@ -35,7 +35,7 @@ extension UINestedCollectionViewRowCell {
     /// Method used to populate the cell with given properties.
     ///
     /// - Parameter viewModel: The view model used to populate the UI elements.
-    func set(properties viewModel: UINestedCollectionViewRowCellViewModel) {
+    func set(properties viewModel: UINestedCollectionViewRowCellViewModelProtocol) {
         title.text = viewModel.title
         detail.text = viewModel.detail
     }
