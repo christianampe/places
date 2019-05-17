@@ -17,6 +17,7 @@ final class DetailHeaderView: UICollectionReusableView {
     private var viewModel: DetailHeaderViewModelProtocol?
 }
 
+// MARK: - Public API
 extension DetailHeaderView {
     func set(properties newViewModel: DetailHeaderViewModelProtocol) {
         viewModel = newViewModel
@@ -73,6 +74,7 @@ extension DetailHeaderView: UICollectionViewDelegate {
     }
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
 extension DetailHeaderView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
@@ -80,4 +82,13 @@ extension DetailHeaderView: UICollectionViewDelegateFlowLayout {
         
         return collectionView.bounds.size
     }
+}
+
+// MARK: - Static Properties
+extension DetailHeaderView {
+    static let imageCollectionHeight: CGFloat = UIScreen.main.bounds.height * 0.7
+    static let directionButtonHeight: CGFloat = UIScreen.main.bounds.height * 0.1
+    static let topTextPadding: CGFloat = UIScreen.main.bounds.height * 0.05
+    static let bottomTextPadding: CGFloat = UIScreen.main.bounds.height * 0.05
+    static let textLabelHeight: CGFloat = UIScreen.main.bounds.height * 0.1
 }
