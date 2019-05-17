@@ -13,6 +13,7 @@ final class DetailViewController: UIViewController, DetailViewProtocol {
     var output: DetailOutputProtocol?
     var viewModel: DetailViewModelProtocol?
     var presenter: DetailPresenterProtocol?
+    weak var delegate: DetailDelegateProtocol?
     
     @IBOutlet private weak var collectionView: UICollectionView!
 }
@@ -109,6 +110,7 @@ extension DetailViewController: UICollectionViewDataSource {
             return
         }
         
+        header.delegate = self
         header.set(properties: headerViewModel)
     }
     
@@ -135,6 +137,17 @@ extension DetailViewController: UICollectionViewDelegate {
                         didSelectItemAt indexPath: IndexPath) {
         
         
+    }
+}
+
+extension DetailViewController: DetailHeaderViewDelegate {
+    func didTapDirectionsButton() {
+        guard let placeID = input?.placeID else {
+            return
+        }
+        
+        delegate?.detailViewController(self,
+                                       didRequestDirectionsToPlace: placeID)
     }
 }
 

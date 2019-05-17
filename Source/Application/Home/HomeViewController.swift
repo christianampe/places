@@ -14,6 +14,7 @@ final class HomeViewController: UIViewController, HomeViewProtocol {
     var output: HomeOutputProtocol?
     var viewModel: HomeViewModelProtocol?
     var presenter: HomePresenterProtocol?
+    weak var delegate: HomeDelegateProtocol?
     
     private var mapViewController: UIMapViewController?
     private var nestedCollectionViewController: UINestedCollectionViewController?
@@ -175,5 +176,15 @@ extension HomeViewController: UINestedCollectionViewDelegate {
         
         presenter?.selectedPlace(id: place.id,
                                  name: place.name)
+    }
+}
+
+extension HomeViewController: DetailDelegateProtocol {
+    func detailViewController(_ detailViewController: DetailViewController,
+                              didRequestDirectionsToPlace placeID: String) {
+        
+        // TODO: move this logic into the router
+        mapViewController?.navigationController?.popToViewController(self, animated: true)
+        mapViewController?.routeTo(place: placeID)
     }
 }

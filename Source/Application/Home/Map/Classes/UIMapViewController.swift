@@ -36,6 +36,7 @@ class UIMapViewController: UIViewController {
     
     private var annotationsHash: [String: MKPointAnnotation] = [:]
     private var placesHash: [MKPointAnnotation: UIMapViewPlace] = [:]
+    private var routeOverlays: [MKOverlay] = []
     
     weak var dataSource: UIMapViewDataSource?
     weak var delegate: UIMapViewDelegate?
@@ -73,6 +74,16 @@ extension UIMapViewController: MKMapViewDelegate {
         }
 
         set(places: places)
+    }
+    
+    func mapView(_ mapView: MKMapView,
+                 rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        
+        let renderer = MKPolylineRenderer(overlay: overlay)
+        renderer.strokeColor = UIColor.red
+        renderer.lineWidth = 5.0
+        
+        return renderer
     }
 }
 
@@ -119,8 +130,30 @@ extension UIMapViewController {
             return
         }
 
+        mapView.removeOverlays(routeOverlays)
         mapView.showAnnotations([userAnnotation, marker], animated: true)
         mapView.selectAnnotation(marker, animated: true)
+    }
+    
+    func routeTo(place placeID: String) {
+        guard let annotation = annotationsHash[placeID] else {
+            return
+        }
+        
+        let request = MKDirections.Request()
+        request.source = MKMapItem.forCurrentLocation()
+        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: annotation.coordinate))
+        request.requestsAlternateRoutes = false
+        
+        let directions = MKDirections(request: request)
+        
+        directions.calculate { [weak self] (response, error) in
+            guard let self = self else { return }
+            
+            if let response = response {
+                self.showRoute(response)
+            }
+        }
     }
 }
 
@@ -132,5 +165,18 @@ private extension UIMapViewController {
                                                        longitude: place.longitude)
         
         return annotation
+    }
+    
+    func showRoute(_ response: MKDirections.Response) {
+        mapView.removeOverlays(routeOverlays)
+        
+        response.routes.forEach {
+            let overlay = $0.polyline
+            
+            routeOverlays.append(overlay)
+            
+            mapView.addOverlay(overlay,
+                               level: MKOverlayLevel.aboveRoads)
+        }
     }
 }

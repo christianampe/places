@@ -24,10 +24,10 @@ final class HomeBuilder {
         view.viewModel = viewModel
         view.output = output
         view.presenter = presenter
+        view.delegate = delegate
         presenter.view = view
         presenter.interactor = interactor
         presenter.router = router
-        presenter.delegate = delegate
         interactor.presenter = presenter
         router.viewController = view
         
