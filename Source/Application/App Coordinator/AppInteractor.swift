@@ -12,6 +12,4 @@ final class AppInteractor: AppInteractorProtocol {
     weak var presenter: AppPresenterProtocol?
 }
 
-extension AppInteractor {
-   
-}
+extension AppInteractor {}

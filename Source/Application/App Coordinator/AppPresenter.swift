@@ -19,6 +19,4 @@ extension AppPresenter {
     }
 }
 
-extension AppPresenter: HomeDelegateProtocol {
-    
-}
+extension AppPresenter: HomeDelegateProtocol {}

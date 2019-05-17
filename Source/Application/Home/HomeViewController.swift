@@ -46,13 +46,20 @@ extension HomeViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "embedMap" {
+        switch segueCase(for: segue) {
+        case .embedMap:
             mapViewController = segue.viewController()
-        }
-        
-        if segue.identifier == "embedNestedCollection" {
+        case .embedNestedCollection:
             nestedCollectionViewController = segue.viewController()
         }
+    }
+}
+
+// MARK: - SegueIdentifiable
+extension HomeViewController: SegueIdentifiable {
+    enum Segue: String {
+        case embedMap
+        case embedNestedCollection
     }
 }
 
