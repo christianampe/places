@@ -15,29 +15,31 @@ final class DetailInteractor: DetailInteractorProtocol {
 extension DetailInteractor {
     func fetch(place placeName: String) {
         NetworkingProvider.fetchPhotos(of: placeName) { [weak self] result in
-            guard let self = self else { return }
-            
-            switch result {
-            case .success(let response):
-                let imageDictionaries = response.results.map { $0.urls }
+            DispatchQueue.main.async {
+                guard let self = self else { return }
                 
-                let showcaseImageDictionaries = imageDictionaries.dropLast(15)
-                let collectionImageDictionaries = imageDictionaries.dropFirst(5)
-                
-                let showcaseViewModels = showcaseImageDictionaries.map { PlaceDetailHeaderShowcaseViewModel(imageURLString: $0.full) }
-                let collectionViewModels = collectionImageDictionaries.map { PlaceDetailCollectionCellViewModel(imageURLString: $0.small) }
-                
-                let headerViewModel = PlaceDetailHeaderViewModel(headerCellViewModels: showcaseViewModels,
-                                                                 description: "")
-                
-                let viewModel = DetailViewModel(headerViewModel: headerViewModel,
-                                                coordinates: nil,
-                                                description: nil,
-                                                collectionCellViewModels: collectionViewModels)
-                
-                self.presenter?.fetched(place: viewModel)
-            case .failure(let error):
-                self.presenter?.encountered(error: error)
+                switch result {
+                case .success(let response):
+                    let imageDictionaries = response.results.map { $0.urls }
+                    
+                    let showcaseImageDictionaries = imageDictionaries.dropLast(15)
+                    let collectionImageDictionaries = imageDictionaries.dropFirst(5)
+                    
+                    let showcaseViewModels = showcaseImageDictionaries.map { PlaceDetailHeaderShowcaseViewModel(imageURLString: $0.full) }
+                    let collectionViewModels = collectionImageDictionaries.map { PlaceDetailCollectionCellViewModel(imageURLString: $0.small) }
+                    
+                    let headerViewModel = PlaceDetailHeaderViewModel(headerCellViewModels: showcaseViewModels,
+                                                                     description: "")
+                    
+                    let viewModel = DetailViewModel(headerViewModel: headerViewModel,
+                                                    coordinates: nil,
+                                                    description: nil,
+                                                    collectionCellViewModels: collectionViewModels)
+                    
+                    self.presenter?.fetched(place: viewModel)
+                case .failure(let error):
+                    self.presenter?.encountered(error: error)
+                }
             }
         }
     }

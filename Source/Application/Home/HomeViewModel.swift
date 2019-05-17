@@ -7,7 +7,7 @@
 //
 
 struct HomeViewModel: HomeViewModelProtocol, Codable {
-    var panel: [HomeCollectionRow] = []
+    var panels: [HomeCollectionRow] = []
 }
 
 struct HomeCollectionRow: Codable {

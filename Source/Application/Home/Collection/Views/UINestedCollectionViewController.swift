@@ -50,13 +50,13 @@ extension UINestedCollectionViewController {
     
     func focus(indexPath: IndexPath) {
         let requestedTableViewIndexPath = IndexPath(row: 0, section: indexPath.section)
+        tableView.scrollToRow(at: IndexPath(row: 0, section: indexPath.section), at: .top, animated: true)
         
+        // TODO: inspect bug where this fails despite a valid index path
         guard let cell = tableView.cellForRow(at: requestedTableViewIndexPath) as? UINestedCollectionViewColumnCell else {
-            assertionFailure("incorrect cell type used")
             return
         }
         
-        tableView.scrollToRow(at: IndexPath(row: 0, section: indexPath.section), at: .top, animated: true)
         cell.focus(index: indexPath.row)
     }
 }

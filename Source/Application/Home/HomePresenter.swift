@@ -18,12 +18,13 @@ final class HomePresenter: HomePresenterProtocol {
 extension HomePresenter {
     func requestScreen() {
         interactor?.fetchPlaces(in: "CA")
+        interactor?.fetchPlaces(in: "OR")
     }
 }
 
 extension HomePresenter {
-    func fetched(places: HomeViewModel) {
-        view?.show(places: places)
+    func fetched(collection: HomeCollectionRow) {
+        view?.show(collection: collection)
     }
     
     func encountered(error: Error) {
