@@ -77,10 +77,7 @@ extension DetailViewController: UICollectionViewDataSource {
         
         return collectionView.dequeueReusableCell(for: indexPath) as DetailCell
     }
-}
-
-// MARK: - UICollectionViewDelegate
-extension DetailViewController: UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView,
                         willDisplaySupplementaryView view: UICollectionReusableView,
                         forElementKind elementKind: String,
@@ -112,6 +109,15 @@ extension DetailViewController: UICollectionViewDelegate {
         }
         
         cell.set(properties: cellViewModel)
+    }
+}
+
+// MARK: - UICollectionViewDelegate
+extension DetailViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
+        
+        
     }
 }
 
