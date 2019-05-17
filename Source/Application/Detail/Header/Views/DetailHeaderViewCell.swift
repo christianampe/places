@@ -18,5 +18,11 @@ final class DetailHeaderViewCell: UICollectionViewCell {
 extension DetailHeaderViewCell {
     func set(properties newViewModel: DetailHeaderViewCellViewModelProtocol) {
         viewModel = newViewModel
+        
+        guard let imageURL = URL(string: newViewModel.imageURLString) else {
+            return
+        }
+        
+        imageView.kf.setImage(with: imageURL)
     }
 }
