@@ -177,3 +177,11 @@ extension HomeViewController: UINestedCollectionViewDelegate {
                                  name: place.name)
     }
 }
+
+extension HomeViewController: DetailDelegateProtocol {
+    func detailViewController(_ detailViewController: DetailViewController,
+                              didRequestDirectionsToPlace placeID: String) {
+        
+        mapViewController?.routeTo(place: placeID)
+    }
+}

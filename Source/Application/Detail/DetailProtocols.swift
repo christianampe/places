@@ -20,7 +20,10 @@ protocol DetailViewModelProtocol {
 
 protocol DetailOutputProtocol {}
 
-protocol DetailDelegateProtocol: class {}
+protocol DetailDelegateProtocol: class {
+    func detailViewController(_ detailViewController: DetailViewController,
+                              didRequestDirectionsToPlace placeID: String)
+}
 
 protocol DetailViewProtocol: class {
     var input: DetailInputProtocol? { get set }
