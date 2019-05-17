@@ -8,6 +8,4 @@
 
 import UIKit
 
-final class DetailFooterView: UICollectionReusableView {
-    
-}
+final class DetailFooterView: UICollectionReusableView {}

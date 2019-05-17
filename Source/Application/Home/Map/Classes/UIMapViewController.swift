@@ -19,13 +19,13 @@ protocol UIMapViewDelegate: class {
                  didSelect place: UIMapViewPlace)
 }
 
+// MARK: - Default Implementation
 extension UIMapViewDelegate {
     func mapView(_ mapView: MKMapView,
                  didSelect place: UIMapViewPlace) {}
 }
 
 class UIMapViewController: UIViewController {
-    
     @IBOutlet private weak var mapView: MKMapView!
     
     private lazy var locationManager: CLLocationManager = {
@@ -47,43 +47,6 @@ extension UIMapViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.requestWhenInUseAuthorization()
-    }
-}
-
-extension UIMapViewController: MKMapViewDelegate {
-    func mapView(_ mapView: MKMapView,
-                 didSelect view: MKAnnotationView) {
-        
-        guard let annotation = view.annotation as? MKPointAnnotation else {
-            return
-        }
-        
-        guard let place = placesHash[annotation] else {
-            return
-        }
-        
-        delegate?.mapView(mapView,
-                          didSelect: place)
-    }
-    
-    func mapView(_ mapView: MKMapView,
-                 regionDidChangeAnimated animated: Bool) {
-                
-        guard let places = dataSource?.mapView(mapView, placesIn: mapView.region) else {
-            return
-        }
-
-        set(places: places)
-    }
-    
-    func mapView(_ mapView: MKMapView,
-                 rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        
-        let renderer = MKPolylineRenderer(overlay: overlay)
-        renderer.strokeColor = UIColor.red
-        renderer.lineWidth = 5.0
-        
-        return renderer
     }
 }
 
@@ -129,7 +92,7 @@ extension UIMapViewController {
         guard let marker = annotationsHash[place.id] else {
             return
         }
-
+        
         mapView.removeOverlays(routeOverlays)
         mapView.showAnnotations([userAnnotation, marker], animated: true)
         mapView.selectAnnotation(marker, animated: true)
@@ -154,6 +117,44 @@ extension UIMapViewController {
                 self.showRoute(response)
             }
         }
+    }
+}
+
+// MARK: - MKMapViewDelegate
+extension UIMapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView,
+                 didSelect view: MKAnnotationView) {
+        
+        guard let annotation = view.annotation as? MKPointAnnotation else {
+            return
+        }
+        
+        guard let place = placesHash[annotation] else {
+            return
+        }
+        
+        delegate?.mapView(mapView,
+                          didSelect: place)
+    }
+    
+    func mapView(_ mapView: MKMapView,
+                 regionDidChangeAnimated animated: Bool) {
+                
+        guard let places = dataSource?.mapView(mapView, placesIn: mapView.region) else {
+            return
+        }
+
+        set(places: places)
+    }
+    
+    func mapView(_ mapView: MKMapView,
+                 rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        
+        let renderer = MKPolylineRenderer(overlay: overlay)
+        renderer.strokeColor = UIColor.red
+        renderer.lineWidth = 5.0
+        
+        return renderer
     }
 }
 

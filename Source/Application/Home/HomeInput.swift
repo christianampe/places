@@ -6,6 +6,4 @@
 //  Copyright © 2019 christianampe. All rights reserved.
 //
 
-struct HomeInput: HomeInputProtocol {
-
-}
+struct HomeInput: HomeInputProtocol {}

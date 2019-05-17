@@ -12,5 +12,5 @@ struct HomeViewModel: HomeViewModelProtocol, Codable {
 
 struct HomeCollectionRow: Codable {
     let title: String
-    let places: [Place]
+    let places: [HomePlace]
 }

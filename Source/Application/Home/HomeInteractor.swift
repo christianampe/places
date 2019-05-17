@@ -21,19 +21,19 @@ extension HomeInteractor {
                 switch result {
                 case .success(let response):
                     
-                    let places = response.data.compactMap { [weak self] park -> Place? in
+                    let places = response.data.compactMap { [weak self] park -> HomePlace? in
                         guard let self = self else { return nil }
                         
                         guard let coordinates = self.coordinates(from: park.latLong) else {
                             return nil
                         }
                         
-                        return Place(id: park.id,
-                                     latitude: coordinates.lat,
-                                     longitude: coordinates.lon,
-                                     name: park.name,
-                                     detail: "",
-                                     backgroundURLString: park.images.first?.url ?? "")
+                        return HomePlace(id: park.id,
+                                         latitude: coordinates.lat,
+                                         longitude: coordinates.lon,
+                                         name: park.name,
+                                         detail: "",
+                                         backgroundURLString: park.images.first?.url ?? "")
                     }
                     
                     let homeCollectionRow = HomeCollectionRow(title: state,
@@ -48,6 +48,7 @@ extension HomeInteractor {
     }
 }
 
+// MARK: - Helper Methods
 private extension HomeInteractor {
     func coordinates(from string: String) -> (lat: Double, lon: Double)? {
         let latRegex = "lat:[-+]?[0-9]*[.,]?[0-9]+"

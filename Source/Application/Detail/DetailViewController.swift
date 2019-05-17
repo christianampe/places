@@ -26,7 +26,7 @@ extension DetailViewController {
     }
     
     func show(error: Error) {
-        
+        // TODO: implement
     }
 }
 
@@ -41,27 +41,6 @@ extension DetailViewController {
         }
         
         presenter?.request(place: input.placeName)
-    }
-}
-
-// MARK: - Setup Methods
-private extension DetailViewController {
-    func setUpCollectionView() {
-        guard let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
-            assertionFailure("flow layout must be used for this collection")
-            return
-        }
-        
-        let collectionWidth = collectionView.bounds.size.width
-        let itemsInRow = DetailViewController.numberOfCellsPerRow
-        let nonSpaceWidth = collectionWidth - ((itemsInRow - 1) * DetailViewController.interitemSpacing)
-        let itemSideLength = nonSpaceWidth / itemsInRow
-        
-        layout.minimumLineSpacing = DetailViewController.lineSpacing
-        layout.minimumInteritemSpacing = DetailViewController.interitemSpacing
-        layout.itemSize = CGSize(width: itemSideLength, height: itemSideLength)
-        layout.headerReferenceSize = collectionView.frame.size
-        layout.footerReferenceSize = CGSize(width: collectionView.frame.width, height: DetailViewController.footerHeight)
     }
 }
 
@@ -136,10 +115,11 @@ extension DetailViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
         
-        
+        // TODO: implement
     }
 }
 
+// MARK: - DetailHeaderViewDelegate
 extension DetailViewController: DetailHeaderViewDelegate {
     func didTapDirectionsButton() {
         guard let placeID = input?.placeID else {
@@ -148,6 +128,27 @@ extension DetailViewController: DetailHeaderViewDelegate {
         
         delegate?.detailViewController(self,
                                        didRequestDirectionsToPlace: placeID)
+    }
+}
+
+// MARK: - Setup Methods
+private extension DetailViewController {
+    func setUpCollectionView() {
+        guard let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
+            assertionFailure("flow layout must be used for this collection")
+            return
+        }
+        
+        let collectionWidth = collectionView.bounds.size.width
+        let itemsInRow = DetailViewController.numberOfCellsPerRow
+        let nonSpaceWidth = collectionWidth - ((itemsInRow - 1) * DetailViewController.interitemSpacing)
+        let itemSideLength = nonSpaceWidth / itemsInRow
+        
+        layout.minimumLineSpacing = DetailViewController.lineSpacing
+        layout.minimumInteritemSpacing = DetailViewController.interitemSpacing
+        layout.itemSize = CGSize(width: itemSideLength, height: itemSideLength)
+        layout.headerReferenceSize = collectionView.frame.size
+        layout.footerReferenceSize = CGSize(width: collectionView.frame.width, height: DetailViewController.footerHeight)
     }
 }
 

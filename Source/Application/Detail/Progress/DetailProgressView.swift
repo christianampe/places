@@ -14,12 +14,16 @@ final class DetailProgressView: UIStackView {
     var nextIndex: Int = 0
 }
 
+// MARK: - Lifecycle
 extension DetailProgressView {
     override func awakeFromNib() {
         super.awakeFromNib()
         unhighlight(at: 0)
     }
-    
+}
+
+// MARK: - Public API
+extension DetailProgressView {
     func unhighlight(at index: Int) {
         guard index != nextIndex else {
             return

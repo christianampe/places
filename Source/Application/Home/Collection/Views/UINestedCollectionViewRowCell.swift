@@ -56,6 +56,7 @@ extension UINestedCollectionViewRowCell {
     }
 }
 
+// MARK: - Set Up Methods
 private extension UINestedCollectionViewRowCell {
     func styleCell() {
         layer.cornerRadius = 5
