@@ -8,6 +8,7 @@
 
 protocol DetailInputProtocol {
     var placeID: String { get }
+    var placeName: String { get }
 }
 
 protocol DetailViewModelProtocol {
@@ -37,7 +38,7 @@ protocol DetailPresenterProtocol: class {
     var router: DetailRouterProtocol? { get set }
     var delegate: DetailDelegateProtocol? { get set }
     
-    func request(place placeID: String)
+    func request(place placeName: String)
     
     func fetched(place: DetailViewModel)
     func encountered(error: Error)
@@ -48,7 +49,7 @@ protocol DetailPresenterProtocol: class {
 protocol DetailInteractorProtocol: class {
     var presenter: DetailPresenterProtocol?  { get set }
     
-    func fetch(place placeID: String)
+    func fetch(place placeName: String)
 }
 
 protocol DetailRouterProtocol: class {}

@@ -16,8 +16,7 @@ struct Place: UIMapViewPlace, UINestedCollectionViewRowCellViewModelProtocol, Co
     let longitude: Double
     
     // MARK: Collection View Properties
-    let title: String
+    let name: String
     let detail: String
-    let iconURLString: String
     let backgroundURLString: String
 }

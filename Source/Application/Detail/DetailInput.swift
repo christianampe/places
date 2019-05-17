@@ -8,4 +8,5 @@
 
 struct DetailInput: DetailInputProtocol {
     let placeID: String
+    let placeName: String
 }

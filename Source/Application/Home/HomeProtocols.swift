@@ -37,15 +37,16 @@ protocol HomePresenterProtocol: class {
     func fetched(places: HomeViewModel)
     func encountered(error: Error)
     
-    func selectedPlace()
+    func selectedPlace(id: String,
+                       name: String)
 }
 
 protocol HomeInteractorProtocol: class {
     var presenter: HomePresenterProtocol?  { get set }
     
-    func fetchPlaces()
+    func fetchPlaces(in state: String)
 }
 
 protocol HomeRouterProtocol: class {
-    func showDetail()
+    func showDetail(_ input: DetailInput)
 }

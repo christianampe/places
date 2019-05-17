@@ -18,6 +18,12 @@ final class DetailCell: UICollectionViewCell {
 extension DetailCell {
     func set(properties newViewModel: DetailViewCellViewModelProtocol) {
         viewModel = newViewModel
+        
+        guard let imageURL = URL(string: newViewModel.imageURLString) else {
+            return
+        }
+        
+        imageView.kf.setImage(with: imageURL)
     }
 }
 

@@ -153,6 +153,11 @@ extension HomeViewController: UINestedCollectionViewDelegate {
             return
         }
         
-        presenter?.selectedPlace()
+        guard let place = viewModel?.panel[safe: indexPath.section]?.places[safe: indexPath.item] else {
+            return
+        }
+        
+        presenter?.selectedPlace(id: place.id,
+                                 name: place.name)
     }
 }

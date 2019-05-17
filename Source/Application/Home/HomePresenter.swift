@@ -17,7 +17,7 @@ final class HomePresenter: HomePresenterProtocol {
 
 extension HomePresenter {
     func requestScreen() {
-        interactor?.fetchPlaces()
+        interactor?.fetchPlaces(in: "CA")
     }
 }
 
@@ -32,7 +32,10 @@ extension HomePresenter {
 }
 
 extension HomePresenter {
-    func selectedPlace() {
-        router?.showDetail()
+    func selectedPlace(id: String,
+                       name: String) {
+        
+        router?.showDetail(DetailInput(placeID: id,
+                                       placeName: name))
     }
 }
