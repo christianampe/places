@@ -183,6 +183,8 @@ extension HomeViewController: DetailDelegateProtocol {
     func detailViewController(_ detailViewController: DetailViewController,
                               didRequestDirectionsToPlace placeID: String) {
         
+        // TODO: move this logic into the router
+        mapViewController?.navigationController?.popToViewController(self, animated: true)
         mapViewController?.routeTo(place: placeID)
     }
 }
