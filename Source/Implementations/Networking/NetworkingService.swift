@@ -17,6 +17,7 @@ enum NetworkingService {
     case getNationalParks(state: String)
 }
 
+// MARK: - TargetType
 extension NetworkingService: TargetType {
     var baseURL: URL {
         switch self {
@@ -56,13 +57,13 @@ extension NetworkingService: TargetType {
                                                    "page": 1,
                                                    "per_page": 20,
                                                    "orientation": "squarish",
-                                                   "client_id": "3d248a41fbbbd04205ab275c57c13c73b61a4f53435e188fcf06fd7bcc87a2e6"],
+                                                   "client_id": NetworkingConstants.unsplashAccessKey],
                                       encoding: URLEncoding.queryString)
         case .getNationalParks(let state):
             return .requestParameters(parameters: ["stateCode": state,
                                                    "limit": 8,
                                                    "fields": "images",
-                                                   "api_key": "Fc68gOahpFrcSpaocyUYEZDme5QXV54ZKOQnElOH"],
+                                                   "api_key": NetworkingConstants.npsAPIKey],
                                       encoding: URLEncoding.queryString)
         }
     }
@@ -77,8 +78,11 @@ extension NetworkingService: TargetType {
     }
 }
 
-private enum NetworkingConstants {
-    static let unsplashAccessKey = "3d248a41fbbbd04205ab275c57c13c73b61a4f53435e188fcf06fd7bcc87a2e6"
-    static let unsplashSecretKey = "953fc03400282605590577210cb8c7b33a1c6fc1891fd515c032189ab757cfa8"   
-    static let npsAPIKey = "Fc68gOahpFrcSpaocyUYEZDme5QXV54ZKOQnElOH"
+// MARK: - Static Properties
+private extension NetworkingService {
+    enum NetworkingConstants {
+        static let unsplashAccessKey = "3d248a41fbbbd04205ab275c57c13c73b61a4f53435e188fcf06fd7bcc87a2e6"
+        static let unsplashSecretKey = "953fc03400282605590577210cb8c7b33a1c6fc1891fd515c032189ab757cfa8"
+        static let npsAPIKey = "Fc68gOahpFrcSpaocyUYEZDme5QXV54ZKOQnElOH"
+    }
 }

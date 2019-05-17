@@ -1,5 +1,5 @@
 //
-//  Place.swift
+//  HomePlace.swift
 //  Places
 //
 //  Created by Christian Ampe on 5/12/19.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Place: UIMapViewPlace, UINestedCollectionViewRowCellViewModelProtocol, Codable, Hashable {
+struct HomePlace: UIMapViewPlace, UINestedCollectionViewRowCellViewModelProtocol, Codable, Hashable {
     
     // MARK: Map View Properties
     let id: String

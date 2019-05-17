@@ -16,12 +16,13 @@ protocol NetworkingProviderProtocol: class {
                                    _ completion: @escaping (Result<NPSParksReponse, Error>) -> Void)
 }
 
-final class NetworkingProvider: NetworkingProviderProtocol {
+final class NetworkingProvider {
     private static let provider = MoyaProvider<NetworkingService>()
     private static let jsonDecoder = JSONDecoder()
 }
 
-extension NetworkingProvider {
+// MARK: - NetworkingProviderProtocol
+extension NetworkingProvider: NetworkingProviderProtocol {
     static func fetchPhotos(of query: String,
                             _ completion: @escaping (Result<UnsplashSearchResponse, Error>) -> Void) {
         

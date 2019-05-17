@@ -11,7 +11,7 @@ import UIKit
 final class DetailHeaderViewCell: UICollectionViewCell {
     @IBOutlet private weak var imageView: UIImageView!
     
-    var viewModel: DetailHeaderViewCellViewModelProtocol?
+    private var viewModel: DetailHeaderViewCellViewModelProtocol?
 }
 
 // MARK: - Public API

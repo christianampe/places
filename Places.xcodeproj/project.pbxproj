@@ -38,11 +38,12 @@
 		BF1D36AD228E4FC000CD65D7 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D36AC228E4FC000CD65D7 /* NetworkingError.swift */; };
 		BF1D36AF228E54FE00CD65D7 /* UIImageView+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D36AE228E54FE00CD65D7 /* UIImageView+Kingfisher.swift */; };
 		BF1D36B2228E597600CD65D7 /* NSPParksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D36B1228E597600CD65D7 /* NSPParksResponse.swift */; };
-		BF29F9FB2288A8980015746A /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29F9FA2288A8980015746A /* Place.swift */; };
+		BF29F9FB2288A8980015746A /* HomePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29F9FA2288A8980015746A /* HomePlace.swift */; };
 		BF29F9FD2288B1DD0015746A /* CALayer+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29F9FC2288B1DD0015746A /* CALayer+Additions.swift */; };
 		BF29FA05228A50450015746A /* UINestedCollection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF29FA04228A50450015746A /* UINestedCollection.storyboard */; };
 		BF29FA07228A505E0015746A /* UINestedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29FA06228A505E0015746A /* UINestedCollectionViewController.swift */; };
 		BF37D2AA228E96EE00597C7B /* DetailFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF37D2A9228E96EE00597C7B /* DetailFooterView.swift */; };
+		BF37D2AF228F0BA600597C7B /* README in Resources */ = {isa = PBXBuildFile; fileRef = BF37D2AE228F0BA600597C7B /* README */; };
 		BFA6C38A228B40F400EAD6E8 /* DetailInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA6C380228B40F400EAD6E8 /* DetailInput.swift */; };
 		BFA6C38B228B40F400EAD6E8 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA6C381228B40F400EAD6E8 /* DetailPresenter.swift */; };
 		BFA6C38C228B40F400EAD6E8 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA6C382228B40F400EAD6E8 /* DetailRouter.swift */; };
@@ -146,11 +147,12 @@
 		BF1D36AC228E4FC000CD65D7 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
 		BF1D36AE228E54FE00CD65D7 /* UIImageView+Kingfisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Kingfisher.swift"; sourceTree = "<group>"; };
 		BF1D36B1228E597600CD65D7 /* NSPParksResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSPParksResponse.swift; sourceTree = "<group>"; };
-		BF29F9FA2288A8980015746A /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		BF29F9FA2288A8980015746A /* HomePlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePlace.swift; sourceTree = "<group>"; };
 		BF29F9FC2288B1DD0015746A /* CALayer+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Additions.swift"; sourceTree = "<group>"; };
 		BF29FA04228A50450015746A /* UINestedCollection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UINestedCollection.storyboard; sourceTree = "<group>"; };
 		BF29FA06228A505E0015746A /* UINestedCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINestedCollectionViewController.swift; sourceTree = "<group>"; };
 		BF37D2A9228E96EE00597C7B /* DetailFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFooterView.swift; sourceTree = "<group>"; };
+		BF37D2AE228F0BA600597C7B /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		BFA6C380228B40F400EAD6E8 /* DetailInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInput.swift; sourceTree = "<group>"; };
 		BFA6C381228B40F400EAD6E8 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		BFA6C382228B40F400EAD6E8 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
@@ -363,11 +365,11 @@
 		BF1D36A4228E46F300CD65D7 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				BF1D36B0228E595500CD65D7 /* NPS */,
-				BF1D36A9228E4C2600CD65D7 /* Unsplash */,
 				BF1D36A7228E4B6000CD65D7 /* NetworkingProvider.swift */,
 				BF1D36A5228E471600CD65D7 /* NetworkingService.swift */,
 				BF1D36AC228E4FC000CD65D7 /* NetworkingError.swift */,
+				BF1D36B0228E595500CD65D7 /* NPS */,
+				BF1D36A9228E4C2600CD65D7 /* Unsplash */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -478,7 +480,7 @@
 				BFBA6C01228754360054C330 /* HomeInput.swift */,
 				BFBA6C08228754360054C330 /* HomeOutput.swift */,
 				BFBA6C09228754360054C330 /* HomeViewModel.swift */,
-				BF29F9FA2288A8980015746A /* Place.swift */,
+				BF29F9FA2288A8980015746A /* HomePlace.swift */,
 				BF1D364A228BA39E00CD65D7 /* Map */,
 				BF1D3649228BA38500CD65D7 /* Collection */,
 			);
@@ -557,6 +559,7 @@
 		BFF506782286423B00CA5B0B = {
 			isa = PBXGroup;
 			children = (
+				BF37D2AE228F0BA600597C7B /* README */,
 				BFBA6BE9228753100054C330 /* Documents */,
 				BFF506832286423B00CA5B0B /* Source */,
 				BFF5069B2286423C00CA5B0B /* PlacesTests */,
@@ -731,6 +734,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF37D2AF228F0BA600597C7B /* README in Resources */,
 				BF29FA05228A50450015746A /* UINestedCollection.storyboard in Resources */,
 				BFF506922286423C00CA5B0B /* AppLaunch.storyboard in Resources */,
 				BF1D364D228BA41600CD65D7 /* UIMap.storyboard in Resources */,
@@ -814,7 +818,7 @@
 				BF1D3681228DFAFA00CD65D7 /* DetailHeaderViewModelProtocol.swift in Sources */,
 				BFF506852286423B00CA5B0B /* AppDelegate.swift in Sources */,
 				BFA6C392228B40F400EAD6E8 /* DetailViewModel.swift in Sources */,
-				BF29F9FB2288A8980015746A /* Place.swift in Sources */,
+				BF29F9FB2288A8980015746A /* HomePlace.swift in Sources */,
 				BF29F9FD2288B1DD0015746A /* CALayer+Additions.swift in Sources */,
 				BFA6C391228B40F400EAD6E8 /* DetailOutput.swift in Sources */,
 				BFA6C38A228B40F400EAD6E8 /* DetailInput.swift in Sources */,

@@ -45,8 +45,6 @@ protocol DetailPresenterProtocol: class {
     
     func fetched(place: DetailViewModel)
     func encountered(error: Error)
-    
-    func getDirections()
 }
 
 protocol DetailInteractorProtocol: class {

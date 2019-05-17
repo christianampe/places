@@ -11,8 +11,6 @@ import UIKit.UIStoryboard
 // MARK: - Storyboard Conformance
 extension UIStoryboard {
     enum Storyboard: String {
-        
-        // MARK: - Entry
         case appLaunch = "AppLaunch"
         case app = "App"
         case home = "Home"

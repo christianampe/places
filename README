@@ -1,0 +1,22 @@
+--------------------------
+INCOMPLETE IMPLEMENTATIONS
+--------------------------
+
+[HOME]
+map direction by direction routing
+
+[DETAIL]
+passing description information into the header
+cannot add a photo
+cannot select item in collection to view in full screen
+
+------------
+KNOWN ISSUES
+------------
+
+[HOME]
+on selecting the map annotation sometimes the cell cannot be resolved causing the incorrect scroll-to locaion
+certain map annotations are not selected when viewing item in collection despite being found in the hash
+
+[DETAIL]
+

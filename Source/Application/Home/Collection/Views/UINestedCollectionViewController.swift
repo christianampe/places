@@ -43,6 +43,7 @@ class UINestedCollectionViewController: UIViewController {
     var currentIndexPath = IndexPath(item: 0, section: 0)
 }
 
+// MARK: - Public API
 extension UINestedCollectionViewController {
     func reloadData() {
         tableView.reloadData()
@@ -66,15 +67,6 @@ extension UINestedCollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTableView()
-    }
-}
-
-private extension UINestedCollectionViewController {
-    func setUpTableView() {
-        tableView.decelerationRate = .fast
-        tableView.sectionHeaderHeight = UINestedCollectionViewController.headerHeight
-        tableView.rowHeight = UINestedCollectionViewController.rowHeight
-        tableView.sectionFooterHeight = UINestedCollectionViewController.footerHeight
     }
 }
 
@@ -153,6 +145,36 @@ extension UINestedCollectionViewController: UITableViewDelegate {
     }
 }
 
+// MARK: - UINestedCollectionViewColumnCellDelegate
+extension UINestedCollectionViewController: UINestedCollectionViewColumnCellDelegate {
+    func collectionView(_ collectionView: UICollectionView,
+                        didDisplayCellAt index: Int) {
+        
+        currentIndexPath.row = index
+        
+        delegate?.tableView(tableView,
+                            didDisplayItemAt: currentIndexPath)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt index: Int) {
+        
+        delegate?.tableView(tableView,
+                            didSelectItemAt: IndexPath(item: index,
+                                                       section: currentIndexPath.section))
+    }
+}
+
+// MARK: - Set Up Methods
+private extension UINestedCollectionViewController {
+    func setUpTableView() {
+        tableView.decelerationRate = .fast
+        tableView.sectionHeaderHeight = UINestedCollectionViewController.headerHeight
+        tableView.rowHeight = UINestedCollectionViewController.rowHeight
+        tableView.sectionFooterHeight = UINestedCollectionViewController.footerHeight
+    }
+}
+
 // MARK: - Helper Methods
 private extension UINestedCollectionViewController {
     func nextFocus(for scrollView: UIScrollView,
@@ -189,25 +211,6 @@ private extension UINestedCollectionViewController {
         }
         
         return index
-    }
-}
-
-extension UINestedCollectionViewController: UINestedCollectionViewColumnCellDelegate {
-    func collectionView(_ collectionView: UICollectionView,
-                        didDisplayCellAt index: Int) {
-        
-        currentIndexPath.row = index
-        
-        delegate?.tableView(tableView,
-                            didDisplayItemAt: currentIndexPath)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        didSelectItemAt index: Int) {
-        
-        delegate?.tableView(tableView,
-                            didSelectItemAt: IndexPath(item: index,
-                                                       section: currentIndexPath.section))
     }
 }
 
