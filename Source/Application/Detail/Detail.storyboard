@@ -94,7 +94,7 @@
                                             </connections>
                                         </collectionView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yosemite" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLH-Bd-Glp">
-                                            <rect key="frame" x="16" y="497" width="122" height="37"/>
+                                            <rect key="frame" x="16" y="521" width="122" height="37"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -144,12 +144,13 @@ California, USA</string>
                                         <constraint firstItem="crb-Io-Hp2" firstAttribute="top" secondItem="huk-QW-vcJ" secondAttribute="bottom" id="ipg-JL-CMi"/>
                                         <constraint firstItem="huk-QW-vcJ" firstAttribute="top" secondItem="bWR-px-210" secondAttribute="top" id="pJ6-uF-x4s"/>
                                         <constraint firstItem="XLH-Bd-Glp" firstAttribute="leading" secondItem="bWR-px-210" secondAttribute="leading" constant="16" id="rf1-52-H8a"/>
-                                        <constraint firstItem="gyO-ZR-Q48" firstAttribute="top" secondItem="XLH-Bd-Glp" secondAttribute="bottom" constant="48" id="uuu-Wb-aG2"/>
+                                        <constraint firstItem="gyO-ZR-Q48" firstAttribute="top" secondItem="XLH-Bd-Glp" secondAttribute="bottom" constant="24" id="uuu-Wb-aG2"/>
                                     </constraints>
                                     <connections>
                                         <outlet property="collectionView" destination="huk-QW-vcJ" id="Nh7-lf-GX8"/>
                                         <outlet property="descriptionLabel" destination="idb-Va-jUs" id="6L8-Vd-Jit"/>
                                         <outlet property="directionsButton" destination="crb-Io-Hp2" id="aDO-Be-BFp"/>
+                                        <outlet property="nameLabel" destination="XLH-Bd-Glp" id="lca-Xi-Pfr"/>
                                         <outlet property="progressView" destination="gyO-ZR-Q48" id="SHA-oG-rM0"/>
                                     </connections>
                                 </collectionReusableView>

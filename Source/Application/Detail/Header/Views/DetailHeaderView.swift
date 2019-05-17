@@ -10,6 +10,7 @@ import UIKit
 
 final class DetailHeaderView: UICollectionReusableView {
     @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var progressView: DetailProgressView!
     @IBOutlet private weak var directionsButton: UIButton!
     @IBOutlet private weak var descriptionLabel: UILabel!
@@ -26,6 +27,7 @@ extension DetailHeaderView {
             return
         }
         
+        nameLabel.text = viewModel?.name
         progressView.setNumberOfIncrements(headerCellViewModels.count)
         collectionView.reloadData()
     }

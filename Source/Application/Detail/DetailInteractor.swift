@@ -28,8 +28,9 @@ extension DetailInteractor {
                     let showcaseViewModels = showcaseImageDictionaries.map { PlaceDetailHeaderShowcaseViewModel(imageURLString: $0.full) }
                     let collectionViewModels = collectionImageDictionaries.map { PlaceDetailCollectionCellViewModel(imageURLString: $0.small) }
                     
-                    let headerViewModel = PlaceDetailHeaderViewModel(headerCellViewModels: showcaseViewModels,
-                                                                     description: "")
+                    let headerViewModel = PlaceDetailHeaderViewModel(name: placeName,
+                                                                     description: "",
+                                                                     headerCellViewModels: showcaseViewModels)
                     
                     let viewModel = DetailViewModel(headerViewModel: headerViewModel,
                                                     coordinates: nil,
@@ -46,8 +47,9 @@ extension DetailInteractor {
 }
 
 struct PlaceDetailHeaderViewModel: DetailHeaderViewModelProtocol {
-    var headerCellViewModels: [DetailHeaderViewCellViewModelProtocol]?
+    var name: String?
     var description: String?
+    var headerCellViewModels: [DetailHeaderViewCellViewModelProtocol]?
 }
 
 struct PlaceDetailHeaderShowcaseViewModel: DetailHeaderViewCellViewModelProtocol {

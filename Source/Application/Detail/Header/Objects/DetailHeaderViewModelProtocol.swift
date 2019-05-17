@@ -9,6 +9,7 @@
 import Foundation
 
 protocol DetailHeaderViewModelProtocol {
-    var headerCellViewModels: [DetailHeaderViewCellViewModelProtocol]? { get set }
+    var name: String? { get set }
     var description: String? { get set }
+    var headerCellViewModels: [DetailHeaderViewCellViewModelProtocol]? { get set }
 }
