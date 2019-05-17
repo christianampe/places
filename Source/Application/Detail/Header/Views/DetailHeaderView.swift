@@ -46,6 +46,7 @@ extension DetailHeaderView {
         
         nameLabel.text = viewModel?.name
         progressView.setNumberOfIncrements(headerCellViewModels.count)
+        
         collectionView.reloadData()
     }
 }

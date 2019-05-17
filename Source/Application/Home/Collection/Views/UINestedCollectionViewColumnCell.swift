@@ -165,7 +165,7 @@ extension UINestedCollectionViewColumnCell: UICollectionViewDelegateFlowLayout {
 // MARK: - Helper Methods
 private extension UINestedCollectionViewColumnCell {
     func nextFocus(for scrollView: UIScrollView,
-                           withVelocity velocity: CGPoint = .zero) -> (index: Int, offset: CGFloat) {
+                   withVelocity velocity: CGPoint = .zero) -> (index: Int, offset: CGFloat) {
         
         let horizontalVelocity = velocity.x
         let itemSpace = UINestedCollectionViewColumnCell.itemWidth + UINestedCollectionViewColumnCell.itemSpacing
