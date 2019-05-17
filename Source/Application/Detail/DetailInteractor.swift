@@ -13,16 +13,15 @@ final class DetailInteractor: DetailInteractorProtocol {
 }
 
 extension DetailInteractor {
-    func fetch(place placeID: String) {
-        NetworkingProvider.fetchPhotos(of: "yosemite") { [weak self] result in
+    func fetch(place placeName: String) {
+        NetworkingProvider.fetchPhotos(of: placeName) { [weak self] result in
             guard let self = self else { return }
             
             switch result {
-                
             case .success(let response):
                 let imageDictionaries = response.results.map { $0.urls }
                 
-                let showcaseImageDictionaries = imageDictionaries.dropLast(12)
+                let showcaseImageDictionaries = imageDictionaries.dropLast(15)
                 let collectionImageDictionaries = imageDictionaries.dropFirst(5)
                 
                 let showcaseViewModels = showcaseImageDictionaries.map { PlaceDetailHeaderShowcaseViewModel(imageURLString: $0.full) }
@@ -37,7 +36,6 @@ extension DetailInteractor {
                                                 collectionCellViewModels: collectionViewModels)
                 
                 self.presenter?.fetched(place: viewModel)
-                
             case .failure(let error):
                 self.presenter?.encountered(error: error)
             }

@@ -38,6 +38,12 @@ extension UINestedCollectionViewRowCell {
     func set(properties viewModel: UINestedCollectionViewRowCellViewModelProtocol) {
         title.text = viewModel.name
         detail.text = viewModel.detail
+        
+        guard let url = URL(string: viewModel.backgroundURLString) else {
+            return
+        }
+        
+        background.kf.setImage(with: url)
     }
 }
 

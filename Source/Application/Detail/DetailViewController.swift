@@ -34,7 +34,12 @@ extension DetailViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpCollectionView()
-        presenter?.request(place: "1")
+        
+        guard let input = input else {
+            return
+        }
+        
+        presenter?.request(place: input.placeName)
     }
 }
 

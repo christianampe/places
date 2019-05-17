@@ -20,15 +20,13 @@ final class DetailHeaderView: UICollectionReusableView {
 extension DetailHeaderView {
     func set(properties newViewModel: DetailHeaderViewModelProtocol) {
         viewModel = newViewModel
+        
+        guard let headerCellViewModels = viewModel?.headerCellViewModels else {
+            return
+        }
+        
+        progressView.setNumberOfIncrements(headerCellViewModels.count)
         collectionView.reloadData()
-    }
-}
-
-// MARK: - Lifecycle
-extension DetailHeaderView {
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        progressView.setNumberOfIncrements(4)
     }
 }
 
