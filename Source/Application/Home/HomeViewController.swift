@@ -27,11 +27,11 @@ extension HomeViewController {
         
     }
     
-    func show(places: HomeViewModel) {
-        viewModel = places
+    func show(collection: HomeCollectionRow) {
+        viewModel?.panels.append(collection)
         
         nestedCollectionViewController?.reloadData()
-        mapViewController?.set(places: places.panel.flatMap { $0.places })
+        mapViewController?.set(places: collection.places)
     }
 }
 
@@ -91,7 +91,7 @@ extension HomeViewController: UIMapViewDelegate {
         let currentRowIndex = collection.currentIndexPath.section
         let currentItemIndex = collection.currentIndexPath.row
         
-        guard let currentRowViewModels = viewModel.panel[safe: currentRowIndex] else {
+        guard let currentRowViewModels = viewModel.panels[safe: currentRowIndex] else {
             return
         }
         
@@ -101,31 +101,47 @@ extension HomeViewController: UIMapViewDelegate {
             return
         }
         
-        guard let firstMatchingItemIndex = currentRowViewModelIDs.firstIndex(of: place.id) else {
-            return
+        if let firstMatchingItemIndex = currentRowViewModelIDs.firstIndex(of: place.id) {
+            nestedCollectionViewController?.focus(indexPath: IndexPath(item: firstMatchingItemIndex,
+                                                                       section: currentRowIndex))
+        } else {
+            var rowIndex: Int = 0
+            
+            for x in 0..<viewModel.panels.count {
+                rowIndex = x
+                guard let panel = viewModel.panels[safe: x] else {
+                    continue
+                }
+                
+                let panelIDs = panel.places.map { $0.id }
+                
+                guard let itemIndex = panelIDs.firstIndex(of: place.id) else {
+                    continue
+                }
+                
+                nestedCollectionViewController?.focus(indexPath: IndexPath(item: itemIndex,
+                                                                           section: rowIndex))
+            }
         }
-        
-        nestedCollectionViewController?.focus(indexPath: IndexPath(item: firstMatchingItemIndex,
-                                                                   section: currentRowIndex))
     }
 }
 
 // MARK: - UINestedCollectionViewDataSource
 extension HomeViewController: UINestedCollectionViewDataSource {
     func numberOfRows(in tableView: UITableView) -> Int {
-        return viewModel?.panel.count ?? 0
+        return viewModel?.panels.count ?? 0
     }
     
     func tableView(_ tableView: UITableView,
                    viewModelsFor row: Int) -> [UINestedCollectionViewRowCellViewModelProtocol] {
         
-        return viewModel?.panel[safe: row]?.places ?? []
+        return viewModel?.panels[safe: row]?.places ?? []
     }
     
     func tableView(_ tableView: UITableView,
                    titleFor row: Int) -> String {
         
-        return viewModel?.panel[safe: row]?.title ?? ""
+        return viewModel?.panels[safe: row]?.title ?? ""
     }
 }
 
@@ -134,7 +150,7 @@ extension HomeViewController: UINestedCollectionViewDelegate {
     func tableView(_ tableView: UITableView,
                    didDisplayItemAt indexPath: IndexPath) {
         
-        guard let place = viewModel?.panel[safe: indexPath.section]?.places[safe: indexPath.item] else {
+        guard let place = viewModel?.panels[safe: indexPath.section]?.places[safe: indexPath.item] else {
             return
         }
         
@@ -153,6 +169,11 @@ extension HomeViewController: UINestedCollectionViewDelegate {
             return
         }
         
-        presenter?.selectedPlace()
+        guard let place = viewModel?.panels[safe: indexPath.section]?.places[safe: indexPath.item] else {
+            return
+        }
+        
+        presenter?.selectedPlace(id: place.id,
+                                 name: place.name)
     }
 }

@@ -36,8 +36,14 @@ extension UINestedCollectionViewRowCell {
     ///
     /// - Parameter viewModel: The view model used to populate the UI elements.
     func set(properties viewModel: UINestedCollectionViewRowCellViewModelProtocol) {
-        title.text = viewModel.title
+        title.text = viewModel.name
         detail.text = viewModel.detail
+        
+        guard let url = URL(string: viewModel.backgroundURLString) else {
+            return
+        }
+        
+        background.kf.setImage(with: url)
     }
 }
 

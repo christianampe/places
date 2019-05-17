@@ -17,13 +17,14 @@ final class HomePresenter: HomePresenterProtocol {
 
 extension HomePresenter {
     func requestScreen() {
-        interactor?.fetchPlaces()
+        interactor?.fetchPlaces(in: "CA")
+        interactor?.fetchPlaces(in: "OR")
     }
 }
 
 extension HomePresenter {
-    func fetched(places: HomeViewModel) {
-        view?.show(places: places)
+    func fetched(collection: HomeCollectionRow) {
+        view?.show(collection: collection)
     }
     
     func encountered(error: Error) {
@@ -32,7 +33,10 @@ extension HomePresenter {
 }
 
 extension HomePresenter {
-    func selectedPlace() {
-        router?.showDetail()
+    func selectedPlace(id: String,
+                       name: String) {
+        
+        router?.showDetail(DetailInput(placeID: id,
+                                       placeName: name))
     }
 }

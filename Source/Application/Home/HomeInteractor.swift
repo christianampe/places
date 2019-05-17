@@ -13,17 +13,62 @@ final class HomeInteractor: HomeInteractorProtocol {
 }
 
 extension HomeInteractor {
-    func fetchPlaces() {
-        let yosemite = Place(id: "1", latitude: 37.8651011, longitude: -119.5383294, title: "Yosemite", detail: "12 mi", iconURLString: "", backgroundURLString: "")
+    func fetchPlaces(in state: String) {
+        NetworkingProvider.fetchNationalParks(in: state) { [weak self] result in
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                
+                switch result {
+                    
+                case .success(let response):
+                    let places = response.data.compactMap({ [weak self] (park) -> Place? in
+                        guard let self = self else { return nil }
+                        
+                        guard let coordinates = self.coordinates(from: park.latLong) else {
+                            return nil
+                        }
+                        
+                        return Place(id: park.id,
+                                     latitude: coordinates.lat,
+                                     longitude: coordinates.lon,
+                                     name: park.name,
+                                     detail: "",
+                                     backgroundURLString: park.images.first?.url ?? "")
+                    })
+                    
+                    let homeCollectionRow = HomeCollectionRow(title: state,
+                                                              places: places)
+                    
+                    self.presenter?.fetched(collection: homeCollectionRow)
+                    
+                case .failure(let error):
+                    self.presenter?.encountered(error: error)
+                }
+            }
+        }
+    }
+}
+
+private extension HomeInteractor {
+    func coordinates(from string: String) -> (lat: Double, lon: Double)? {
+        let latRegex = "lat:[-+]?[0-9]*[.,]?[0-9]+"
+        let longRegex = "long:[-+]?[0-9]*[.,]?[0-9]+"
         
-        let joshuaTree = Place(id: "2", latitude: 34.134728, longitude: -116.313066, title: "Joshua Tree", detail: "20 mi", iconURLString: "", backgroundURLString: "")
+        guard
+            let latRange = string.range(of: latRegex, options: .regularExpression),
+            let lonRange = string.range(of: longRegex, options: .regularExpression)
+        else {
+                return nil
+        }
         
-        let cannonBeach = Place(id: "3", latitude: 45.8917738, longitude: -123.9615274, title: "Cannon Beach ", detail: "140 mi", iconURLString: "", backgroundURLString: "")
+        let latString = string[latRange].dropFirst(4)
+        let lonString = string[lonRange].dropFirst(5)
         
-        let row = HomeCollectionRow(title: "Near Me", places: [yosemite, joshuaTree, cannonBeach, yosemite, joshuaTree, cannonBeach])
-        let row1 = HomeCollectionRow(title: "Favorited", places: [joshuaTree, cannonBeach])
-        let row2 = HomeCollectionRow(title: "Popular", places: [yosemite, yosemite, yosemite, yosemite, joshuaTree])
+        guard let lat = Double(latString), let lon = Double(lonString) else {
+            return nil
+        }
         
-        presenter?.fetched(places: HomeViewModel(panel: [row, row1, row2]))
+        return (lat: lat,
+                lon: lon)
     }
 }

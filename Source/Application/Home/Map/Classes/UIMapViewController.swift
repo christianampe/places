@@ -78,7 +78,9 @@ extension UIMapViewController: MKMapViewDelegate {
 
 // MARK: - Public API
 extension UIMapViewController {
-    func set(places: [UIMapViewPlace], clearPrevious: Bool = false) {
+    func set(places: [UIMapViewPlace],
+             clearPrevious: Bool = false) {
+        
         if clearPrevious {
             annotationsHash = [:]
             placesHash = [:]
@@ -106,8 +108,12 @@ extension UIMapViewController {
     }
     
     func move(to place: UIMapViewPlace) {
+        guard let userLocation = locationManager.location else {
+            return
+        }
+        
         let userAnnotation = MKPointAnnotation()
-        userAnnotation.coordinate = locationManager.location!.coordinate
+        userAnnotation.coordinate = userLocation.coordinate
         
         guard let marker = annotationsHash[place.id] else {
             return
@@ -122,7 +128,9 @@ extension UIMapViewController {
 private extension UIMapViewController {
     func annotation(from place: UIMapViewPlace) -> MKPointAnnotation {
         let annotation = MKPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longitude)
+        annotation.coordinate = CLLocationCoordinate2D(latitude: place.latitude,
+                                                       longitude: place.longitude)
+        
         return annotation
     }
 }

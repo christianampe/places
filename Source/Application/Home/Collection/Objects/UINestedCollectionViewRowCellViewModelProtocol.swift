@@ -9,8 +9,7 @@
 import Foundation
 
 protocol UINestedCollectionViewRowCellViewModelProtocol {
-    var title: String { get }
+    var name: String { get }
     var detail: String { get }
-    var iconURLString: String { get }
     var backgroundURLString: String { get }
 }

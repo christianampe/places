@@ -26,8 +26,8 @@ extension UICollectionView {
     ///
     /// - Parameter indexPath: The index path specifying the location of the cell. The data source receives this information when it is asked for the cell and should just pass it along. This method uses the index path to perform additional configuration based on the cell’s position in the table view.
     /// - Returns: A UICollectionReusableView object with the associated type. If no UICollectionReusableView is associated with the type, this method throws an exception.
-    func dequeueReusableSupplementaryView<T: UICollectionReusableView>(for indexPath: IndexPath) -> T {
-        guard let view = dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: T.storyboardIdentifier, for: indexPath) as? T else {
+    func dequeueReusableSupplementaryView<T: UICollectionReusableView>(ofKind kind: String, for indexPath: IndexPath) -> T {
+        guard let view = dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: T.storyboardIdentifier, for: indexPath) as? T else {
             fatalError("Cannot dequeue: \(T.self) with identifier: \(T.storyboardIdentifier)")
         }
         

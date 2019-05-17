@@ -9,7 +9,7 @@
 protocol HomeInputProtocol {}
 
 protocol HomeViewModelProtocol {
-    var panel: [HomeCollectionRow] { get set }
+    var panels: [HomeCollectionRow] { get set }
 }
 
 protocol HomeOutputProtocol {}
@@ -22,7 +22,7 @@ protocol HomeViewProtocol: class {
     var viewModel: HomeViewModelProtocol? { get set }
     var presenter: HomePresenterProtocol?  { get set }
     
-    func show(places: HomeViewModel)
+    func show(collection: HomeCollectionRow)
     func show(error: Error)
 }
 
@@ -34,18 +34,19 @@ protocol HomePresenterProtocol: class {
     
     func requestScreen()
     
-    func fetched(places: HomeViewModel)
+    func fetched(collection: HomeCollectionRow)
     func encountered(error: Error)
     
-    func selectedPlace()
+    func selectedPlace(id: String,
+                       name: String)
 }
 
 protocol HomeInteractorProtocol: class {
     var presenter: HomePresenterProtocol?  { get set }
     
-    func fetchPlaces()
+    func fetchPlaces(in state: String)
 }
 
 protocol HomeRouterProtocol: class {
-    func showDetail()
+    func showDetail(_ input: DetailInput)
 }

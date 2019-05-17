@@ -16,8 +16,8 @@ final class DetailPresenter: DetailPresenterProtocol {
 }
 
 extension DetailPresenter {
-    func request(place placeID: String) {
-        interactor?.fetch(place: placeID)
+    func request(place placeName: String) {
+        interactor?.fetch(place: placeName)
     }
     
     func fetched(place: DetailViewModel) {

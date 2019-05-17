@@ -34,7 +34,12 @@ extension DetailViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpCollectionView()
-        presenter?.request(place: "1")
+        
+        guard let input = input else {
+            return
+        }
+        
+        presenter?.request(place: input.placeName)
     }
 }
 
@@ -54,6 +59,8 @@ private extension DetailViewController {
         layout.minimumLineSpacing = DetailViewController.lineSpacing
         layout.minimumInteritemSpacing = DetailViewController.interitemSpacing
         layout.itemSize = CGSize(width: itemSideLength, height: itemSideLength)
+        layout.headerReferenceSize = collectionView.frame.size
+        layout.footerReferenceSize = CGSize(width: collectionView.frame.width, height: DetailViewController.footerHeight)
     }
 }
 
@@ -69,7 +76,13 @@ extension DetailViewController: UICollectionViewDataSource {
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
         
-        return collectionView.dequeueReusableSupplementaryView(for: indexPath) as DetailHeaderView
+        if kind == UICollectionView.elementKindSectionHeader {
+            return collectionView.dequeueReusableSupplementaryView(ofKind: kind, for: indexPath) as DetailHeaderView
+        } else if kind == UICollectionView.elementKindSectionFooter {
+            return collectionView.dequeueReusableSupplementaryView(ofKind: kind, for: indexPath) as DetailFooterView
+        }
+        
+        return UICollectionReusableView()
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -82,6 +95,10 @@ extension DetailViewController: UICollectionViewDataSource {
                         willDisplaySupplementaryView view: UICollectionReusableView,
                         forElementKind elementKind: String,
                         at indexPath: IndexPath) {
+        
+        guard elementKind == UICollectionView.elementKindSectionHeader else {
+            return
+        }
         
         guard let header = view as? DetailHeaderView else {
             assertionFailure("incorrect cell type used")
@@ -123,11 +140,8 @@ extension DetailViewController: UICollectionViewDelegate {
 
 // MARK: - Static Properties
 extension DetailViewController {
-    static let imageCollectionHeight: CGFloat = 400
-    static let directionButtonHeight: CGFloat = 72
-    static let topTextPadding: CGFloat = 48
-    static let bottomTextPadding: CGFloat = 48
     static let lineSpacing: CGFloat = 1
     static let interitemSpacing: CGFloat = 1
     static let numberOfCellsPerRow: CGFloat = 3
+    static let footerHeight: CGFloat = 72
 }

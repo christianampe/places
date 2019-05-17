@@ -24,7 +24,7 @@
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="BUF-WX-nhI">
                                     <size key="itemSize" width="147" height="128"/>
                                     <size key="headerReferenceSize" width="50" height="823"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="50" height="72"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
@@ -58,9 +58,6 @@
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="huk-QW-vcJ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="600"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="600" id="Mdb-S6-WC5"/>
-                                            </constraints>
                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="82M-m1-ChD">
                                                 <size key="itemSize" width="412" height="584"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -96,10 +93,9 @@
                                                 <outlet property="delegate" destination="bWR-px-210" id="60M-j8-tCI"/>
                                             </connections>
                                         </collectionView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Yosemite" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLH-Bd-Glp">
-                                            <rect key="frame" x="0.0" y="500" width="95" height="29"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yosemite" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLH-Bd-Glp">
+                                            <rect key="frame" x="16" y="521" width="122" height="37"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -113,12 +109,11 @@
                                         </stackView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idb-Va-jUs">
                                             <rect key="frame" x="32" y="720" width="350" height="55"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="55" id="omw-kz-hsf"/>
+                                            </constraints>
                                             <string key="text">Location
-California, USA
-
-Lorem ipsum dolor sit amet, te pri alii ornatus, cum id libris inimicus omittantur. Sea no diam invenire aliquando, aeque meliore erroribus ne eum, quod magna minimum ut sed. In ceteros definitiones cum, at eos graeco accusamus, te nec diam doming invenire. Hinc nominavi volutpat pri ea.
-
-Ius duis interpretaris ad, vel meis libris recusabo te, an mel volumus contentiones. Eam hinc eruditi ad. Docendi contentiones necessitatibus nec no, amet elitr eam an. Ferri ornatus signiferumque pri et.</string>
+California, USA</string>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -129,7 +124,7 @@ Ius duis interpretaris ad, vel meis libris recusabo te, an mel volumus contentio
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="72" id="HvQ-Hs-Ifn"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <state key="normal" title="Directions">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
@@ -148,13 +143,35 @@ Ius duis interpretaris ad, vel meis libris recusabo te, an mel volumus contentio
                                         <constraint firstItem="crb-Io-Hp2" firstAttribute="top" secondItem="gyO-ZR-Q48" secondAttribute="bottom" constant="16" id="gh2-4C-U8Y"/>
                                         <constraint firstItem="crb-Io-Hp2" firstAttribute="top" secondItem="huk-QW-vcJ" secondAttribute="bottom" id="ipg-JL-CMi"/>
                                         <constraint firstItem="huk-QW-vcJ" firstAttribute="top" secondItem="bWR-px-210" secondAttribute="top" id="pJ6-uF-x4s"/>
+                                        <constraint firstItem="XLH-Bd-Glp" firstAttribute="leading" secondItem="bWR-px-210" secondAttribute="leading" constant="16" id="rf1-52-H8a"/>
+                                        <constraint firstItem="gyO-ZR-Q48" firstAttribute="top" secondItem="XLH-Bd-Glp" secondAttribute="bottom" constant="24" id="uuu-Wb-aG2"/>
                                     </constraints>
                                     <connections>
                                         <outlet property="collectionView" destination="huk-QW-vcJ" id="Nh7-lf-GX8"/>
                                         <outlet property="descriptionLabel" destination="idb-Va-jUs" id="6L8-Vd-Jit"/>
                                         <outlet property="directionsButton" destination="crb-Io-Hp2" id="aDO-Be-BFp"/>
+                                        <outlet property="nameLabel" destination="XLH-Bd-Glp" id="lca-Xi-Pfr"/>
                                         <outlet property="progressView" destination="gyO-ZR-Q48" id="SHA-oG-rM0"/>
                                     </connections>
+                                </collectionReusableView>
+                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="DetailFooterView" id="bV2-u5-rg4" customClass="DetailFooterView" customModule="Places" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="951" width="414" height="72"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vud-OR-o3m">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="72"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <state key="normal" title="Add Image">
+                                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="vud-OR-o3m" firstAttribute="leading" secondItem="bV2-u5-rg4" secondAttribute="leading" id="4by-mR-1TU"/>
+                                        <constraint firstItem="vud-OR-o3m" firstAttribute="top" secondItem="bV2-u5-rg4" secondAttribute="top" id="7uZ-ua-TTk"/>
+                                        <constraint firstAttribute="trailing" secondItem="vud-OR-o3m" secondAttribute="trailing" id="995-9x-CV3"/>
+                                        <constraint firstAttribute="bottom" secondItem="vud-OR-o3m" secondAttribute="bottom" id="QFr-4C-H1v"/>
+                                    </constraints>
                                 </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="eEY-fX-S1w" id="NP0-Rg-akC"/>
