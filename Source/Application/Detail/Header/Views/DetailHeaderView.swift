@@ -8,6 +8,14 @@
 
 import UIKit
 
+protocol DetailHeaderViewDelegate: class {
+    func didTapDirectionsButton()
+}
+
+extension DetailHeaderViewDelegate {
+    func didTapDirectionsButton() {}
+}
+
 final class DetailHeaderView: UICollectionReusableView {
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var nameLabel: UILabel!
@@ -16,6 +24,15 @@ final class DetailHeaderView: UICollectionReusableView {
     @IBOutlet private weak var descriptionLabel: UILabel!
     
     private var viewModel: DetailHeaderViewModelProtocol?
+    
+    weak var delegate: DetailHeaderViewDelegate?
+}
+
+// MARK: - IBOutlets
+extension DetailHeaderView {
+    @IBAction func didSelectDirectionsButton(_ sender: UIButton) {
+        delegate?.didTapDirectionsButton()
+    }
 }
 
 // MARK: - Public API

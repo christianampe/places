@@ -130,6 +130,7 @@ extension UIMapViewController {
             return
         }
 
+        mapView.removeOverlays(routeOverlays)
         mapView.showAnnotations([userAnnotation, marker], animated: true)
         mapView.selectAnnotation(marker, animated: true)
     }

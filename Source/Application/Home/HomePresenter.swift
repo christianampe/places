@@ -12,7 +12,6 @@ final class HomePresenter: HomePresenterProtocol {
     var interactor: HomeInteractorProtocol?
     var router: HomeRouterProtocol?
     weak var view: HomeViewProtocol?
-    weak var delegate: HomeDelegateProtocol?
 }
 
 extension HomePresenter {

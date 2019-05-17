@@ -14,6 +14,7 @@ final class HomeViewController: UIViewController, HomeViewProtocol {
     var output: HomeOutputProtocol?
     var viewModel: HomeViewModelProtocol?
     var presenter: HomePresenterProtocol?
+    weak var delegate: HomeDelegateProtocol?
     
     private var mapViewController: UIMapViewController?
     private var nestedCollectionViewController: UINestedCollectionViewController?

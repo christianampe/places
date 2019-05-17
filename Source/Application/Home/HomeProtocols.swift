@@ -21,6 +21,7 @@ protocol HomeViewProtocol: class {
     var output: HomeOutputProtocol? { get set }
     var viewModel: HomeViewModelProtocol? { get set }
     var presenter: HomePresenterProtocol?  { get set }
+    var delegate: HomeDelegateProtocol? { get set }
     
     func show(collection: HomeCollectionRow)
     func show(error: Error)
@@ -30,7 +31,6 @@ protocol HomePresenterProtocol: class {
     var view: HomeViewProtocol? { get set }
     var interactor: HomeInteractorProtocol? { get set }
     var router: HomeRouterProtocol? { get set }
-    var delegate: HomeDelegateProtocol? { get set }
     
     func requestScreen()
     
