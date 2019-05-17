@@ -17,7 +17,7 @@ final class HomePresenter: HomePresenterProtocol {
 
 extension HomePresenter {
     func requestScreen() {
-        interactor?.fetchPlaces()
+        interactor?.fetchPlaces(in: "CA")
     }
 }
 

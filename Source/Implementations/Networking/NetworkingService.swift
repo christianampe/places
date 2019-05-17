@@ -57,6 +57,7 @@ extension NetworkingService: TargetType {
         case .getNationalParks(let state):
             return .requestParameters(parameters: ["stateCode": state,
                                                    "limit": 8,
+                                                   "fields": "images",
                                                    "api_key": "Fc68gOahpFrcSpaocyUYEZDme5QXV54ZKOQnElOH"],
                                       encoding: URLEncoding.queryString)
         }

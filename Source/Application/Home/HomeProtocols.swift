@@ -43,7 +43,7 @@ protocol HomePresenterProtocol: class {
 protocol HomeInteractorProtocol: class {
     var presenter: HomePresenterProtocol?  { get set }
     
-    func fetchPlaces()
+    func fetchPlaces(in state: String)
 }
 
 protocol HomeRouterProtocol: class {

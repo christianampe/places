@@ -13,6 +13,7 @@ struct NPSParksReponse: Decodable {
 }
 
 struct NPSPark: Decodable {
+    let id: String
     let name: String
     let latLong: String
     let images: [NPSParkImage]

@@ -13,7 +13,7 @@ protocol NetworkingProviderProtocol: class {
                             _ completion: @escaping (Result<UnsplashSearchResponse, Error>) -> Void)
     
     static func fetchNationalParks(in state: String,
-                                   _ completion: @escaping (Result<[NPSParksReponse], Error>) -> Void)
+                                   _ completion: @escaping (Result<NPSParksReponse, Error>) -> Void)
 }
 
 final class NetworkingProvider: NetworkingProviderProtocol {
@@ -41,13 +41,13 @@ extension NetworkingProvider {
     }
     
     static func fetchNationalParks(in state: String,
-                                   _ completion: @escaping (Result<[NPSParksReponse], Error>) -> Void) {
+                                   _ completion: @escaping (Result<NPSParksReponse, Error>) -> Void) {
         
         provider.request(.getNationalParks(state: state)) { result in
             switch result {
             case .success(let moyaResponse):
                 do {
-                    completion(.success(try jsonDecoder.decode([NPSParksReponse].self,
+                    completion(.success(try jsonDecoder.decode(NPSParksReponse.self,
                                                                from: moyaResponse.data)))
                 } catch {
                     completion(.failure(NetworkingError()))
