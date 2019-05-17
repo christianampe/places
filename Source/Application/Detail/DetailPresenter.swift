@@ -24,10 +24,6 @@ extension DetailPresenter {
     }
     
     func encountered(error: Error) {
-        
-    }
-    
-    func getDirections() {
-        
+        view?.show(error: error)
     }
 }
