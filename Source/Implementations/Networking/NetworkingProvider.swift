@@ -22,7 +22,7 @@ extension NetworkingProvider {
     static func fetchPhotos(of query: String,
                             _ completion: @escaping (Result<UnsplashSearchResponse, Error>) -> Void) {
         
-        provider.request(.showUnsplashPhotos(query: query)) { result in
+        provider.request(.getUnsplashPhotos(query: query)) { result in
             switch result {
             case .success(let moyaResponse):
                 do {
