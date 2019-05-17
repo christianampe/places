@@ -30,6 +30,7 @@ protocol DetailViewProtocol: class {
     var output: DetailOutputProtocol? { get set }
     var viewModel: DetailViewModelProtocol? { get set }
     var presenter: DetailPresenterProtocol?  { get set }
+    var delegate: DetailDelegateProtocol? { get set }
     
     func show(place: DetailViewModel)
     func show(error: Error)
@@ -39,7 +40,6 @@ protocol DetailPresenterProtocol: class {
     var view: DetailViewProtocol? { get set }
     var interactor: DetailInteractorProtocol? { get set }
     var router: DetailRouterProtocol? { get set }
-    var delegate: DetailDelegateProtocol? { get set }
     
     func request(place placeName: String)
     
