@@ -9,7 +9,11 @@
 import Moya
 
 enum NetworkingService {
+    
+    /// https://unsplash.com/documentation#search-photos
     case getUnsplashPhotos(query: String)
+    
+    /// https://www.nps.gov/subjects/developer/api-documentation.htm#/parks/getPark
     case getNationalParks(state: String)
 }
 
