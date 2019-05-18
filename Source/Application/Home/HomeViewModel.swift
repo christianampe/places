@@ -6,11 +6,11 @@
 //  Copyright © 2019 christianampe. All rights reserved.
 //
 
-struct HomeViewModel: HomeViewModelProtocol, Codable {
+struct HomeViewModel: HomeViewModelProtocol, Decodable {
     var panels: [HomeCollectionRow] = []
 }
 
-struct HomeCollectionRow: Codable {
+struct HomeCollectionRow: Decodable {
     let title: String
     let places: [HomePlace]
 }
